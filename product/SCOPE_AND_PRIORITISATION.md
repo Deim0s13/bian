@@ -99,6 +99,10 @@ Run product discovery around **a bounded BIAN adoption and modernisation
 assessment**, initially using payments as the working example but not assuming
 payments is the final market choice.
 
+The first assessment will be performed against Horizon Synthetic Bank. It will
+validate the internal product logic and required evidence while leaving market
+demand and real-bank operating fit explicitly unvalidated.
+
 The assessment would aim to answer:
 
 1. Where are the selected BIAN responsibilities implemented today?
@@ -126,7 +130,9 @@ engineering, vendor mapping, and assurance use cases.
 
 ## Prioritisation criteria
 
-Each proposition should be assessed with customer evidence against:
+Each proposition should first be assessed through official sources, public case
+studies, HSB scenario exercises, and qualified peer review. This can establish
+coherence and technical feasibility, but buyer demand remains unvalidated.
 
 | Criterion | Question |
 |---|---|
@@ -143,9 +149,11 @@ Each proposition should be assessed with customer evidence against:
 
 ## Product-definition exit criteria
 
-Move into conceptual architecture only when there is reasonable confidence in:
+Move into conceptual architecture when the product definition is internally
+coherent and there is adequate documented evidence or an explicit unvalidated
+hypothesis for:
 
-- the first target customer and buying trigger;
+- the first target adopter and likely trigger;
 - the primary user and accountable decision-maker;
 - the decision or workflow the first proposition improves;
 - the required inputs and likely data quality;
@@ -154,3 +162,6 @@ Move into conceptual architecture only when there is reasonable confidence in:
 - clear success measures and unacceptable failure modes;
 - how the first proposition contributes to the larger fourteen-use-case vision.
 
+Architecture must also have approved inputs from the BIAN alignment policy,
+fictional-bank validation plan, open-source governance requirements, and
+production-readiness policy.

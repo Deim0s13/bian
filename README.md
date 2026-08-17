@@ -28,12 +28,16 @@ owners, controls, evidence, plans, and generated engineering assets.
 Read these in order:
 
 1. [Product vision](product/PRODUCT_VISION.md)
-2. [Personas and outcomes](product/PERSONAS_AND_OUTCOMES.md)
-3. [Use-case catalogue](product/USE_CASE_CATALOGUE.md)
-4. [End-to-end journeys](product/END_TO_END_JOURNEYS.md)
-5. [Outline traceability](product/TRACEABILITY.md)
-6. [Scope and prioritisation](product/SCOPE_AND_PRIORITISATION.md)
-7. [Discovery questions](product/DISCOVERY_QUESTIONS.md)
+2. [Project principles](product/PROJECT_PRINCIPLES.md)
+3. [BIAN alignment policy](product/BIAN_ALIGNMENT_POLICY.md)
+4. [Fictional bank and synthetic validation](product/FICTIONAL_BANK_AND_SYNTHETIC_VALIDATION.md)
+5. [Open source and production readiness](product/OPEN_SOURCE_AND_PRODUCTION_READINESS.md)
+6. [Personas and outcomes](product/PERSONAS_AND_OUTCOMES.md)
+7. [Use-case catalogue](product/USE_CASE_CATALOGUE.md)
+8. [End-to-end journeys](product/END_TO_END_JOURNEYS.md)
+9. [Outline traceability](product/TRACEABILITY.md)
+10. [Scope and prioritisation](product/SCOPE_AND_PRIORITISATION.md)
+11. [Discovery questions](product/DISCOVERY_QUESTIONS.md)
 
 ## Stage gates
 
@@ -43,7 +47,8 @@ Read these in order:
 - define the complete use-case set and how the use cases reinforce each other;
 - state evidence, confidence, provenance, and safety expectations;
 - identify the smallest valuable customer proposition;
-- validate assumptions through customer and subject-matter interviews.
+- evaluate assumptions through authoritative sources, public evidence, the
+  fictional Horizon Synthetic Bank, and later qualified peer review.
 
 ### Stage 2 — Conceptual architecture
 
@@ -62,3 +67,7 @@ are sufficiently understood. Technology choices and prototypes belong here.
 All use cases in this repository are currently **product hypotheses**. They are
 not implemented capabilities, validated customer demand, BIAN-provided
 features, or compliance claims.
+
+The project is intended to be independently open source, BIAN-native, secure by
+design, and capable of meeting explicit bank-grade production-readiness gates.
+It must not imply official BIAN or Red Hat affiliation, endorsement, or support.

@@ -42,8 +42,8 @@ than one place because their value emerges through combined journeys:
 
 If a use case is merged, removed, or materially reinterpreted later, record:
 
-- the customer evidence supporting the change;
+- the official-source, public, HSB, test, or peer-review evidence supporting the
+  change, including limitations;
 - what original problem remains covered;
 - which journey and capability now owns it; and
 - what is explicitly no longer in product scope.
-

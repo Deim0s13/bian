@@ -1,8 +1,11 @@
 # Discovery questions
 
-This is the working research agenda. Answers should be supported by interviews,
-observed workflows, artefact review, or authoritative source analysis—not only
-internal opinion.
+This is the working research agenda. The project will not ask banks or customers
+to trial the product. Answers should instead be supported by authoritative source
+analysis, public case studies and presentations, published adoption material,
+Horizon Synthetic Bank exercises, reproducible tests, or later qualified peer
+review—not only internal opinion. Questions about demand or real-bank behaviour
+that cannot be answered this way must remain explicitly unvalidated.
 
 ## 1. Customer and buying context
 
@@ -128,22 +131,22 @@ internal opinion.
 - What import/export and audit capabilities are non-negotiable?
 - What would cause the model to become another abandoned architecture repository?
 
-## 13. Interview prompts
+## 13. HSB scenario-review prompts
 
-Use prompts that elicit actual behaviour rather than asking whether the concept
-sounds useful:
+Use prompts when exercising HSB journeys or conducting later qualified peer
+review. Answers based only on role-play are scenario evidence, not customer
+evidence:
 
-- “Tell me about the last time you tried to map a domain or portfolio to BIAN.”
-- “Show me the artefacts and systems you used.”
-- “Which part took the most effort?”
-- “Where did reviewers disagree, and how was that resolved?”
-- “What decision resulted from the work?”
-- “When was the output last updated?”
-- “Tell me about the last API or architecture proposal that duplicated something.”
-- “How did you discover the duplication?”
-- “Describe the last framework release impact assessment you performed.”
-- “Which evidence would you require before trusting an automated recommendation?”
-- “Who else would need to approve or maintain this?”
+- “What decision is the HSB actor trying to make?”
+- “Which source artefacts and systems support that decision?”
+- “What information is missing, stale, contradictory, or disputed?”
+- “Where should reviewers disagree, and how should that be resolved?”
+- “What action should result from the scenario?”
+- “What event should make the result stale?”
+- “Which duplicate-service warning is real, and which is a false lead?”
+- “Which evidence is required before accepting an automated recommendation?”
+- “Which role approves, maintains, challenges, and audits the result?”
+- “What must the output say it cannot prove?”
 
 ## 14. Evidence log template
 
@@ -152,10 +155,9 @@ For each material discovery finding, record:
 | Field | Meaning |
 |---|---|
 | Finding | Concise statement of what was learned |
-| Evidence type | Interview, observed workflow, document, data sample, source analysis |
-| Participant/context | Relevant role and organisation context without unnecessary personal data |
+| Evidence type | Official source, public evidence, HSB exercise, test, or peer review |
+| Context | Relevant source, synthetic scenario, role, scope, and limitations |
 | Use cases affected | FDN/UC identifiers |
 | Strength | Single signal, repeated signal, contradicted, or validated |
 | Implication | Product scope, workflow, trust rule, or architecture consequence |
 | Follow-up | What must be learned next |
-

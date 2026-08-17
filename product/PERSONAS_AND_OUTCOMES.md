@@ -1,7 +1,10 @@
 # Personas and desired outcomes
 
-These personas are hypotheses to validate. A person may occupy more than one
-role, particularly in a smaller bank.
+These personas are design hypotheses. A person may occupy more than one role,
+particularly in a smaller bank. They will initially be exercised through Horizon
+Synthetic Bank scenarios, public evidence, and qualified peer review rather than
+customer trials. Their real-world priorities and operating fit therefore remain
+unvalidated.
 
 ## Economic buyers and sponsors
 
@@ -189,4 +192,3 @@ trusted or current.
 - confidence and limitations are visible;
 - changes can be reviewed over time;
 - automation accelerates judgment without impersonating it.
-

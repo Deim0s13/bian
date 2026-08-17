@@ -154,6 +154,22 @@ A standalone generator can be copied. A trusted, evolving model of how a bank's
 estate relates to BIAN—and how that relationship affects change—is considerably
 more valuable and defensible.
 
+## Project delivery position
+
+The intended product will be developed as an independent open-source project.
+Its repeatable evaluation environment will be the fictional Horizon Synthetic
+Bank rather than a participating customer. The product will be secure by design
+and engineered toward explicit bank-grade production-readiness gates from the
+first implementation increment.
+
+This does not make early work automatically production ready, and synthetic
+evaluation does not prove customer demand or real-bank operating fit. Status,
+evidence, limitations, and external review must remain explicit.
+
+All BIAN-attributed content must come from an authoritative, rights-reviewed BIAN
+source. Project, fictional-bank, regulatory, security, and vendor assertions are
+separate extensions and must never be presented as BIAN definitions.
+
 ## Product guardrails
 
 - Never invent BIAN semantics and present them as authoritative.
@@ -163,14 +179,21 @@ more valuable and defensible.
 - Never overwrite customer-owned implementation through regeneration.
 - Never treat AI inference as reviewed architecture truth.
 - Never assume that publicly accessible material is commercially reusable.
+- Never imply that this independent project is an official BIAN or Red Hat
+  product without explicit evidence and permission.
+- Never call a release production ready without the required readiness evidence.
+- Never use synthetic evaluation to claim validated customer demand or realised
+  bank outcomes.
 - Always show source, release, scope, confidence, review state, and limitations
   where they materially affect a conclusion.
 
 ## What must be learned before architecture
 
-The full vision is intentionally broad. Product discovery must establish:
+The full vision is intentionally broad. Product discovery must establish through
+authoritative sources, public evidence, HSB scenarios, and later peer review:
 
-- which customer problem is painful enough to fund first;
+- which customer problem appears sufficiently material to address first, while
+  acknowledging that demand remains unvalidated without customer research;
 - who buys, champions, operates, and trusts the product;
 - which customer data is realistically available and sufficiently reliable;
 - which decisions users expect the platform to improve;
@@ -180,3 +203,5 @@ The full vision is intentionally broad. Product discovery must establish:
 - which narrow proposition can demonstrate value without pretending to deliver
   the entire vision.
 
+The governing constraints are defined in
+[PROJECT_PRINCIPLES.md](PROJECT_PRINCIPLES.md).

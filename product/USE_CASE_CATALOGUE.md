@@ -6,8 +6,11 @@ These fourteen use cases preserve the complete original product outline. They
 are customer-problem definitions, not promises of implemented functionality and
 not predetermined technical components.
 
-Every use case is currently at **Concept** status and requires customer
-validation. “Platform” below refers to the proposed product, not existing code.
+Every use case is currently at **Concept** status. It requires authoritative BIAN
+source validation, Horizon Synthetic Bank scenario evaluation, and eventually
+qualified peer review. No use case currently has validated customer demand or
+real-bank outcome evidence. “Platform” below refers to the proposed product, not
+existing code.
 
 ## Shared foundation: FDN-01 — Trusted BIAN and bank knowledge model
 
@@ -660,4 +663,6 @@ The following are product requirements even before they become architecture:
   architecture repository;
 - protection of sensitive topology, security, commercial, and ownership data;
 - graceful handling of incomplete and contradictory customer information.
-
+- exact separation of BIAN assertions, mechanically derived projections, project
+  extensions, fictional/customer information, inference, and third-party claims;
+- open-source governance and evidenced production-readiness gates.
