@@ -35,15 +35,14 @@ Before material work, read the parts of these files relevant to the request:
 2. `product/VALUE_AND_VALIDATION.md`
 3. `governance/PROJECT_STATUS.md`
 4. `governance/PROJECT_CONTEXT.md`
-5. `governance/WRITING_STYLE.md`
-6. `product/PROJECT_PRINCIPLES.md`
-7. `product/BIAN_ALIGNMENT_POLICY.md`
-8. `architecture/ARCHITECTURE_VISION.md`
-9. `governance/ARCHITECTURE_AND_ENGINEERING_PRINCIPLES.md`
-10. `governance/QUALITY_AND_REVIEW.md`
-
-Use `governance/DECISION_LOG.md` and `governance/OPEN_QUESTIONS.md` when a task
-creates, changes, or depends on a material decision.
+5. `governance/ARCHITECTURE_REGISTER.md`
+6. `governance/WRITING_STYLE.md`
+7. `product/PROJECT_PRINCIPLES.md`
+8. `product/BIAN_ALIGNMENT_POLICY.md`
+9. `architecture/ARCHITECTURE_VISION.md`
+10. `architecture/BUSINESS_ARCHITECTURE.md`
+11. `governance/ARCHITECTURE_AND_ENGINEERING_PRINCIPLES.md`
+12. `governance/QUALITY_AND_REVIEW.md`
 
 ## BIAN integrity
 
@@ -95,9 +94,10 @@ creates, changes, or depends on a material decision.
 - Keep changes small, coherent, reviewable, and free of speculative scaffolding.
 - Update `governance/PROJECT_STATUS.md` when the project stage, current focus, or
   next gate changes.
-- Record material decisions and consequences in
-  `governance/DECISION_LOG.md`; record unresolved matters in
-  `governance/OPEN_QUESTIONS.md`.
+- Record decisions, active questions, risks, assumptions, dependencies, evidence
+  gaps, architecture requirements, work items, and issues only in
+  `governance/ARCHITECTURE_REGISTER.md`. Context documents reference register
+  identifiers and must not maintain competing status or resolution records.
 - Update affected traceability when product scope or meaning changes.
 - Run `python3 tools/check_project.py` before completing an active-file change.
 - Do not weaken or bypass a check to make a change pass. Fix the issue or record

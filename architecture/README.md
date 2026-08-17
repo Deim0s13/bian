@@ -11,15 +11,14 @@ technology stack, deployment topology, or implementation is approved.
 ## Architecture work products
 
 1. [Architecture Vision](ARCHITECTURE_VISION.md)
+2. [Business Architecture](BUSINESS_ARCHITECTURE.md)
 
 Future work products will be added only when they answer a named stakeholder
 concern or support a decision. Expected next views include:
 
-- capability and value-flow view;
 - system context and ecosystem view;
 - conceptual information and provenance view;
 - trust-boundary and security view;
-- operating-model and governance view;
 - conceptual component interaction view;
 - Horizon Synthetic Bank scenario views;
 - requirements and architecture traceability.

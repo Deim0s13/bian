@@ -7,6 +7,13 @@ Horizon Synthetic Bank exercises, reproducible tests, or later qualified peer
 review, not only internal opinion. Questions about demand or real-bank behaviour
 that cannot be answered this way must remain explicitly unvalidated.
 
+This document is a reusable discovery prompt catalogue, not the authoritative
+open-question register. When a prompt becomes an active project question or
+evidence gap, it must be promoted to the
+[Architecture Register](../governance/ARCHITECTURE_REGISTER.md) and referenced
+by its assigned `OQ` or `EVD` identifier. Ownership, status, resolution, and
+review dates are maintained only there.
+
 ## 1. Customer and buying context
 
 - Which banks are actively trying to adopt BIAN, and why now?

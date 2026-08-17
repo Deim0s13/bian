@@ -26,7 +26,9 @@ REQUIRED_FILES = (
     "SECURITY.md",
     "architecture/README.md",
     "architecture/ARCHITECTURE_VISION.md",
+    "architecture/BUSINESS_ARCHITECTURE.md",
     "governance/PROJECT_STATUS.md",
+    "governance/ARCHITECTURE_REGISTER.md",
     "governance/PROJECT_CONTEXT.md",
     "governance/WRITING_STYLE.md",
     "governance/ARCHITECTURE_AND_ENGINEERING_PRINCIPLES.md",
@@ -59,6 +61,17 @@ REQUIRED_CONTENT = {
         "Platform Control",
         "Runtime Targets",
     ),
+    "architecture/BUSINESS_ARCHITECTURE.md": (
+        "Business Architecture proposition",
+        "Connected value flow",
+        "Platform capability map",
+        "Capability investment hypothesis",
+        "Value-stream to capability cross-map",
+        "Platform business services",
+        "Initial Business Architecture requirements",
+        "Initial HSB business scenario",
+        "Failure and stop signals",
+    ),
     "product/VALUE_AND_VALIDATION.md": (
         "Continue product discovery and conceptual architecture",
         "Primary value hypothesis",
@@ -72,11 +85,39 @@ REQUIRED_CONTENT = {
         "not to authorise a full platform build",
         "Connected decision value",
     ),
+    "governance/ARCHITECTURE_REGISTER.md": (
+        "single canonical control record",
+        "## Decisions",
+        "DEC-015",
+        "## Open questions",
+        "## Risks",
+        "## Assumptions",
+        "## Dependencies",
+        "## Evidence gaps",
+        "## Requirements",
+        "BAR-014",
+        "## Work items",
+        "WRK-014",
+        "## Issues",
+    ),
+    "governance/DECISION_LOG.md": (
+        "compatibility pointer",
+        "Architecture Register",
+    ),
+    "governance/OPEN_QUESTIONS.md": (
+        "compatibility pointer",
+        "Architecture Register",
+    ),
 }
 FORBIDDEN_PHRASES = (
     "BIAN Adoption & " + "Transformation Platform",
 )
 MARKDOWN_LINK = re.compile(r"!?\[[^\]]*\]\(([^)]+)\)")
+GOVERNED_ID = re.compile(r"\b(?:DEC|OQ|RSK|ASM|DEP|EVD|BAR|WRK|ISS)-\d{3}\b")
+REGISTER_ROW = re.compile(
+    r"^\| ((?:DEC|OQ|RSK|ASM|DEP|EVD|BAR|WRK|ISS)-\d{3}) \|",
+    re.MULTILINE,
+)
 EM_DASH = chr(0x2014)
 
 
@@ -164,6 +205,45 @@ def check_markdown_links(path: Path, text: str, errors: list[str]) -> None:
             )
 
 
+def check_architecture_register(files: list[Path], errors: list[str]) -> None:
+    register_path = ROOT / "governance/ARCHITECTURE_REGISTER.md"
+    if not register_path.is_file():
+        return
+
+    register_text = register_path.read_text(encoding="utf-8")
+    definitions = REGISTER_ROW.findall(register_text)
+    defined_ids = set(definitions)
+
+    for identifier in sorted(defined_ids):
+        if definitions.count(identifier) > 1:
+            errors.append(
+                "governance/ARCHITECTURE_REGISTER.md: "
+                f"duplicate governed record definition: {identifier}"
+            )
+
+    for path in files:
+        if path.suffix.lower() != ".md" or path == register_path:
+            continue
+        text = path.read_text(encoding="utf-8")
+        for identifier in sorted(set(GOVERNED_ID.findall(text))):
+            if identifier not in defined_ids:
+                errors.append(
+                    f"{path.relative_to(ROOT)}: undefined Architecture Register "
+                    f"reference: {identifier}"
+                )
+
+    for relative in (
+        "governance/DECISION_LOG.md",
+        "governance/OPEN_QUESTIONS.md",
+    ):
+        path = ROOT / relative
+        if path.is_file() and REGISTER_ROW.search(path.read_text(encoding="utf-8")):
+            errors.append(
+                f"{relative}: governed records must be defined only in "
+                "governance/ARCHITECTURE_REGISTER.md"
+            )
+
+
 def main() -> int:
     errors: list[str] = []
     check_required_files(errors)
@@ -171,6 +251,7 @@ def main() -> int:
     check_required_content(errors)
 
     files = active_text_files()
+    check_architecture_register(files, errors)
     for path in files:
         text = check_text(path, errors)
         if text is not None and path.suffix.lower() == ".md":

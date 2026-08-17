@@ -182,5 +182,7 @@ Review this document when:
 - solution architecture or implementation is proposed; or
 - a stop condition is approached.
 
-Record durable changes in the decision log and update the project status. Do not
-remove a failed hypothesis merely because it is inconvenient.
+Record durable changes in the
+[Architecture Register](../governance/ARCHITECTURE_REGISTER.md) and update the
+project status. Do not remove a failed hypothesis merely because it is
+inconvenient.

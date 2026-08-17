@@ -18,10 +18,13 @@ should not constrain the product vision.
   contributors.
 - [Project status](governance/PROJECT_STATUS.md) records the current stage and
   next gate.
+- [Architecture Register](governance/ARCHITECTURE_REGISTER.md) is the canonical
+  record of decisions, questions, risks, assumptions, dependencies, evidence
+  gaps, requirements, work items, and issues.
 - [Architecture repository](architecture/README.md) contains the active
   Architecture Vision and future conceptual views.
 - [Governance and working context](governance/README.md) holds shared audience,
-  writing, architecture, quality, decision, and open-question context.
+  writing, architecture, quality, and governance context.
 - [Contributing](CONTRIBUTING.md) defines the current contribution scope.
 - [Security policy](SECURITY.md) states the present security and disclosure
   position.
@@ -91,10 +94,13 @@ Read these in order:
 ### Stage 2: Conceptual architecture (current)
 
 The [Architecture Vision](architecture/ARCHITECTURE_VISION.md) establishes the
-direction. This stage will define requirements, information domains, system
-boundaries, conceptual components, external actors, trust boundaries, operating
-concerns, and capability interactions without prematurely selecting detailed
-technology.
+direction. The initial
+[Business Architecture](architecture/BUSINESS_ARCHITECTURE.md) defines the
+value streams, platform capabilities, business services, roles, decision rights,
+operating-model hypothesis, and HSB decision scenario. This stage will continue
+with requirements, information domains, system boundaries, conceptual
+components, trust boundaries, and capability interactions without prematurely
+selecting detailed technology.
 
 ### Stage 3: Solution architecture and experiments
 

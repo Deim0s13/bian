@@ -437,7 +437,7 @@ Expected architecture learning includes:
 - scope, exclusions, assumptions, risks, and trust boundaries are explicit;
 - connected HSB scenarios can test the BIAN Model Registry and all three pillars;
 - no solution technology is presented as an approved architecture decision;
-- open questions are routed to future work rather than hidden.
+- active questions are routed to the Architecture Register rather than hidden.
 
 ### Future product evidence hypotheses
 
@@ -462,43 +462,21 @@ adoption-fit, sustainable-scope, and external-desirability tests in the
 
 ## 15. Risks and responses
 
-| Risk | Consequence | Architecture response |
-|---|---|---|
-| BIAN source rights or terminology are misunderstood | Invalid redistribution, misleading claims, or loss of trust | Source register, rights review, exact release provenance, and no invented semantics |
-| The vision becomes fourteen disconnected products | Cost, duplication, and incoherent workflows | Shared BIAN Model Registry, three clear pillars, Platform Control, and connected validation scenarios |
-| A shallow feature is added to every platform block | A broad demonstration that solves no user problem well enough to adopt | Validate one complete decision journey and deepen only the capabilities required by it |
-| Mature adjacent tools are recreated | High delivery cost with weak differentiation and poor enterprise fit | Treat EA, API, GRC, generation, portal, and runtime products as systems to complement or integrate unless evidence justifies otherwise |
-| The model becomes a copy of OpenAPI or one BIAN artefact | Later architecture and adoption uses become constrained | Extensible conceptual model based on identity, assertion, relationship, provenance, and evidence |
-| Automated mapping appears authoritative | Unsafe decisions and rapid stakeholder distrust | Confidence, explanation, review, dispute, and explicit authority classes |
-| HSB becomes unrealistically clean | Architecture passes tests that do not represent enterprise conditions | Contradictory, stale, incomplete, adversarial, and changing synthetic records |
-| Security and assurance are treated as generated paperwork | Weak controls and inflated compliance claims | Threat-led design and regulation-to-evidence traceability with explicit gaps |
-| Cloud-native becomes a product checklist | Premature distribution, operational complexity, or platform coupling | Trace decisions to current CNCF guidance and measurable requirements |
-| Open-source ambition exceeds maintainer capacity | Unsafe releases, slow response, and abandoned scope | Narrow increments, explicit support status, automation, and sustainable governance |
-| An experience or vendor layer dictates the core | Lock-in and distorted boundaries | Platform Control remains separate from the canonical BIAN Model Registry and uses governed integrations |
-| Architecture documentation becomes the product | Slow learning and little validated value | Use each view to answer a decision and exercise it through HSB scenarios |
+Risk statements, owners, status, responses, gates, and review dates are
+maintained only in the
+[Architecture Register](../governance/ARCHITECTURE_REGISTER.md#risks).
+
+This vision originated `RSK-001` through `RSK-012`. Later product and Business
+Architecture work added `RSK-013` through `RSK-018`. Architecture reviews must
+use the register rather than reproducing a local risk table.
 
 ## 16. Assumptions and dependencies
 
-### Assumptions
-
-- connected HSB scenarios can create useful architecture learning before
-  customer desirability is validated;
-- authorised BIAN material will be available for the selected scope under terms
-  compatible with the intended use;
-- HSB can represent enough ambiguity and change to test enterprise concerns;
-- human review remains acceptable for material mappings and recommendations;
-- banks will prefer integration and export over replacement of established tools;
-- architecture can preserve deployment optionality until requirements mature.
-
-### Dependencies
-
-- completion of the BIAN source-rights register for any artefact used;
-- coherent HSB scenarios and expected outcomes spanning all three pillars;
-- a conceptual information and provenance model;
-- defined identity, tenancy, sensitivity, and evidence concepts;
-- sustainable open-source licensing, contribution, and security governance;
-- later review by people competent in BIAN, banking architecture, security,
-  operations, accessibility, and open-source maintenance.
+The formal assumptions `ASM-001` through `ASM-007` and dependencies `DEP-001`
+through `DEP-006` are maintained in the Architecture Register under
+[assumptions](../governance/ARCHITECTURE_REGISTER.md#assumptions) and
+[dependencies](../governance/ARCHITECTURE_REGISTER.md#dependencies). Their
+status is not repeated here.
 
 ## 17. Required next viewpoints and work products
 
@@ -506,17 +484,9 @@ The value proposition and validation strategy remains a parallel investment
 gate across every architecture work product. Architecture may describe the full
 north-star, but implementation scope must remain bounded to evidenced value.
 
-| Priority | Work product | Decision or concern answered |
-|---|---|---|
-| 1 | Architecture requirements register | What must the architecture achieve, for whom, and with what evidence? |
-| 2 | Capability and value-flow view | How do the BIAN Model Registry, three pillars, Platform Control, and Runtime Targets create connected value? |
-| 3 | Conceptual information and provenance model | What is known, who owns it, how does authority differ, and how does it change? |
-| 4 | System context and ecosystem view | What is inside the platform and which external systems remain authoritative? |
-| 5 | Trust-boundary and security view | Where can information, identity, code, inference, or authority cross risk boundaries? |
-| 6 | Connected HSB scenario view | Can one model thread support adoption, engineering, assurance, control, and runtime concerns? |
-| 7 | Operating-model and governance view | Who imports, reviews, approves, operates, supports, and changes the platform? |
-| 8 | Conceptual component interaction view | Which responsibilities collaborate, without yet defining deployable services? |
-| 9 | Architecture roadmap and transition view | What sequence reduces uncertainty and creates reusable value? |
+The active sequence, ownership, dependencies, status, and acceptance criteria
+for the next work products are maintained as `WRK-001` through `WRK-014` in the
+[Architecture Register](../governance/ARCHITECTURE_REGISTER.md#work-items).
 
 ArchiMate may be used later where its notation materially improves a viewpoint.
 No modelling language is mandated merely for visual consistency.
@@ -540,6 +510,7 @@ claims, TOGAF conformance, or production use.
 
 ### Internal
 
+- [Business Architecture](BUSINESS_ARCHITECTURE.md)
 - [Product vision](../product/PRODUCT_VISION.md)
 - [Value proposition and validation strategy](../product/VALUE_AND_VALIDATION.md)
 - [Use-case catalogue](../product/USE_CASE_CATALOGUE.md)

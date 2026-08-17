@@ -1,21 +1,7 @@
-# Decision log
+# Decision log compatibility pointer
 
-This log records material project decisions before formal architecture decision
-records are appropriate. A decision may be revisited when its stated trigger is
-met. Proposed ideas belong in `OPEN_QUESTIONS.md`, not here.
+Decisions are maintained only in the
+[Architecture Register](ARCHITECTURE_REGISTER.md#decisions).
 
-| ID | Date | Decision | Consequence | Revisit trigger |
-|---|---|---|---|---|
-| DEC-001 | 2026-08-17 | Define the full use case before implementation or solution architecture. | Implementation was held while product discovery and architecture inputs were developed. | Owner closes the product-definition gate. |
-| DEC-002 | 2026-08-17 | Use Horizon Synthetic Bank and synthetic information as the repeatable validation environment. | No claim of customer demand or real-bank fit may be derived from synthetic results. | A future external validation model is authorised. |
-| DEC-003 | 2026-08-17 | Develop the project as independent open source. | Governance, contribution rights, source rights, support, and security processes are product requirements. | Rights review or sustainability model requires change. |
-| DEC-004 | 2026-08-17 | Attribute content to BIAN only when it is authoritative, release-qualified, and traceable. | Project extensions and inferences need separate classes and provenance. | Never for convenience; refine only with authoritative BIAN guidance. |
-| DEC-005 | 2026-08-17 | Treat production readiness as an evidenced release state. | Early work may be concept, experimental, or preview without weakening engineering expectations. | Readiness model is replaced by an approved evidence framework. |
-| DEC-006 | 2026-08-17 | Use TOGAF to guide architecture method and viewpoints and BIAN for banking reference content. | Future architecture will maintain stakeholder, requirements, domain, transition, and governance traceability. | TOGAF tailoring or licensing review changes the approach. |
-| DEC-007 | 2026-08-17 | Align cloud-native architecture and engineering to the current CNCF definition and relevant authoritative CNCF guidance. Treat common practice lists as discovery inputs, not CNCF standards, and do not mandate microservices or Kubernetes for every component. | CNCF sources and versions must be traceable to project requirements and evidence. Deployment boundaries and platforms require an evidenced fit. | CNCF guidance changes or solution architecture supplies evidence for a narrower choice. |
-| DEC-008 | 2026-08-17 | Store durable project instructions and context in the repository. | `AGENTS.md` and governance documents are the source of truth across tools and sessions. | Repository governance model changes. |
-| DEC-009 | 2026-08-17 | Do not use the Unicode em dash character in active project content. | Automated checks reject it; punctuation must use alternatives. | Project owner changes the writing convention. |
-| DEC-010 | 2026-08-17 | Keep the initial technical spike archived and outside active design. | Its existing choices carry no product or architecture preference. It may be consulted only when a later, independently defined question makes it relevant. | Explicit review accepts a specific finding based on current requirements and new evidence. |
-| DEC-011 | 2026-08-17 | Accept the product definition as an evolving baseline and begin conceptual architecture with a TOGAF-informed Architecture Vision. Carry unresolved buyer, demand, rights, and operating-model matters as explicit hypotheses rather than waiting for final wording or certainty. | Architecture work may now define conceptual requirements, viewpoints, information, boundaries, risks, and operating concerns. Implementation and solution technology remain out of scope. | Architecture Vision review identifies a material product contradiction, or the owner changes the stage. |
-| DEC-012 | 2026-08-17 | Define the product as the BIAN Adoption & Engineering Platform. Its north-star structure is BIAN Sources to BIAN Model Registry to the three Service Generator, Adoption & Architecture, and Assurance & Compliance pillars, supported by Platform Control and Runtime Targets. No third-party BIAN API portal has architectural authority. | Active product and architecture work must use the platform's affirmative model-led definition and must not use another portal as a baseline, comparison point, constraint, or source of scope. | The project owner explicitly changes the product identity or north-star structure. |
-| DEC-013 | 2026-08-17 | Continue product discovery and conceptual architecture, but do not treat the full platform vision or an accepted Architecture Vision as build authorisation. Require a bounded proposition to demonstrate decision value, connected differentiation, feasible inputs, trust, adoption fit, sustainable scope, and explicit stop conditions. | Architecture may cover the full north-star, while any future implementation approval is limited to the proposition supported by evidence. HSB evidence cannot establish external desirability by itself. | Credible evidence passes the build-authorisation gate, a stop condition is reached, or the project owner explicitly changes the investment position. |
+This file is retained so existing links do not break. Do not add or update
+decision records here.

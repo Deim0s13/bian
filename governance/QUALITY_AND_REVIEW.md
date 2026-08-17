@@ -15,7 +15,8 @@ Every active change must:
 
 - remain within the current project stage or explicitly change the stage;
 - preserve BIAN attribution and assertion-class boundaries;
-- update decisions, open questions, status, and traceability when affected;
+- update the Architecture Register, project status, and traceability when
+  affected;
 - contain no Unicode em dash characters, trailing whitespace, or broken local
   Markdown links;
 - pass `python3 tools/check_project.py`;
@@ -89,4 +90,3 @@ evidence and recorded when solution architecture begins.
 An exception must identify its owner, reason, affected scope, risk, compensating
 control, approval, and expiry or removal condition. A schedule date alone is not
 a reason to lower a security, provenance, or correctness gate.
-

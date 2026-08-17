@@ -8,11 +8,11 @@
 
 ## Current focus
 
-Review and refine the Architecture Vision, then develop the requirements,
-capability, information, context, trust, HSB scenario, and operating-model views
-needed to establish a coherent conceptual architecture. In parallel, test the
-value proposition, alternatives, minimum consumable journey, and stop conditions
-before any build is authorised.
+Review the initial Business Architecture and use it to refine the primary user,
+decision, value streams, platform capabilities, business services, roles,
+decision rights, operating model, measures, and bounded HSB scenario. Continue
+testing alternatives, value hypotheses, and stop conditions before any build is
+authorised.
 
 No software implementation or solution architecture is approved. The archived
 technical spike is inactive and does not constrain current work.
@@ -32,6 +32,13 @@ technical spike is inactive and does not constrain current work.
   must be demonstrated before implementation scope is approved.
 - The Architecture Vision covers the full platform. A bounded HSB payments
   assessment is an initial validation scenario rather than the product centre.
+- The initial Business Architecture defines six connected value streams, seven
+  project-defined platform capabilities, business services, decision rights,
+  candidate requirements, measures, and a bounded HSB decision scenario.
+- The Architecture Register is the single canonical record for decisions,
+  active questions, risks, assumptions, dependencies, evidence gaps,
+  architecture requirements, work items, and issues. Context documents use its
+  stable identifiers rather than maintaining parallel registers.
 - Horizon Synthetic Bank will provide repeatable fictional scenarios and
   synthetic information.
 - The project is intended to be independently open source.
@@ -61,6 +68,9 @@ individual platform capabilities are not assumed to be differentiated.
 Stage 2 is ready to close only when:
 
 - the Architecture Vision is reviewed and accepted;
+- the Business Architecture is reviewed and its leading user, decision, value
+  stream, capability, operating-model, and measure hypotheses are accepted or
+  explicitly carried as open questions;
 - architecture requirements and stakeholder concerns are traceable;
 - conceptual capability, information, context, trust, scenario, and operating
   model views are coherent;
@@ -78,5 +88,6 @@ Stage 2 is ready to close only when:
 ## How to update this check-in
 
 Update this file when the stage, current focus, evidence position, or next gate
-changes. Put durable rationale in `DECISION_LOG.md` and unresolved matters in
-`OPEN_QUESTIONS.md` rather than turning this into a historical diary.
+changes. Put decisions, questions, risks, assumptions, dependencies, evidence
+gaps, architecture requirements, work items, and issues in
+`ARCHITECTURE_REGISTER.md` rather than turning this into a historical diary.

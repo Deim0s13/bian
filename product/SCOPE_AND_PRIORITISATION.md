@@ -39,8 +39,8 @@ UC-09 target-state planning.
 - can begin within a bounded area such as payments;
 - tests the hardest trust question: will architects accept and maintain mappings?
 
-**Primary risk:** customer source data may be incomplete, inconsistent, hard to
-access, or politically sensitive. Review effort may dominate any automation.
+**Primary tracked risk:** `RSK-013` in the
+[Architecture Register](../governance/ARCHITECTURE_REGISTER.md#risks).
 
 ### B. API alignment and governance assessment
 
@@ -52,8 +52,8 @@ responsibilities and possible duplication, and help owners decide what to do.”
 **Why it is promising:** OpenAPI and gateway catalogues may be more accessible
 than complete enterprise architecture data, and outputs can be concrete.
 
-**Primary risk:** contracts and names alone may be semantically insufficient.
-Poor explanations or overconfident scores will quickly undermine trust.
+**Primary tracked risk:** `RSK-014` in the
+[Architecture Register](../governance/ARCHITECTURE_REGISTER.md#risks).
 
 ### C. BIAN release impact service
 
@@ -65,8 +65,8 @@ your reviewed mappings or engineering assets may be affected.”
 **Why it is promising:** it is repeatable, model-centric, and potentially highly
 differentiated once a bank has established mappings.
 
-**Primary risk:** its bank-specific value is limited before the customer model
-exists. Release frequency and urgency may not support it as the first wedge.
+**Primary tracked risk:** `RSK-015` in the
+[Architecture Register](../governance/ARCHITECTURE_REGISTER.md#risks).
 
 ### D. Service Generator and engineering golden path
 
@@ -78,9 +78,8 @@ governed, traceable engineering starting point.”
 **Why it is promising:** visible demonstrations, tangible artefacts, and clear
 platform-engineering users.
 
-**Primary risk:** generated assets may be adopted without clear service
-ownership, implementation boundaries, integration context, or an agreed place in
-the bank's target architecture.
+**Primary tracked risk:** `RSK-016` in the
+[Architecture Register](../governance/ARCHITECTURE_REGISTER.md#risks).
 
 ### E. Evidence-based security and control assurance
 
@@ -92,8 +91,8 @@ controls are verified, with evidence and explicit gaps.”
 **Why it is promising:** high-value governance problem and strong trust-based
 differentiation.
 
-**Primary risk:** high domain, legal, audit, integration, and liability burden.
-It should not be the first proposition without expert control ownership.
+**Primary tracked risk:** `RSK-017` in the
+[Architecture Register](../governance/ARCHITECTURE_REGISTER.md#risks).
 
 ## Current architecture validation recommendation
 

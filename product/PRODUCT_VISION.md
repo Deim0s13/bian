@@ -282,20 +282,16 @@ separate extensions and must never be presented as BIAN definitions.
 
 ## Questions carried into architecture
 
-The full vision is intentionally broad. Conceptual architecture and continuing
-product discovery must establish through authoritative sources, public evidence,
-HSB scenarios, and later peer review:
+The full vision is intentionally broad. Active product and architecture
+questions are maintained only in the
+[Architecture Register](../governance/ARCHITECTURE_REGISTER.md#open-questions),
+principally `OQ-001` through `OQ-017`. The evidence still needed to answer them
+is recorded as `EVD-001` through `EVD-007` in the same register.
 
-- which customer problem appears sufficiently material to address first, while
-  acknowledging that demand remains unvalidated without customer research;
-- who buys, champions, operates, and trusts the product;
-- which customer data is realistically available and sufficiently reliable;
-- which decisions users expect the platform to improve;
-- what evidence users need before accepting a mapping or recommendation;
-- which BIAN materials may legally and operationally be used;
-- how much human review is acceptable or desirable; and
-- which narrow proposition can demonstrate value without pretending to deliver
-  the entire vision.
+Conceptual architecture and continuing product discovery must address those
+records through authoritative sources, public evidence, HSB scenarios, and
+later qualified peer review. This vision supplies their product context but
+does not maintain a competing question list or resolution status.
 
 The governing constraints are defined in
 [PROJECT_PRINCIPLES.md](PROJECT_PRINCIPLES.md).
