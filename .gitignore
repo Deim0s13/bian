@@ -1,0 +1,16 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.venv/
+build/
+dist/
+*.egg-info/
+.DS_Store
+
+# Codex project context is managed outside this repository.
+AGENTS.md
+sources/
+
+# Generated outputs are reproducible and should be rebuilt locally.
+out/

@@ -1,0 +1,145 @@
+{
+  "dataset": {
+    "id": "source:synthetic:r14-small:v1",
+    "title": "Synthetic BIAN R14-shaped sample",
+    "bianRelease": "R14-fixture",
+    "classification": "synthetic-fixture",
+    "locator": "repository:fixtures/synthetic/r14-small.json",
+    "licenseStatus": "synthetic-project-authored"
+  },
+  "serviceDomains": [
+    {
+      "id": "fixture:service-domain:current-account",
+      "name": "Current Account",
+      "description": "Illustrative domain label; not an imported BIAN definition.",
+      "apiSpecification": {
+        "id": "fixture:api:current-account",
+        "name": "Current Account illustrative API",
+        "description": "Synthetic API used only to exercise normalisation.",
+        "specificationFormat": "OpenAPI",
+        "specificationVersion": "3.0.3",
+        "operations": [
+          {
+            "id": "fixture:operation:current-account:retrieve",
+            "name": "Retrieve illustrative current account",
+            "httpMethod": "GET",
+            "path": "/fixture/current-accounts/{id}"
+          }
+        ]
+      }
+    },
+    {
+      "id": "fixture:service-domain:customer-agreement",
+      "name": "Customer Agreement",
+      "description": "Illustrative domain label; not an imported BIAN definition.",
+      "apiSpecification": {
+        "id": "fixture:api:customer-agreement",
+        "name": "Customer Agreement illustrative API",
+        "specificationFormat": "OpenAPI",
+        "specificationVersion": "3.0.3",
+        "operations": [
+          {
+            "id": "fixture:operation:customer-agreement:retrieve",
+            "name": "Retrieve illustrative agreement",
+            "httpMethod": "GET",
+            "path": "/fixture/customer-agreements/{id}"
+          }
+        ]
+      }
+    },
+    {
+      "id": "fixture:service-domain:party-authentication",
+      "name": "Party Authentication",
+      "description": "Illustrative domain label; not an imported BIAN definition.",
+      "apiSpecification": {
+        "id": "fixture:api:party-authentication",
+        "name": "Party Authentication illustrative API",
+        "specificationFormat": "OpenAPI",
+        "specificationVersion": "3.0.3",
+        "operations": [
+          {
+            "id": "fixture:operation:party-authentication:initiate",
+            "name": "Initiate illustrative authentication",
+            "httpMethod": "POST",
+            "path": "/fixture/party-authentications"
+          }
+        ]
+      }
+    },
+    {
+      "id": "fixture:service-domain:payment-initiation",
+      "name": "Payment Initiation",
+      "description": "Illustrative domain label; not an imported BIAN definition.",
+      "apiSpecification": {
+        "id": "fixture:api:payment-initiation",
+        "name": "Payment Initiation illustrative API",
+        "specificationFormat": "OpenAPI",
+        "specificationVersion": "3.0.3",
+        "operations": [
+          {
+            "id": "fixture:operation:payment-initiation:initiate",
+            "name": "Initiate illustrative payment",
+            "httpMethod": "POST",
+            "path": "/fixture/payment-initiations"
+          }
+        ]
+      }
+    },
+    {
+      "id": "fixture:service-domain:payment-execution",
+      "name": "Payment Execution",
+      "description": "Illustrative domain label; not an imported BIAN definition.",
+      "apiSpecification": {
+        "id": "fixture:api:payment-execution",
+        "name": "Payment Execution illustrative API",
+        "specificationFormat": "OpenAPI",
+        "specificationVersion": "3.0.3",
+        "operations": [
+          {
+            "id": "fixture:operation:payment-execution:update",
+            "name": "Update illustrative payment execution",
+            "httpMethod": "PATCH",
+            "path": "/fixture/payment-executions/{id}"
+          }
+        ]
+      }
+    },
+    {
+      "id": "fixture:service-domain:fraud-evaluation",
+      "name": "Fraud Evaluation",
+      "description": "Illustrative no-API case; this is not a claim about the real R14 domain.",
+      "apiSpecification": null
+    },
+    {
+      "id": "fixture:service-domain:customer-offer",
+      "name": "Customer Offer",
+      "description": "Illustrative domain label; not an imported BIAN definition.",
+      "apiSpecification": {
+        "id": "fixture:api:customer-offer",
+        "name": "Customer Offer illustrative API",
+        "specificationFormat": "OpenAPI",
+        "specificationVersion": "3.0.3",
+        "operations": [
+          {
+            "id": "fixture:operation:customer-offer:retrieve",
+            "name": "Retrieve illustrative customer offer",
+            "httpMethod": "GET",
+            "path": "/fixture/customer-offers/{id}"
+          }
+        ]
+      }
+    }
+  ],
+  "relationships": [
+    {
+      "id": "fixture:relationship:payment-initiation-to-execution",
+      "type": "relates-to",
+      "sourceId": "fixture:service-domain:payment-initiation",
+      "targetId": "fixture:service-domain:payment-execution",
+      "attributes": {
+        "assertionStatus": "synthetic-example"
+      }
+    }
+  ]
+}
+

@@ -1,0 +1,27 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "bian-model-engine"
+version = "0.1.0"
+description = "A model-first engine for trustworthy BIAN-derived projections"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "Proprietary - evaluation scaffold; BIAN source rights not included" }
+authors = [{ name = "BIAN Adoption Platform contributors" }]
+dependencies = []
+
+[project.scripts]
+bian-engine = "bian_engine.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/bian_engine"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+
