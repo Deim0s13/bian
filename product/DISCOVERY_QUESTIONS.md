@@ -17,7 +17,7 @@ that cannot be answered this way must remain explicitly unvalidated.
 - Is the first engagement expected to be software, advisory work, an assessment,
   or a combined service?
 - What alternatives are customers using today: consultancies, spreadsheets,
-  architecture tools, BIAN portal capabilities, internal teams, or doing nothing?
+  BIAN and enterprise architecture tooling, internal teams, or doing nothing?
 
 ## 2. Decisions and value
 

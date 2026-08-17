@@ -5,12 +5,23 @@ These instructions apply to the entire repository unless a more specific
 
 ## Project position
 
-- This is an independent, open-source BIAN adoption and transformation project.
+- This is the independent, open-source BIAN Adoption & Engineering Platform.
+- Its north-star structure is authoritative BIAN sources feeding a BIAN Model
+  Registry, which drives Service Generator, Adoption & Architecture, and
+  Assurance & Compliance capabilities, supported by Platform Control and
+  appropriate Runtime Targets.
+- No third-party BIAN API portal or similar implementation is a baseline,
+  competitor specification, constraint, or architecture input. Do not frame this
+  project as a response to one or use one to justify scope.
 - The current stage is conceptual architecture. Develop outcomes, requirements,
   viewpoints, information concepts, boundaries, risks, and operating concerns.
   Do not start implementation, select solution technologies, or turn the
   archived spike into an approved design unless the user explicitly changes the
   stage or asks for a bounded experiment.
+- The full platform vision is not build authorisation. Use
+  `product/VALUE_AND_VALIDATION.md` to test decision value, connected
+  differentiation, input feasibility, trust, adoption fit, and sustainable
+  scope. Preserve its explicit stop and narrow conditions.
 - Treat `archive/initial-technical-spike/` as historical reference only. Do not
   edit, revive, or cite it as current architecture without explicit instruction.
 - Confirm the repository root before editing. Do not work from a copied sibling
@@ -21,14 +32,15 @@ These instructions apply to the entire repository unless a more specific
 Before material work, read the parts of these files relevant to the request:
 
 1. `README.md`
-2. `governance/PROJECT_STATUS.md`
-3. `governance/PROJECT_CONTEXT.md`
-4. `governance/WRITING_STYLE.md`
-5. `product/PROJECT_PRINCIPLES.md`
-6. `product/BIAN_ALIGNMENT_POLICY.md`
-7. `architecture/ARCHITECTURE_VISION.md`
-8. `governance/ARCHITECTURE_AND_ENGINEERING_PRINCIPLES.md`
-9. `governance/QUALITY_AND_REVIEW.md`
+2. `product/VALUE_AND_VALIDATION.md`
+3. `governance/PROJECT_STATUS.md`
+4. `governance/PROJECT_CONTEXT.md`
+5. `governance/WRITING_STYLE.md`
+6. `product/PROJECT_PRINCIPLES.md`
+7. `product/BIAN_ALIGNMENT_POLICY.md`
+8. `architecture/ARCHITECTURE_VISION.md`
+9. `governance/ARCHITECTURE_AND_ENGINEERING_PRINCIPLES.md`
+10. `governance/QUALITY_AND_REVIEW.md`
 
 Use `governance/DECISION_LOG.md` and `governance/OPEN_QUESTIONS.md` when a task
 creates, changes, or depends on a material decision.
@@ -51,6 +63,9 @@ creates, changes, or depends on a material decision.
 
 - Begin with customer outcomes, stakeholders, requirements, constraints, risks,
   operating model, trust boundaries, and evidence before components or products.
+- Every proposed capability or increment must name the user, decision, existing
+  alternative, required inputs, expected evidence, and condition under which it
+  should be stopped or narrowed.
 - Use TOGAF as a method and viewpoint discipline where appropriate. Use BIAN as
   banking reference content and taxonomy. Do not confuse their roles.
 - Use the current CNCF Cloud Native Definition and relevant authoritative CNCF

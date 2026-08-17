@@ -1,4 +1,4 @@
-# BIAN Adoption & Transformation Platform
+# BIAN Adoption & Engineering Platform
 
 This repository is currently a **product and conceptual-architecture
 workspace**. The product baseline is established and will continue to evolve.
@@ -38,25 +38,44 @@ Develop and validate a coherent product centred on this question:
 > understanding its estate, improving architecture, engineering services,
 > governing change, and planning transformation?
 
-The product is not simply a BIAN API generator. Its central asset is a trusted
-model connecting BIAN knowledge to a bank's actual applications, APIs, data,
-owners, controls, evidence, plans, and generated engineering assets.
+The product is a model-driven adoption and engineering platform. Its central
+asset is a trusted BIAN Model Registry connecting authoritative BIAN knowledge
+to a bank's applications, APIs, data, owners, controls, evidence, plans, and
+generated engineering assets.
+
+The registry drives three first-class product pillars:
+
+- Service Generator;
+- Adoption & Architecture;
+- Assurance & Compliance.
+
+Platform Control provides the governed experience, catalogue, templates,
+ownership, lifecycle, scorecards, and documentation across those pillars.
+Runtime Targets represent the environments into which platform and generated
+capabilities may later be delivered.
+
+The full vision is not yet authorised for implementation. The current
+investment position is to continue discovery and conceptual architecture while
+testing whether a bounded, connected journey offers decision value beyond a
+collection of existing tools. See the
+[value proposition and validation strategy](product/VALUE_AND_VALIDATION.md).
 
 ## Discovery pack
 
 Read these in order:
 
 1. [Product vision](product/PRODUCT_VISION.md)
-2. [Project principles](product/PROJECT_PRINCIPLES.md)
-3. [BIAN alignment policy](product/BIAN_ALIGNMENT_POLICY.md)
-4. [Fictional bank and synthetic validation](product/FICTIONAL_BANK_AND_SYNTHETIC_VALIDATION.md)
-5. [Open source and production readiness](product/OPEN_SOURCE_AND_PRODUCTION_READINESS.md)
-6. [Personas and outcomes](product/PERSONAS_AND_OUTCOMES.md)
-7. [Use-case catalogue](product/USE_CASE_CATALOGUE.md)
-8. [End-to-end journeys](product/END_TO_END_JOURNEYS.md)
-9. [Outline traceability](product/TRACEABILITY.md)
-10. [Scope and prioritisation](product/SCOPE_AND_PRIORITISATION.md)
-11. [Discovery questions](product/DISCOVERY_QUESTIONS.md)
+2. [Value proposition and validation strategy](product/VALUE_AND_VALIDATION.md)
+3. [Project principles](product/PROJECT_PRINCIPLES.md)
+4. [BIAN alignment policy](product/BIAN_ALIGNMENT_POLICY.md)
+5. [Fictional bank and synthetic validation](product/FICTIONAL_BANK_AND_SYNTHETIC_VALIDATION.md)
+6. [Open source and production readiness](product/OPEN_SOURCE_AND_PRODUCTION_READINESS.md)
+7. [Personas and outcomes](product/PERSONAS_AND_OUTCOMES.md)
+8. [Use-case catalogue](product/USE_CASE_CATALOGUE.md)
+9. [End-to-end journeys](product/END_TO_END_JOURNEYS.md)
+10. [Outline traceability](product/TRACEABILITY.md)
+11. [Scope and prioritisation](product/SCOPE_AND_PRIORITISATION.md)
+12. [Discovery questions](product/DISCOVERY_QUESTIONS.md)
 
 ## Stage gates
 

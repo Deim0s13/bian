@@ -7,8 +7,8 @@
 | Status | Draft for project-owner review |
 | Architecture stage | Conceptual architecture |
 | Lifecycle state | Concept |
-| Scope | Full product vision with a bounded first architecture lens |
-| Working first lens | Horizon Synthetic Bank payments adoption and modernisation assessment |
+| Scope | Full BIAN Adoption & Engineering Platform vision |
+| Initial validation scenario | Horizon Synthetic Bank payments adoption, engineering, and assurance journey |
 | Method | TOGAF-informed, tailored for a small open-source project |
 | Last updated | 17 August 2026 |
 
@@ -18,9 +18,9 @@ production-readiness claim.
 
 ## 1. Executive vision
 
-The BIAN Adoption & Transformation Platform will help a bank connect
-authoritative BIAN knowledge to its actual estate, its architecture decisions,
-its engineering delivery, and the evidence used to govern change.
+The BIAN Adoption & Engineering Platform will use a canonical, versioned BIAN
+Model Registry to drive service engineering, adoption and architecture, and
+assurance and compliance capabilities from authorised BIAN sources.
 
 The platform's central architectural idea is a trusted, versioned knowledge and
 evidence foundation. It will distinguish what BIAN defines, what a bank states,
@@ -28,11 +28,11 @@ what the project derives, what an analytical capability infers, and what tests o
 reviews have verified. Every material conclusion should be explainable through
 its source, release, scope, method, confidence, review state, and limitations.
 
-The platform is not primarily an API generator and is not intended to replace a
-bank's architecture repository, configuration management database, API
-management platform, source-control system, developer portal, control system, or
-human decision authority. It connects and enriches those concerns through a
-shared BIAN-informed model.
+The platform connects with a bank's architecture repository, configuration
+management database, API management platform, source-control system, developer
+portal, control systems, delivery platforms, and runtime environments while
+preserving their ownership and authority. It connects these concerns through the
+shared BIAN Model Registry rather than recreating them as disconnected features.
 
 ## 2. Purpose of this architecture effort
 
@@ -51,7 +51,7 @@ It will:
 - identify trust boundaries and accountable human decisions;
 - define viewpoints that address real stakeholder concerns;
 - use Horizon Synthetic Bank to test the architecture with repeatable scenarios;
-- establish a credible first increment that contributes to the wider vision;
+- establish validation scenarios that exercise the complete platform structure;
 - preserve optionality until solution decisions have evidence.
 
 ## 3. Opportunity and drivers
@@ -130,10 +130,11 @@ Creating diagrams without a decision or concern is not an architecture outcome.
 
 ### Product breadth
 
-The vision covers the trusted model foundation and all fourteen use cases in the
-product catalogue. This prevents the first increment from creating a local
-architecture that obstructs later adoption, governance, engineering, assurance,
-and transformation capabilities.
+The vision covers BIAN Sources, the BIAN Model Registry, Service Generator,
+Adoption & Architecture, Assurance & Compliance, Platform Control, Runtime
+Targets, and all fourteen use cases in the product catalogue. This prevents any
+single pillar or validation scenario from becoming the definition of the whole
+platform.
 
 ### Current depth
 
@@ -157,10 +158,10 @@ cloud providers, Kubernetes resources, or source-code modules.
 
 | Horizon | Purpose |
 |---|---|
-| Foundation | Establish trustworthy BIAN, project, HSB, external, inferred, and evidence relationships |
-| First value | Exercise a bounded HSB adoption and modernisation assessment, initially using payments |
-| Connected adoption | Add architecture, governance, release, engineering, and self-service workflows around maintained knowledge |
-| Extended assurance | Deepen security profiles, control evidence, vendor analysis, adoption reporting, and ecosystem extensions |
+| Model foundation | Establish BIAN Sources, ingestion, versioning, provenance, and the canonical BIAN Model Registry |
+| Pillar validation | Exercise Service Generator, Adoption & Architecture, and Assurance & Compliance through connected HSB scenarios |
+| Platform control | Connect catalogue, templates, ownership, lifecycle, scorecards, documentation, policy, and workflow |
+| Runtime readiness | Validate supported local, container, OpenShift, Kubernetes, cloud, and customer-controlled targets |
 
 The horizons express dependency and learning, not delivery dates or a commitment
 to build every capability.
@@ -203,67 +204,71 @@ sources, bank assertions, mappings, architecture states, generated projections,
 controls, evidence, and change decisions remain connected while retaining their
 different authority and ownership.
 
-The platform should support a continuous adoption cycle:
+The platform should support a continuous model-driven engineering and adoption
+cycle:
 
 ```text
-Understand BIAN and source rights
-             -> map the bank estate
-             -> review alignment and uncertainty
-             -> design scenarios and target states
-             -> plan and govern change
-             -> enable safe engineering delivery
-             -> verify controls and operations
-             -> measure outcomes and absorb new releases
-             -> update the shared knowledge foundation
+Authorised BIAN sources
+        -> ingest, validate, and version
+        -> BIAN Model Registry
+        -> Service Generator
+           + Adoption & Architecture
+           + Assurance & Compliance
+        -> Platform Control
+        -> Runtime Targets and bank ecosystems
+        -> evidence, decisions, and change feedback
+        -> BIAN Model Registry
 ```
 
-## 8. Conceptual capability vision
+## 8. North-star platform structure
 
-The following are project capability groups. They are not BIAN Service Domains,
-BIAN Business Capabilities, approved modules, or deployable services.
+This is the authoritative vision-level structure of the product. The named
+blocks are project concepts, not BIAN Service Domains or BIAN Business
+Capabilities. They do not yet imply deployable service boundaries.
 
 ```mermaid
 flowchart TB
-    BIAN["Authorised BIAN sources"]
-    BANK["Bank estate sources or HSB"]
-    EXT["Regulation, standards and vendor sources"]
+    SOURCES["BIAN Sources"]
+    REGISTRY["BIAN Model Registry"]
+    GENERATOR["Service Generator"]
+    ADOPTION["Adoption & Architecture"]
+    ASSURANCE["Assurance & Compliance"]
+    CONTROL["Platform Control"]
+    RUNTIME["Runtime Targets"]
 
-    FOUNDATION["Trusted knowledge, provenance and version foundation"]
-    UNDERSTAND["Understand and align"]
-    DESIGN["Design and transform"]
-    ENGINEER["Engineer and evolve"]
-    GOVERN["Govern and assure"]
-    EXPERIENCE["Governed user experiences and integrations"]
-
-    BIAN --> FOUNDATION
-    BANK --> FOUNDATION
-    EXT --> FOUNDATION
-    FOUNDATION --> UNDERSTAND
-    UNDERSTAND --> DESIGN
-    DESIGN --> ENGINEER
-    ENGINEER --> GOVERN
-    GOVERN --> FOUNDATION
-    FOUNDATION --> EXPERIENCE
-    UNDERSTAND --> EXPERIENCE
-    DESIGN --> EXPERIENCE
-    ENGINEER --> EXPERIENCE
-    GOVERN --> EXPERIENCE
+    SOURCES -->|"ingest and version"| REGISTRY
+    REGISTRY --> GENERATOR
+    REGISTRY --> ADOPTION
+    REGISTRY --> ASSURANCE
+    GENERATOR --> CONTROL
+    ADOPTION --> CONTROL
+    ASSURANCE --> CONTROL
+    CONTROL --> RUNTIME
 ```
 
-### Capability groups
+Intended BIAN source coverage includes the Service Landscape, Semantic APIs,
+AsyncAPI definitions, Business Objects, Business Scenarios, Business
+Capabilities, wireframes, and relevant ISO 20022 mappings where authoritative
+sources and reviewed rights permit their use. This does not claim that every
+artefact is currently available, licensed, or imported.
 
-| Group | Purpose | Primary catalogue traceability |
+### Structure and use-case traceability
+
+| Structure | Purpose | Primary catalogue traceability |
 |---|---|---|
-| Trusted knowledge, provenance and version foundation | Maintain identity, source, release, relationships, review state, confidence, history, and evidence linkage | FDN-01 and all use cases |
-| Understand and align | Relate the bank estate and external claims to BIAN, explain uncertainty, and reveal material concerns | UC-07, UC-08, UC-10, UC-12 |
-| Design and transform | Explore current, transition, and target states and produce evidence-backed modernisation options | UC-09, UC-11 |
-| Engineer and evolve | Produce governed artefacts, preserve owned implementation, manage release impact, and support self-service | UC-01, UC-02, UC-03, UC-06 |
-| Govern and assure | Apply security profiles, connect controls to evidence, govern proposals, and measure adoption honestly | UC-04, UC-05, UC-13, UC-14 |
-| Governed experiences and integrations | Present role-appropriate workflows and connect external systems without making the front door the architecture core | Cross-cutting, especially UC-06 |
+| BIAN Sources | Provide authoritative, rights-reviewed BIAN artefacts and relationships for declared releases | FDN-01 and all use cases |
+| BIAN Model Registry | Maintain the canonical BIAN model, relationships, release versions, customer extensions and mappings, regulatory mappings, provenance, review, and evidence links | FDN-01 and all use cases |
+| Service Generator | Produce REST and asynchronous API artefacts, models, SDKs, tests, infrastructure definitions, policies, documentation, and safe regeneration outputs | UC-01, UC-02, UC-03 |
+| Adoption & Architecture | Support application and API mapping, capability views, Business Scenario overlays, current and target states, vendor analysis, modernisation, and roadmaps | UC-07, UC-08, UC-09, UC-10, UC-11, UC-12 |
+| Assurance & Compliance | Apply security profiles and connect policies, requirements, controls, implementations, tests, evidence, attestations, exceptions, and scorecards | UC-04, UC-05, UC-14 |
+| Platform Control | Provide catalogue, templates, ownership, lifecycle, architecture governance, scorecards, documentation, policy, and workflow across the three pillars | UC-06, UC-13 and cross-cutting support |
+| Runtime Targets | Support approved local or Docker, OpenShift or Kubernetes, AWS, Azure, and customer-controlled environments | Cross-cutting delivery and operational concern |
 
-Capabilities collaborate through the shared knowledge foundation. They should
-not create private copies of BIAN meaning, mappings, evidence, ownership, or
-review decisions.
+Bank, HSB, regulatory, standards, vendor, and delivery-system information enters
+through governed registry extensions and integrations. It never changes the
+meaning of authoritative BIAN content. The three pillars reuse the registry and
+must not create private copies of BIAN meaning, mappings, evidence, ownership,
+or review decisions.
 
 ## 9. Information vision
 
@@ -327,8 +332,10 @@ human decision-makers, analytical capabilities, and delivery ecosystems.
   source-control, CI/CD, policy systems, observability, and developer portals;
 - portable exports that preserve provenance and prevent platform lock-in.
 
-Red Hat Developer Hub or Backstage may provide a future experience layer. It is
-not the system of record and does not determine the core architecture.
+Platform Control is part of the product vision. Red Hat Developer Hub is the
+intended future front door for catalogue, templates, ownership, lifecycle,
+scorecards, and documentation, subject to later solution validation. It is not
+the system of record and does not replace or determine the BIAN Model Registry.
 
 ## 11. Trust boundaries
 
@@ -379,23 +386,31 @@ and sensitive information flows are agreed.
 12. **Complexity must earn its place.** Components, services, dependencies, and
     abstractions require a named outcome, quality attribute, or trust boundary.
 
-## 13. First architecture lens
+## 13. Initial validation scenario
 
-The first lens is a bounded HSB payments adoption and modernisation assessment.
-It is a working hypothesis, not a commitment that payments or assessment tooling
-will be the first commercial offer.
+The initial scenario is a bounded HSB payments journey that exercises adoption,
+engineering, and assurance through the shared BIAN Model Registry. It is a
+validation device, not the centre of the product and not a commitment that
+payments or assessment tooling will be the first commercial offer.
 
-The scenario should ask:
+The scenario should answer a connected set of questions:
 
-> Where are selected BIAN responsibilities implemented across HSB's payments
-> estate, how trustworthy are those mappings, what material fragmentation,
-> duplication, ownership, and API-boundary concerns exist, and which target-state
-> questions follow from the evidence?
+- Which authoritative BIAN sources and relationships define the selected scope?
+- Where are those responsibilities implemented across HSB, and how trustworthy
+  are the mappings and target-state decisions?
+- Which contracts, models, tests, and scaffolds can be projected from the same
+  governed model without overwriting owned implementation?
+- Which security requirements and controls apply, what evidence exists, and what
+  remains explicitly unverified?
+- How will Platform Control expose ownership, lifecycle, governance, workflow,
+  documentation, and scorecards across the journey?
+- What must be true for the outputs to operate safely in selected Runtime Targets?
 
-It exercises the foundation plus focused parts of UC-07, UC-08, UC-09, UC-10,
-UC-11, UC-13, and UC-14. The resulting knowledge later enables release impact,
-generation, safe regeneration, security profiles, assurance, self-service, and
-vendor analysis without requiring those capabilities in the first increment.
+The adoption part exercises focused elements of UC-07, UC-08, UC-09, UC-10,
+UC-11, UC-13, and UC-14. Connected scenario stages will then use the same model
+elements to exercise Service Generator capabilities in UC-01, UC-02, and UC-03,
+Assurance & Compliance capabilities in UC-04 and UC-05, Platform Control in
+UC-06, and vendor analysis in UC-12.
 
 Expected architecture learning includes:
 
@@ -403,6 +418,10 @@ Expected architecture learning includes:
 - which bank and HSB information concepts must be represented;
 - how mappings, uncertainty, review, and disputes behave;
 - how current, transition, and target assertions differ;
+- how generated projections retain source and release lineage;
+- how security profiles, controls, tests, evidence, and gaps stay connected;
+- how Platform Control governs the three pillars without replacing the registry;
+- which Runtime Target requirements materially affect the model and outputs;
 - which evidence makes findings credible to architects and owners;
 - which integration boundaries are essential and which can be deferred;
 - where tenant, identity, privacy, and audit concerns arise;
@@ -416,7 +435,7 @@ Expected architecture learning includes:
 - named stakeholder concerns have planned viewpoints;
 - BIAN, bank, project, inference, external, and evidence authority remain distinct;
 - scope, exclusions, assumptions, risks, and trust boundaries are explicit;
-- the first HSB lens can test the most important information relationships;
+- connected HSB scenarios can test the BIAN Model Registry and all three pillars;
 - no solution technology is presented as an approved architecture decision;
 - open questions are routed to future work rather than hidden.
 
@@ -436,27 +455,34 @@ Expected architecture learning includes:
 Measures of customer demand, adoption cost, realised value, and operating-model
 fit remain unvalidated until supported by evidence beyond HSB.
 
+Architecture acceptance is not build authorisation. The product must also pass
+the decision-value, connected-differentiation, input-feasibility, trust,
+adoption-fit, sustainable-scope, and external-desirability tests in the
+[value proposition and validation strategy](../product/VALUE_AND_VALIDATION.md).
+
 ## 15. Risks and responses
 
 | Risk | Consequence | Architecture response |
 |---|---|---|
 | BIAN source rights or terminology are misunderstood | Invalid redistribution, misleading claims, or loss of trust | Source register, rights review, exact release provenance, and no invented semantics |
-| The vision becomes fourteen disconnected products | Cost, duplication, and incoherent workflows | Shared capability and information model with a narrow first lens |
+| The vision becomes fourteen disconnected products | Cost, duplication, and incoherent workflows | Shared BIAN Model Registry, three clear pillars, Platform Control, and connected validation scenarios |
+| A shallow feature is added to every platform block | A broad demonstration that solves no user problem well enough to adopt | Validate one complete decision journey and deepen only the capabilities required by it |
+| Mature adjacent tools are recreated | High delivery cost with weak differentiation and poor enterprise fit | Treat EA, API, GRC, generation, portal, and runtime products as systems to complement or integrate unless evidence justifies otherwise |
 | The model becomes a copy of OpenAPI or one BIAN artefact | Later architecture and adoption uses become constrained | Extensible conceptual model based on identity, assertion, relationship, provenance, and evidence |
 | Automated mapping appears authoritative | Unsafe decisions and rapid stakeholder distrust | Confidence, explanation, review, dispute, and explicit authority classes |
 | HSB becomes unrealistically clean | Architecture passes tests that do not represent enterprise conditions | Contradictory, stale, incomplete, adversarial, and changing synthetic records |
 | Security and assurance are treated as generated paperwork | Weak controls and inflated compliance claims | Threat-led design and regulation-to-evidence traceability with explicit gaps |
 | Cloud-native becomes a product checklist | Premature distribution, operational complexity, or platform coupling | Trace decisions to current CNCF guidance and measurable requirements |
 | Open-source ambition exceeds maintainer capacity | Unsafe releases, slow response, and abandoned scope | Narrow increments, explicit support status, automation, and sustainable governance |
-| A portal or vendor platform dictates the core | Lock-in and distorted boundaries | Adapter-based integration and a channel-independent knowledge foundation |
+| An experience or vendor layer dictates the core | Lock-in and distorted boundaries | Platform Control remains separate from the canonical BIAN Model Registry and uses governed integrations |
 | Architecture documentation becomes the product | Slow learning and little validated value | Use each view to answer a decision and exercise it through HSB scenarios |
 
 ## 16. Assumptions and dependencies
 
 ### Assumptions
 
-- a bounded assessment can create useful architecture learning before customer
-  desirability is validated;
+- connected HSB scenarios can create useful architecture learning before
+  customer desirability is validated;
 - authorised BIAN material will be available for the selected scope under terms
   compatible with the intended use;
 - HSB can represent enough ambiguity and change to test enterprise concerns;
@@ -467,7 +493,7 @@ fit remain unvalidated until supported by evidence beyond HSB.
 ### Dependencies
 
 - completion of the BIAN source-rights register for any artefact used;
-- a coherent HSB payments estate and expected scenario outcomes;
+- coherent HSB scenarios and expected outcomes spanning all three pillars;
 - a conceptual information and provenance model;
 - defined identity, tenancy, sensitivity, and evidence concepts;
 - sustainable open-source licensing, contribution, and security governance;
@@ -476,14 +502,18 @@ fit remain unvalidated until supported by evidence beyond HSB.
 
 ## 17. Required next viewpoints and work products
 
+The value proposition and validation strategy remains a parallel investment
+gate across every architecture work product. Architecture may describe the full
+north-star, but implementation scope must remain bounded to evidenced value.
+
 | Priority | Work product | Decision or concern answered |
 |---|---|---|
 | 1 | Architecture requirements register | What must the architecture achieve, for whom, and with what evidence? |
-| 2 | Capability and value-flow view | How do the full product and first lens create value without becoming separate tools? |
+| 2 | Capability and value-flow view | How do the BIAN Model Registry, three pillars, Platform Control, and Runtime Targets create connected value? |
 | 3 | Conceptual information and provenance model | What is known, who owns it, how does authority differ, and how does it change? |
 | 4 | System context and ecosystem view | What is inside the platform and which external systems remain authoritative? |
 | 5 | Trust-boundary and security view | Where can information, identity, code, inference, or authority cross risk boundaries? |
-| 6 | HSB payments scenario view | Can the architecture support a concrete end-to-end assessment with known outcomes? |
+| 6 | Connected HSB scenario view | Can one model thread support adoption, engineering, assurance, control, and runtime concerns? |
 | 7 | Operating-model and governance view | Who imports, reviews, approves, operates, supports, and changes the platform? |
 | 8 | Conceptual component interaction view | Which responsibilities collaborate, without yet defining deployable services? |
 | 9 | Architecture roadmap and transition view | What sequence reduces uncertainty and creates reusable value? |
@@ -497,8 +527,8 @@ Review of this Architecture Vision should determine whether to:
 
 1. accept the product boundary and target direction as the basis for conceptual
    architecture;
-2. accept the full capability vision while using the HSB payments assessment as
-   the first architecture lens;
+2. accept BIAN Sources, the BIAN Model Registry, the three product pillars,
+   Platform Control, and Runtime Targets as the north-star structure;
 3. accept the stakeholder, trust, evidence, BIAN, TOGAF, and CNCF positions;
 4. identify material omissions, contradictions, or unacceptable assumptions;
 5. authorise the next conceptual viewpoints and requirements work.
@@ -511,6 +541,7 @@ claims, TOGAF conformance, or production use.
 ### Internal
 
 - [Product vision](../product/PRODUCT_VISION.md)
+- [Value proposition and validation strategy](../product/VALUE_AND_VALIDATION.md)
 - [Use-case catalogue](../product/USE_CASE_CATALOGUE.md)
 - [End-to-end journeys](../product/END_TO_END_JOURNEYS.md)
 - [Scope and prioritisation](../product/SCOPE_AND_PRIORITISATION.md)

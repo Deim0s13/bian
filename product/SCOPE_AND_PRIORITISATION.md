@@ -14,12 +14,13 @@ The trusted model registry, provenance, versioning, inference status, review,
 and change history are foundational qualities. Customers may value them, but
 they are unlikely to buy “a canonical model” in isolation.
 
-Likewise, a portal, database, AI model, graph technology, or API generator is not
-a customer outcome. Technology selection should follow the chosen proposition.
+Architecture components and technologies must contribute to a customer outcome.
+Their selection and packaging should follow the product capability and evidence
+needed, rather than becoming the definition of the platform.
 
 ## Candidate first propositions
 
-### A. BIAN adoption baseline for a bounded domain: recommended for discovery
+### A. BIAN adoption baseline for a bounded domain
 
 **Promise:** “We will show where the responsibilities in one important banking
 domain are implemented today, how reliable those mappings are, and where the
@@ -31,7 +32,8 @@ UC-09 target-state planning.
 
 **Why it is promising:**
 
-- addresses the adoption problem that exists before service generation;
+- creates bank-estate knowledge that service generation and later use cases can
+  reuse;
 - creates customer-specific knowledge reused by most later use cases;
 - produces findings an architecture or transformation sponsor can act on;
 - can begin within a bounded area such as payments;
@@ -66,7 +68,7 @@ differentiated once a bank has established mappings.
 **Primary risk:** its bank-specific value is limited before the customer model
 exists. Release frequency and urgency may not support it as the first wedge.
 
-### D. BIAN engineering golden path
+### D. Service Generator and engineering golden path
 
 **Promise:** “Select a BIAN domain and organisational profile and receive a
 governed, traceable engineering starting point.”
@@ -76,9 +78,9 @@ governed, traceable engineering starting point.”
 **Why it is promising:** visible demonstrations, tangible artefacts, and clear
 platform-engineering users.
 
-**Primary risk:** it can collapse into commodity code generation and create many
-technically valid but organisationally unowned services. It does not by itself
-solve BIAN adoption.
+**Primary risk:** generated assets may be adopted without clear service
+ownership, implementation boundaries, integration context, or an agreed place in
+the bank's target architecture.
 
 ### E. Evidence-based security and control assurance
 
@@ -93,29 +95,38 @@ differentiation.
 **Primary risk:** high domain, legal, audit, integration, and liability burden.
 It should not be the first proposition without expert control ownership.
 
-## Current recommendation
+## Current architecture validation recommendation
 
-Run product discovery around **a bounded BIAN adoption and modernisation
-assessment**, initially using payments as the working example but not assuming
-payments is the final market choice.
+Use a **connected, model-driven HSB journey** across the north-star structure,
+initially within a bounded payments scope. Payments is a practical synthetic
+scenario, not an assumed market choice or the definition of the platform.
 
-The first assessment will be performed against Horizon Synthetic Bank. It will
-validate the internal product logic and required evidence while leaving market
-demand and real-bank operating fit explicitly unvalidated.
+The journey should progressively demonstrate that one governed model thread can:
 
-The assessment would aim to answer:
+1. ingest and version selected authorised BIAN Sources;
+2. represent their semantics and relationships in the BIAN Model Registry;
+3. connect HSB applications, APIs, integrations, data, owners, lifecycle, and
+   reviewed mappings through Adoption & Architecture;
+4. describe a current state, target option, and transition question;
+5. drive traceable contracts, models, tests, and scaffolds through the Service
+   Generator while preserving owned implementation boundaries;
+6. apply a security profile and connect requirements, controls, tests, evidence,
+   gaps, and scoped conclusions through Assurance & Compliance;
+7. expose catalogue, templates, ownership, lifecycle, architecture governance,
+   documentation, and scorecards through Platform Control;
+8. describe and later validate delivery into selected Runtime Targets; and
+9. assess how a BIAN or HSB change affects mappings, generated artefacts,
+   controls, evidence, owners, and runtime consumers.
 
-1. Where are the selected BIAN responsibilities implemented today?
-2. Which mappings are known, inferred, disputed, or missing?
-3. Where are responsibilities fragmented or duplicated?
-4. Which APIs combine responsibilities that deserve architectural review?
-5. Which ownership and lifecycle concerns matter to the target objective?
-6. What target-state options and transition questions follow from the evidence?
-7. How should progress be measured without a misleading adoption score?
+This does not require every capability to be implemented at once. It gives each
+architecture increment a shared end-to-end thread and prevents any one pillar
+from defining the product. HSB can validate internal coherence and technical
+behaviour while market demand and real-bank operating fit remain unvalidated.
 
-This proposition leads with customer understanding and transformation value. It
-also establishes the information needed for later governance, release impact,
-engineering, vendor mapping, and assurance use cases.
+The complete vision must not be implemented as a shallow feature checklist. A
+consumable release must support one meaningful decision through a complete
+model thread. The applicable value tests and stop conditions are maintained in
+[VALUE_AND_VALIDATION.md](VALUE_AND_VALIDATION.md).
 
 ## What the first proposition should not promise
 
@@ -165,3 +176,8 @@ hypothesis for:
 Architecture must also have approved inputs from the BIAN alignment policy,
 fictional-bank validation plan, open-source governance requirements, and
 production-readiness policy.
+
+Passing product definition does not authorise a full platform build. Any later
+implementation approval is limited to the proposition supported by the
+build-authorisation gate in
+[VALUE_AND_VALIDATION.md](VALUE_AND_VALIDATION.md).

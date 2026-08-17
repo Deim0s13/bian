@@ -10,19 +10,28 @@
 
 Review and refine the Architecture Vision, then develop the requirements,
 capability, information, context, trust, HSB scenario, and operating-model views
-needed to establish a coherent conceptual architecture.
+needed to establish a coherent conceptual architecture. In parallel, test the
+value proposition, alternatives, minimum consumable journey, and stop conditions
+before any build is authorised.
 
 No software implementation or solution architecture is approved. The archived
 technical spike is inactive and does not constrain current work.
 
 ## Established foundations
 
+- The product is the BIAN Adoption & Engineering Platform. Its north-star
+  structure is BIAN Sources to BIAN Model Registry to Service Generator,
+  Adoption & Architecture, and Assurance & Compliance, supported by Platform
+  Control and Runtime Targets.
 - Fourteen customer-facing use cases and a shared trusted model foundation are
   preserved in the product definition.
 - The product definition is accepted as an evolving baseline. Unresolved buyer,
   demand, source-rights, and operating-model assumptions remain visible.
-- The Architecture Vision covers the full product and uses a bounded HSB
-  payments assessment as its first architecture lens.
+- The current investment position is to continue discovery and conceptual
+  architecture, not to authorise a full platform build. Connected decision value
+  must be demonstrated before implementation scope is approved.
+- The Architecture Vision covers the full platform. A bounded HSB payments
+  assessment is an initial validation scenario rather than the product centre.
 - Horizon Synthetic Bank will provide repeatable fictional scenarios and
   synthetic information.
 - The project is intended to be independently open source.
@@ -42,6 +51,11 @@ The current use cases are product hypotheses. Synthetic scenarios can establish
 internal coherence and future technical behaviour, but cannot validate customer
 demand, bank adoption, regulatory acceptance, or realised benefits.
 
+The strongest current value hypothesis is the traceable connection from an
+authoritative BIAN concept through bank-estate mapping, architecture decision,
+engineering asset, assurance evidence, ownership, and change impact. The
+individual platform capabilities are not assumed to be differentiated.
+
 ## Next gate
 
 Stage 2 is ready to close only when:
@@ -51,6 +65,11 @@ Stage 2 is ready to close only when:
 - conceptual capability, information, context, trust, scenario, and operating
   model views are coherent;
 - the first HSB scenario has defined inputs, expected decisions, and evidence;
+- the first proposition has passed the applicable decision-value,
+  connected-differentiation, input-feasibility, trust, adoption-fit, and
+  sustainable-scope tests;
+- external desirability remains explicitly unvalidated or has credible evidence;
+- applicable stop and narrow conditions have been reviewed;
 - material source-rights, security, privacy, tenancy, and governance questions
   affecting solution architecture are understood;
 - the architecture identifies which uncertainties require bounded experiments;

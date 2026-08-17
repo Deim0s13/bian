@@ -2,7 +2,7 @@
 
 ## How to read this catalogue
 
-These fourteen use cases preserve the complete original product outline. They
+These fourteen use cases preserve the complete platform vision. They
 are customer-problem definitions, not promises of implemented functionality and
 not predetermined technical components.
 
@@ -46,7 +46,7 @@ third-party claims, and verified evidence.
 
 ## UC-01: Generate engineering artefacts from the BIAN-informed model
 
-**Original idea:** treat BIAN as compiler input, producing many artefacts rather
+**Capability intent:** treat BIAN as compiler input, producing many artefacts rather
 than merely converting OpenAPI into a service.
 
 **Primary actors:** platform engineer, developer, API architect, domain architect.
@@ -97,7 +97,7 @@ runtime architecture, or certifying a service as BIAN-compliant.
 
 ## UC-02: Regenerate safely while preserving bank-owned implementation
 
-**Original idea:** keep generated content completely separate from business
+**Capability intent:** keep generated content completely separate from business
 logic, adapters, and configuration.
 
 **Primary actors:** developer, platform engineer, service owner, release manager.
@@ -137,7 +137,7 @@ manual merging declines; teams can explain exactly why code changed.
 
 ## UC-03: Assess and manage BIAN release impact
 
-**Original idea:** make BIAN release management a first-class enterprise feature.
+**Capability intent:** make BIAN release management a first-class enterprise feature.
 
 **Primary actors:** enterprise architect, API architect, service owner,
 transformation lead, platform owner.
@@ -179,7 +179,7 @@ bank-specific action set; visible ownership of upgrade decisions.
 
 ## UC-04: Apply consistent, context-specific security profiles
 
-**Original idea:** security is a platform layer expressed through reusable
+**Capability intent:** security is a platform layer expressed through reusable
 profiles, not hard-coded independently into every service.
 
 **Primary actors:** security architect, platform engineer, API owner, developer.
@@ -221,7 +221,7 @@ explicit exceptions; quicker review; reusable evidence.
 
 ## UC-05: Produce evidence-based, scoped control assurance
 
-**Original idea:** compliance is an evidence chain, not a checkbox.
+**Capability intent:** compliance is an evidence chain, not a checkbox.
 
 **Primary actors:** control owner, security architect, risk/compliance analyst,
 service owner, auditor or assurance reviewer.
@@ -262,8 +262,10 @@ clear gaps; repeatable assurance; reviewers can reproduce conclusions.
 
 ## UC-06: Provide a developer and architect self-service front door
 
-**Original idea:** use Red Hat Developer Hub/Backstage as a future front door for
-catalogue, templates, ownership, lifecycle, scorecards, and documentation.
+**Capability intent:** provide Platform Control across the three product pillars
+through catalogue, templates, ownership, lifecycle, scorecards, documentation,
+policy, and workflow. Red Hat Developer Hub is the intended future front door,
+subject to solution validation.
 
 **Primary actors:** developer, platform engineer, solution architect, service
 owner, platform product owner.
@@ -280,8 +282,8 @@ and access, ownership, lifecycle, profiles, templates, and target platform data.
 **Conceptual flow:**
 
 1. The user searches or selects a BIAN domain, customer capability, or asset.
-2. The portal shows relevant owners, implementations, APIs, standards, and
-   lifecycle information.
+2. Platform Control shows relevant owners, implementations, APIs, standards,
+   lifecycle information, and supporting evidence.
 3. The user starts an approved workflow such as create, align, review, or assess.
 4. Required context is captured through a guided form.
 5. The platform invokes the appropriate underlying capability.
@@ -293,8 +295,10 @@ documentation, ownership/lifecycle views, and task/result status.
 **Decisions enabled:** whether to reuse or create; which standard path applies;
 who owns the result; where to find supporting evidence.
 
-**Trust and safety rules:** the portal is an interaction surface, not the source
-of truth. The core proposition must not depend on one portal product.
+**Trust and safety rules:** Platform Control is an interaction and governance
+surface, not the source of BIAN truth. The BIAN Model Registry remains
+authoritative for the platform model, and the architecture must preserve a
+governed seam between the two.
 
 **Success signals:** higher discovery and reuse; fewer support hand-offs; greater
 golden-path adoption; current ownership and documentation.
@@ -303,7 +307,7 @@ golden-path adoption; current ownership and documentation.
 
 ## UC-07: Map a customer's application, API, integration, and data landscape
 
-**Original idea:** BIAN Landscape Mapper.
+**Capability intent:** BIAN Landscape Mapper.
 
 **Primary actors:** enterprise architect, application owner, portfolio manager,
 API architect, transformation analyst.
@@ -346,7 +350,7 @@ material findings; less manual reconciliation; baseline remains maintainable.
 
 ## UC-08: Analyse an existing API's alignment with BIAN
 
-**Original idea:** BIAN API Alignment connected to the customer's wider estate,
+**Capability intent:** BIAN API Alignment connected to the customer's wider estate,
 ownership, controls, and remediation workflow.
 
 **Primary actors:** API architect, API product owner, enterprise architect,
@@ -389,7 +393,7 @@ or misplaced behaviour is discovered; remediation decisions are recorded.
 
 ## UC-09: Design current, transition, and target states
 
-**Original idea:** current-state to target-state BIAN architecture and roadmap.
+**Capability intent:** current-state to target-state BIAN architecture and roadmap.
 
 **Primary actors:** enterprise architect, domain architect, transformation lead,
 programme architect, application owners.
@@ -432,7 +436,7 @@ identified earlier; target-state decisions link to programme work and outcomes.
 
 ## UC-10: Model business scenarios and overlay the customer's implementation
 
-**Original idea:** Business Scenario Studio that builds on, rather than merely
+**Capability intent:** Business Scenario Studio that builds on, rather than merely
 copies, BIAN scenario concepts.
 
 **Primary actors:** business architect, domain architect, solution architect,
@@ -476,7 +480,7 @@ responsibility gaps become visible; scenarios are reused across design work.
 
 ## UC-11: Provide evidence-backed modernisation advice
 
-**Original idea:** BIAN Modernisation Advisor using AI to reason over the model,
+**Capability intent:** BIAN Modernisation Advisor using AI to reason over the model,
 not merely “chat with BIAN.”
 
 **Primary actors:** enterprise architect, transformation lead, domain architect,
@@ -518,7 +522,7 @@ analysis time falls; users discover dependencies or options they had missed.
 
 ## UC-12: Map vendor and product capabilities to BIAN and the bank estate
 
-**Original idea:** vendor/product mapping for core replacement, RFPs, overlap,
+**Capability intent:** vendor/product mapping for core replacement, RFPs, overlap,
 and exit strategy.
 
 **Primary actors:** sourcing lead, enterprise architect, transformation director,
@@ -562,7 +566,7 @@ overlap; less subjective comparison; traceable sourcing decisions.
 
 ## UC-13: Embed BIAN-informed architecture governance into change delivery
 
-**Original idea:** automatically assess new project/service proposals for likely
+**Capability intent:** automatically assess new project/service proposals for likely
 domain, duplication, ownership, and data concerns.
 
 **Primary actors:** solution architect, architecture review board, enterprise
@@ -606,7 +610,7 @@ for well-aligned proposals; decisions and exceptions remain visible.
 
 ## UC-14: Measure and communicate BIAN adoption
 
-**Original idea:** BIAN adoption scorecard for executives and architects.
+**Capability intent:** BIAN adoption scorecard for executives and architects.
 
 **Primary actors:** Chief Architect, CIO/CTO, transformation director, enterprise
 architect, portfolio owner, architecture governance lead.

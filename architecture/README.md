@@ -1,7 +1,7 @@
 # Architecture repository
 
 This directory contains the active architecture for the BIAN Adoption &
-Transformation Platform.
+Engineering Platform.
 
 ## Current stage
 
@@ -33,4 +33,3 @@ different roles.
 The architecture documents are original project work. They do not reproduce a
 TOGAF template, claim TOGAF conformance, or imply that BIAN, The Open Group,
 CNCF, Red Hat, or a bank has reviewed or endorsed the project.
-

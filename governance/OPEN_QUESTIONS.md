@@ -13,6 +13,11 @@ to all work, but the relevant item must be resolved before its dependent gate.
   Synthetic Bank demonstrate it?
 - What would make the project useful without requiring a real bank trial, while
   keeping external desirability explicitly unvalidated?
+- What connected outcome cannot be achieved readily through authoritative BIAN
+  tooling plus established EA, API, GRC, generation, portal, and runtime tools?
+- What evidence would justify build authorisation for the first bounded
+  proposition?
+- Which result would cause the proposition to be stopped or materially narrowed?
 
 ## BIAN and source rights
 
