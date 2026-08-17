@@ -101,7 +101,7 @@ deployment controls are inconsistent or require manual interpretation.
 
 **Desired outcome:** request an approved starting point that already reflects
 the selected domain, version, security profile, ownership, and deployment
-context—and can be regenerated safely later.
+context and can be regenerated safely later.
 
 ### Application / Service Owner
 

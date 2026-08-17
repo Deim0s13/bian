@@ -12,7 +12,7 @@ qualified peer review. No use case currently has validated customer demand or
 real-bank outcome evidence. “Platform” below refers to the proposed product, not
 existing code.
 
-## Shared foundation: FDN-01 — Trusted BIAN and bank knowledge model
+## Shared foundation: FDN-01: Trusted BIAN and bank knowledge model
 
 This is a prerequisite shared across the use cases rather than a standalone
 customer outcome.
@@ -44,7 +44,7 @@ third-party claims, and verified evidence.
 
 ---
 
-## UC-01 — Generate engineering artefacts from the BIAN-informed model
+## UC-01: Generate engineering artefacts from the BIAN-informed model
 
 **Original idea:** treat BIAN as compiler input, producing many artefacts rather
 than merely converting OpenAPI into a service.
@@ -95,7 +95,7 @@ runtime architecture, or certifying a service as BIAN-compliant.
 
 ---
 
-## UC-02 — Regenerate safely while preserving bank-owned implementation
+## UC-02: Regenerate safely while preserving bank-owned implementation
 
 **Original idea:** keep generated content completely separate from business
 logic, adapters, and configuration.
@@ -135,7 +135,7 @@ manual merging declines; teams can explain exactly why code changed.
 
 ---
 
-## UC-03 — Assess and manage BIAN release impact
+## UC-03: Assess and manage BIAN release impact
 
 **Original idea:** make BIAN release management a first-class enterprise feature.
 
@@ -154,7 +154,7 @@ rules, bank mappings, generated-asset lineage, consumers, owners, and lifecycle.
 **Conceptual flow:**
 
 1. The platform compares BIAN concepts and relationships, not just file text.
-2. Changes are classified—for example addition, removal, rename, schema change,
+2. Changes are classified, for example addition, removal, rename, schema change,
    behavioural change, or relationship change.
 3. Bank mappings reveal which applications, APIs, data, plans, and controls are
    potentially affected.
@@ -177,7 +177,7 @@ bank-specific action set; visible ownership of upgrade decisions.
 
 ---
 
-## UC-04 — Apply consistent, context-specific security profiles
+## UC-04: Apply consistent, context-specific security profiles
 
 **Original idea:** security is a platform layer expressed through reusable
 profiles, not hard-coded independently into every service.
@@ -219,7 +219,7 @@ explicit exceptions; quicker review; reusable evidence.
 
 ---
 
-## UC-05 — Produce evidence-based, scoped control assurance
+## UC-05: Produce evidence-based, scoped control assurance
 
 **Original idea:** compliance is an evidence chain, not a checkbox.
 
@@ -260,7 +260,7 @@ clear gaps; repeatable assurance; reviewers can reproduce conclusions.
 
 ---
 
-## UC-06 — Provide a developer and architect self-service front door
+## UC-06: Provide a developer and architect self-service front door
 
 **Original idea:** use Red Hat Developer Hub/Backstage as a future front door for
 catalogue, templates, ownership, lifecycle, scorecards, and documentation.
@@ -301,7 +301,7 @@ golden-path adoption; current ownership and documentation.
 
 ---
 
-## UC-07 — Map a customer's application, API, integration, and data landscape
+## UC-07: Map a customer's application, API, integration, and data landscape
 
 **Original idea:** BIAN Landscape Mapper.
 
@@ -320,8 +320,8 @@ metadata, descriptions, owners, lifecycle, and known domain mappings.
 
 **Conceptual flow:**
 
-1. The bank defines scope—for example payments, customer servicing, or a legal
-   entity—and identifies source systems.
+1. The bank defines scope, for example payments, customer servicing, or a legal
+   entity, and identifies source systems.
 2. The platform inventories and reconciles customer assets and identifiers.
 3. Candidate BIAN mappings are proposed with rationale, evidence, and confidence.
 4. Architects and asset owners review, correct, accept, reject, or defer mappings.
@@ -344,7 +344,7 @@ material findings; less manual reconciliation; baseline remains maintainable.
 
 ---
 
-## UC-08 — Analyse an existing API's alignment with BIAN
+## UC-08: Analyse an existing API's alignment with BIAN
 
 **Original idea:** BIAN API Alignment connected to the customer's wider estate,
 ownership, controls, and remediation workflow.
@@ -387,7 +387,7 @@ or misplaced behaviour is discovered; remediation decisions are recorded.
 
 ---
 
-## UC-09 — Design current, transition, and target states
+## UC-09: Design current, transition, and target states
 
 **Original idea:** current-state to target-state BIAN architecture and roadmap.
 
@@ -430,7 +430,7 @@ identified earlier; target-state decisions link to programme work and outcomes.
 
 ---
 
-## UC-10 — Model business scenarios and overlay the customer's implementation
+## UC-10: Model business scenarios and overlay the customer's implementation
 
 **Original idea:** Business Scenario Studio that builds on, rather than merely
 copies, BIAN scenario concepts.
@@ -474,7 +474,7 @@ responsibility gaps become visible; scenarios are reused across design work.
 
 ---
 
-## UC-11 — Provide evidence-backed modernisation advice
+## UC-11: Provide evidence-backed modernisation advice
 
 **Original idea:** BIAN Modernisation Advisor using AI to reason over the model,
 not merely “chat with BIAN.”
@@ -516,7 +516,7 @@ analysis time falls; users discover dependencies or options they had missed.
 
 ---
 
-## UC-12 — Map vendor and product capabilities to BIAN and the bank estate
+## UC-12: Map vendor and product capabilities to BIAN and the bank estate
 
 **Original idea:** vendor/product mapping for core replacement, RFPs, overlap,
 and exit strategy.
@@ -560,7 +560,7 @@ overlap; less subjective comparison; traceable sourcing decisions.
 
 ---
 
-## UC-13 — Embed BIAN-informed architecture governance into change delivery
+## UC-13: Embed BIAN-informed architecture governance into change delivery
 
 **Original idea:** automatically assess new project/service proposals for likely
 domain, duplication, ownership, and data concerns.
@@ -604,7 +604,7 @@ for well-aligned proposals; decisions and exceptions remain visible.
 
 ---
 
-## UC-14 — Measure and communicate BIAN adoption
+## UC-14: Measure and communicate BIAN adoption
 
 **Original idea:** BIAN adoption scorecard for executives and architects.
 
@@ -627,7 +627,7 @@ decisions, remediation, control evidence, and historical baselines.
 2. The platform presents multiple adoption dimensions and their definitions.
 3. Metrics distinguish inventory coverage, mapping confidence, reviewed
    alignment, ownership, duplication, target-state definition, remediation, and
-   evidence—not one opaque score.
+   evidence, not one opaque score.
 4. Trends and material hotspots are highlighted.
 5. Users drill into the underlying assets, findings, owners, and data-quality gaps.
 6. Decisions and actions are recorded through governance or transformation work.

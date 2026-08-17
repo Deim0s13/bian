@@ -4,7 +4,7 @@ This is the working research agenda. The project will not ask banks or customers
 to trial the product. Answers should instead be supported by authoritative source
 analysis, public case studies and presentations, published adoption material,
 Horizon Synthetic Bank exercises, reproducible tests, or later qualified peer
-review—not only internal opinion. Questions about demand or real-bank behaviour
+review, not only internal opinion. Questions about demand or real-bank behaviour
 that cannot be answered this way must remain explicitly unvalidated.
 
 ## 1. Customer and buying context
@@ -16,7 +16,7 @@ that cannot be answered this way must remain explicitly unvalidated.
 - Who controls budget and who can stop adoption?
 - Is the first engagement expected to be software, advisory work, an assessment,
   or a combined service?
-- What alternatives are customers using today—consultancies, spreadsheets,
+- What alternatives are customers using today: consultancies, spreadsheets,
   architecture tools, BIAN portal capabilities, internal teams, or doing nothing?
 
 ## 2. Decisions and value

@@ -8,8 +8,7 @@ dist/
 *.egg-info/
 .DS_Store
 
-# Codex project context is managed outside this repository.
-AGENTS.md
+# Source imports are acquired and verified through the future ingestion process.
 sources/
 
 # Generated outputs are reproducible and should be rebuilt locally.

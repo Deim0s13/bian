@@ -8,11 +8,11 @@ change their technology estate.
 
 It connects three things that are normally separate:
 
-1. **BIAN's model of banking** — Service Domains, APIs, events, Business
+1. **BIAN's model of banking:** Service Domains, APIs, events, Business
    Objects, Business Scenarios, capabilities, and relationships.
-2. **The bank as it exists** — applications, APIs, integrations, data,
+2. **The bank as it exists:** applications, APIs, integrations, data,
    technology, owners, controls, vendors, and lifecycle state.
-3. **The bank as it wants to become** — target architecture, engineering
+3. **The bank as it wants to become:** target architecture, engineering
    standards, migration plans, governance decisions, and assurance evidence.
 
 The result should allow a bank to ask meaningful questions and receive answers
@@ -151,7 +151,7 @@ The strongest proposition is not “generate BIAN APIs.” It is the combination
 - continuous release and adoption management.
 
 A standalone generator can be copied. A trusted, evolving model of how a bank's
-estate relates to BIAN—and how that relationship affects change—is considerably
+estate relates to BIAN, and how that relationship affects change, is considerably
 more valuable and defensible.
 
 ## Project delivery position

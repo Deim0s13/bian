@@ -105,7 +105,7 @@ screen or report was produced.
 
 When the project is sufficiently mature, invite qualified peers to review model
 fidelity, architecture, security, operability, and usability using the public HSB
-environment. Review findings become evidence and tracked work—not endorsement.
+environment. Review findings become evidence and tracked work, not endorsement.
 
 ## What synthetic validation cannot prove
 
@@ -134,4 +134,3 @@ At minimum, the future HSB scenario catalogue should cover:
 10. compare a fictional vendor product with HSB's current estate;
 11. answer a modernisation question with traceable evidence; and
 12. produce a multidimensional adoption view with honest data-quality indicators.
-

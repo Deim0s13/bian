@@ -4,7 +4,7 @@ The platform becomes valuable when use cases reinforce one another. These
 journeys test whether the catalogue describes a coherent product rather than a
 collection of unrelated tools.
 
-## Journey 1 — Modernise payments
+## Journey 1: Modernise payments
 
 ### Situation
 
@@ -46,7 +46,7 @@ target to real applications, APIs, owners, dependencies, and programme actions.
 The bank should make better sequencing and boundary decisions, identify
 duplication earlier, and spend less time reconstructing context for each project.
 
-## Journey 2 — Respond to a new BIAN release
+## Journey 2: Respond to a new BIAN release
 
 ### Situation
 
@@ -84,7 +84,7 @@ generic release comparison or wholesale regeneration exercise.
 Assessment time and missed impacts should fall, while adoption decisions become
 traceable and owned.
 
-## Journey 3 — Introduce a new BIAN-informed service
+## Journey 3: Introduce a new BIAN-informed service
 
 ### Situation
 
@@ -125,7 +125,7 @@ microservice or an architecture document disconnected from delivery.
 Teams should spend less time interpreting standards, create fewer duplicates,
 and reach review with better evidence and clearer ownership.
 
-## Journey 4 — Evaluate a core-banking product
+## Journey 4: Evaluate a core-banking product
 
 ### Situation
 
@@ -140,7 +140,7 @@ owners, commercial teams, security/risk representatives, and vendor specialists.
 ### Journey
 
 1. **Define required scope.** The bank selects BIAN responsibilities, scenarios,
-   business constraints, and target outcomes—not merely a feature checklist.
+   business constraints, and target outcomes, not merely a feature checklist.
 2. **Map current estate (UC-07).** Current implementations, ownership, lifecycle,
    dependencies, and pain points are established.
 3. **Map vendor claims (UC-12).** Claims are connected to BIAN concepts with
@@ -166,7 +166,7 @@ impact, while vendor assertions remain distinguishable from bank-verified facts.
 The bank should ask better due-diligence questions, identify residual scope and
 integration earlier, and retain a reusable decision model beyond the RFP.
 
-## Journey 5 — Establish evidence-backed API governance
+## Journey 5: Establish evidence-backed API governance
 
 ### Situation
 
@@ -215,4 +215,3 @@ and focus remediation on evidence-backed concerns.
 - Which output would a customer act on within the first engagement?
 - What existing tools must receive or provide information?
 - What would make the customer distrust or abandon the result?
-

@@ -19,7 +19,7 @@ a customer outcome. Technology selection should follow the chosen proposition.
 
 ## Candidate first propositions
 
-### A. BIAN adoption baseline for a bounded domain — recommended for discovery
+### A. BIAN adoption baseline for a bounded domain: recommended for discovery
 
 **Promise:** “We will show where the responsibilities in one important banking
 domain are implemented today, how reliable those mappings are, and where the

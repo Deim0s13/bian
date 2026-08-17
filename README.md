@@ -11,6 +11,22 @@ An earlier technical experiment is retained under
 It is historical reference only, does not represent approved architecture, and
 should not constrain the product vision.
 
+## Working foundations
+
+- [Repository instructions](AGENTS.md) define the rules applied by Codex and
+  contributors.
+- [Project status](governance/PROJECT_STATUS.md) records the current stage and
+  next gate.
+- [Governance and working context](governance/README.md) holds shared audience,
+  writing, architecture, quality, decision, and open-question context.
+- [Contributing](CONTRIBUTING.md) defines the current contribution scope.
+- [Security policy](SECURITY.md) states the present security and disclosure
+  position.
+- `python3 tools/check_project.py` runs the active documentation policy checks.
+
+Repository context is the durable source of truth. Tool memory may assist a
+session, but it does not replace checked-in decisions, rules, or status.
+
 ## Current objective
 
 Develop and validate a coherent product centred on this question:
@@ -41,7 +57,7 @@ Read these in order:
 
 ## Stage gates
 
-### Stage 1 — Product definition (current)
+### Stage 1: Product definition (current)
 
 - identify users, buyers, problems, triggers, and desired decisions;
 - define the complete use-case set and how the use cases reinforce each other;
@@ -50,14 +66,14 @@ Read these in order:
 - evaluate assumptions through authoritative sources, public evidence, the
   fictional Horizon Synthetic Bank, and later qualified peer review.
 
-### Stage 2 — Conceptual architecture
+### Stage 2: Conceptual architecture
 
 Begins after the product definition is reviewed. It will define information
 domains, system boundaries, conceptual components, external actors, trust
-boundaries, and capability interactions—without prematurely selecting detailed
+boundaries, and capability interactions without prematurely selecting detailed
 technology.
 
-### Stage 3 — Solution architecture and experiments
+### Stage 3: Solution architecture and experiments
 
 Begins only when the initial customer proposition and architecture questions
 are sufficiently understood. Technology choices and prototypes belong here.
