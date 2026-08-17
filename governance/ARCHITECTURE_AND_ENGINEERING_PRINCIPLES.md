@@ -2,9 +2,11 @@
 
 ## Status
 
-This document establishes the method and quality direction for future
-architecture. It is not the conceptual or solution architecture and does not
-approve an implementation style or technology stack.
+This document establishes the method and quality direction for architecture.
+The active conceptual direction is in the
+[Architecture Vision](../architecture/ARCHITECTURE_VISION.md). This principles
+document is not a solution architecture and does not approve an implementation
+style or technology stack.
 
 ## How TOGAF and BIAN will work together
 

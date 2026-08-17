@@ -24,6 +24,8 @@ REQUIRED_FILES = (
     "README.md",
     "CONTRIBUTING.md",
     "SECURITY.md",
+    "architecture/README.md",
+    "architecture/ARCHITECTURE_VISION.md",
     "governance/PROJECT_STATUS.md",
     "governance/PROJECT_CONTEXT.md",
     "governance/WRITING_STYLE.md",

@@ -1,8 +1,9 @@
 # BIAN Adoption & Transformation Platform
 
-This repository is currently a **product-discovery workspace**. It defines the
-full customer proposition before any implementation or technical architecture
-is selected.
+This repository is currently a **product and conceptual-architecture
+workspace**. The product baseline is established and will continue to evolve.
+The current work defines the architecture vision and conceptual views before any
+implementation or solution technology is selected.
 
 No software is being built in this phase.
 
@@ -17,6 +18,8 @@ should not constrain the product vision.
   contributors.
 - [Project status](governance/PROJECT_STATUS.md) records the current stage and
   next gate.
+- [Architecture repository](architecture/README.md) contains the active
+  Architecture Vision and future conceptual views.
 - [Governance and working context](governance/README.md) holds shared audience,
   writing, architecture, quality, decision, and open-question context.
 - [Contributing](CONTRIBUTING.md) defines the current contribution scope.
@@ -57,7 +60,7 @@ Read these in order:
 
 ## Stage gates
 
-### Stage 1: Product definition (current)
+### Stage 1: Product definition (baseline established)
 
 - identify users, buyers, problems, triggers, and desired decisions;
 - define the complete use-case set and how the use cases reinforce each other;
@@ -66,11 +69,12 @@ Read these in order:
 - evaluate assumptions through authoritative sources, public evidence, the
   fictional Horizon Synthetic Bank, and later qualified peer review.
 
-### Stage 2: Conceptual architecture
+### Stage 2: Conceptual architecture (current)
 
-Begins after the product definition is reviewed. It will define information
-domains, system boundaries, conceptual components, external actors, trust
-boundaries, and capability interactions without prematurely selecting detailed
+The [Architecture Vision](architecture/ARCHITECTURE_VISION.md) establishes the
+direction. This stage will define requirements, information domains, system
+boundaries, conceptual components, external actors, trust boundaries, operating
+concerns, and capability interactions without prematurely selecting detailed
 technology.
 
 ### Stage 3: Solution architecture and experiments

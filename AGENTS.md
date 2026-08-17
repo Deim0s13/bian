@@ -6,9 +6,11 @@ These instructions apply to the entire repository unless a more specific
 ## Project position
 
 - This is an independent, open-source BIAN adoption and transformation project.
-- The current stage is product definition. Do not start implementation, select
-  solution technologies, or turn the archived spike into an approved design
-  unless the user explicitly changes the stage or asks for a bounded experiment.
+- The current stage is conceptual architecture. Develop outcomes, requirements,
+  viewpoints, information concepts, boundaries, risks, and operating concerns.
+  Do not start implementation, select solution technologies, or turn the
+  archived spike into an approved design unless the user explicitly changes the
+  stage or asks for a bounded experiment.
 - Treat `archive/initial-technical-spike/` as historical reference only. Do not
   edit, revive, or cite it as current architecture without explicit instruction.
 - Confirm the repository root before editing. Do not work from a copied sibling
@@ -24,8 +26,9 @@ Before material work, read the parts of these files relevant to the request:
 4. `governance/WRITING_STYLE.md`
 5. `product/PROJECT_PRINCIPLES.md`
 6. `product/BIAN_ALIGNMENT_POLICY.md`
-7. `governance/ARCHITECTURE_AND_ENGINEERING_PRINCIPLES.md`
-8. `governance/QUALITY_AND_REVIEW.md`
+7. `architecture/ARCHITECTURE_VISION.md`
+8. `governance/ARCHITECTURE_AND_ENGINEERING_PRINCIPLES.md`
+9. `governance/QUALITY_AND_REVIEW.md`
 
 Use `governance/DECISION_LOG.md` and `governance/OPEN_QUESTIONS.md` when a task
 creates, changes, or depends on a material decision.

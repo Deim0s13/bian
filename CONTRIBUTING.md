@@ -2,9 +2,10 @@
 
 ## Current contribution scope
 
-The project is in product definition. Contributions should improve the product
-case, evidence, traceability, governance, or inputs to conceptual architecture.
-Implementation and solution scaffolding are out of scope unless a bounded
+The project is in conceptual architecture. Contributions should improve the
+product baseline, Architecture Vision, requirements, viewpoints, evidence,
+traceability, governance, or HSB architecture scenarios. Implementation,
+solution technology, and scaffolding are out of scope unless a bounded
 experiment is explicitly approved.
 
 Start with `AGENTS.md`, `README.md`, and `governance/PROJECT_STATUS.md`. Follow
@@ -36,4 +37,3 @@ the repository as ready to accept public contributions.
 Do not place suspected vulnerabilities, credentials, personal information,
 customer information, or sensitive bank details in a public issue or change.
 Follow `SECURITY.md`.
-

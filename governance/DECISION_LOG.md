@@ -6,7 +6,7 @@ met. Proposed ideas belong in `OPEN_QUESTIONS.md`, not here.
 
 | ID | Date | Decision | Consequence | Revisit trigger |
 |---|---|---|---|---|
-| DEC-001 | 2026-08-17 | Define the full use case before implementation or solution architecture. | Current contributions focus on product discovery and architecture inputs. | Owner closes the product-definition gate. |
+| DEC-001 | 2026-08-17 | Define the full use case before implementation or solution architecture. | Implementation was held while product discovery and architecture inputs were developed. | Owner closes the product-definition gate. |
 | DEC-002 | 2026-08-17 | Use Horizon Synthetic Bank and synthetic information as the repeatable validation environment. | No claim of customer demand or real-bank fit may be derived from synthetic results. | A future external validation model is authorised. |
 | DEC-003 | 2026-08-17 | Develop the project as independent open source. | Governance, contribution rights, source rights, support, and security processes are product requirements. | Rights review or sustainability model requires change. |
 | DEC-004 | 2026-08-17 | Attribute content to BIAN only when it is authoritative, release-qualified, and traceable. | Project extensions and inferences need separate classes and provenance. | Never for convenience; refine only with authoritative BIAN guidance. |
@@ -16,3 +16,4 @@ met. Proposed ideas belong in `OPEN_QUESTIONS.md`, not here.
 | DEC-008 | 2026-08-17 | Store durable project instructions and context in the repository. | `AGENTS.md` and governance documents are the source of truth across tools and sessions. | Repository governance model changes. |
 | DEC-009 | 2026-08-17 | Do not use the Unicode em dash character in active project content. | Automated checks reject it; punctuation must use alternatives. | Project owner changes the writing convention. |
 | DEC-010 | 2026-08-17 | Keep the initial technical spike archived and outside active design. | It may inform later experiments but carries no architectural authority. | Explicit review promotes a specific finding with new evidence. |
+| DEC-011 | 2026-08-17 | Accept the product definition as an evolving baseline and begin conceptual architecture with a TOGAF-informed Architecture Vision. Carry unresolved buyer, demand, rights, and operating-model matters as explicit hypotheses rather than waiting for final wording or certainty. | Architecture work may now define conceptual requirements, viewpoints, information, boundaries, risks, and operating concerns. Implementation and solution technology remain out of scope. | Architecture Vision review identifies a material product contradiction, or the owner changes the stage. |
