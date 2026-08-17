@@ -21,6 +21,11 @@ should not constrain the product vision.
 - [Architecture Register](governance/ARCHITECTURE_REGISTER.md) is the canonical
   record of decisions, questions, risks, assumptions, dependencies, evidence
   gaps, requirements, work items, and issues.
+- [Project principles](product/PROJECT_PRINCIPLES.md) is the authoritative
+  numbered catalogue of overarching project principles.
+- [Requirements and traceability](architecture/REQUIREMENTS_AND_TRACEABILITY.md)
+  defines the requirements-management model while the Architecture Register
+  retains authoritative requirement records and status.
 - [Architecture repository](architecture/README.md) contains the active
   Architecture Vision and future conceptual views.
 - [Governance and working context](governance/README.md) holds shared audience,
@@ -70,14 +75,15 @@ Read these in order:
 1. [Product vision](product/PRODUCT_VISION.md)
 2. [Value proposition and validation strategy](product/VALUE_AND_VALIDATION.md)
 3. [Project principles](product/PROJECT_PRINCIPLES.md)
-4. [BIAN alignment policy](product/BIAN_ALIGNMENT_POLICY.md)
-5. [Fictional bank and synthetic validation](product/FICTIONAL_BANK_AND_SYNTHETIC_VALIDATION.md)
-6. [Open source and production readiness](product/OPEN_SOURCE_AND_PRODUCTION_READINESS.md)
-7. [Personas and outcomes](product/PERSONAS_AND_OUTCOMES.md)
-8. [Use-case catalogue](product/USE_CASE_CATALOGUE.md)
-9. [End-to-end journeys](product/END_TO_END_JOURNEYS.md)
-10. [Outline traceability](product/TRACEABILITY.md)
-11. [Scope and prioritisation](product/SCOPE_AND_PRIORITISATION.md)
+4. [Requirements and traceability](architecture/REQUIREMENTS_AND_TRACEABILITY.md)
+5. [BIAN alignment policy](product/BIAN_ALIGNMENT_POLICY.md)
+6. [Fictional bank and synthetic validation](product/FICTIONAL_BANK_AND_SYNTHETIC_VALIDATION.md)
+7. [Open source and production readiness](product/OPEN_SOURCE_AND_PRODUCTION_READINESS.md)
+8. [Personas and outcomes](product/PERSONAS_AND_OUTCOMES.md)
+9. [Use-case catalogue](product/USE_CASE_CATALOGUE.md)
+10. [End-to-end journeys](product/END_TO_END_JOURNEYS.md)
+11. [Outline traceability](product/TRACEABILITY.md)
+12. [Scope and prioritisation](product/SCOPE_AND_PRIORITISATION.md)
 12. [Discovery questions](product/DISCOVERY_QUESTIONS.md)
 
 ## Stage gates

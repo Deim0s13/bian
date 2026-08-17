@@ -12,6 +12,7 @@ technology stack, deployment topology, or implementation is approved.
 
 1. [Architecture Vision](ARCHITECTURE_VISION.md)
 2. [Business Architecture](BUSINESS_ARCHITECTURE.md)
+3. [Requirements and traceability](REQUIREMENTS_AND_TRACEABILITY.md)
 
 Future work products will be added only when they answer a named stakeholder
 concern or support a decision. Expected next views include:
@@ -21,7 +22,8 @@ concern or support a decision. Expected next views include:
 - trust-boundary and security view;
 - conceptual component interaction view;
 - Horizon Synthetic Bank scenario views;
-- requirements and architecture traceability.
+- domain and solution requirement refinements where the architecture requires
+  them.
 
 ## Method position
 

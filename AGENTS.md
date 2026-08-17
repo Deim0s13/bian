@@ -41,8 +41,9 @@ Before material work, read the parts of these files relevant to the request:
 8. `product/BIAN_ALIGNMENT_POLICY.md`
 9. `architecture/ARCHITECTURE_VISION.md`
 10. `architecture/BUSINESS_ARCHITECTURE.md`
-11. `governance/ARCHITECTURE_AND_ENGINEERING_PRINCIPLES.md`
-12. `governance/QUALITY_AND_REVIEW.md`
+11. `architecture/REQUIREMENTS_AND_TRACEABILITY.md`
+12. `governance/ARCHITECTURE_AND_ENGINEERING_PRINCIPLES.md`
+13. `governance/QUALITY_AND_REVIEW.md`
 
 ## BIAN integrity
 
@@ -98,6 +99,9 @@ Before material work, read the parts of these files relevant to the request:
   gaps, architecture requirements, work items, and issues only in
   `governance/ARCHITECTURE_REGISTER.md`. Context documents reference register
   identifiers and must not maintain competing status or resolution records.
+- Maintain overarching principles only in `product/PROJECT_PRINCIPLES.md` and
+  reference their stable `PRN` identifiers from policies, requirements, and
+  architecture documents.
 - Update affected traceability when product scope or meaning changes.
 - Run `python3 tools/check_project.py` before completing an active-file change.
 - Do not weaken or bypass a check to make a change pass. Fix the issue or record

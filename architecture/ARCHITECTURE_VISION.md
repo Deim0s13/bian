@@ -518,7 +518,9 @@ claims, TOGAF conformance, or production use.
 - [Scope and prioritisation](../product/SCOPE_AND_PRIORITISATION.md)
 - [BIAN alignment policy](../product/BIAN_ALIGNMENT_POLICY.md)
 - [Fictional bank and synthetic validation](../product/FICTIONAL_BANK_AND_SYNTHETIC_VALIDATION.md)
-- [Architecture and engineering principles](../governance/ARCHITECTURE_AND_ENGINEERING_PRINCIPLES.md)
+- [Project principles](../product/PROJECT_PRINCIPLES.md)
+- [Requirements and traceability](REQUIREMENTS_AND_TRACEABILITY.md)
+- [Architecture and engineering application guidance](../governance/ARCHITECTURE_AND_ENGINEERING_PRINCIPLES.md)
 - [Open-source and production readiness](../product/OPEN_SOURCE_AND_PRODUCTION_READINESS.md)
 
 ### Authoritative method and guidance

@@ -17,6 +17,8 @@ Every active change must:
 - preserve BIAN attribution and assertion-class boundaries;
 - update the Architecture Register, project status, and traceability when
   affected;
+- reference defined `PRN` and governed-record identifiers rather than creating
+  competing principle or requirement records;
 - contain no Unicode em dash characters, trailing whitespace, or broken local
   Markdown links;
 - pass `python3 tools/check_project.py`;

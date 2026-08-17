@@ -8,11 +8,10 @@
 
 ## Current focus
 
-Review the initial Business Architecture and use it to refine the primary user,
-decision, value streams, platform capabilities, business services, roles,
-decision rights, operating model, measures, and bounded HSB scenario. Continue
-testing alternatives, value hypotheses, and stop conditions before any build is
-authorised.
+Review the proposed overarching project principles and cross-cutting
+requirements baseline. Record explicit acceptance, revision, deferral, or
+rejection through `WRK-016` and `WRK-018` before returning to the minimum
+Business Architecture questions or beginning Information Systems Architecture.
 
 No software implementation or solution architecture is approved. The archived
 technical spike is inactive and does not constrain current work.
@@ -39,6 +38,13 @@ technical spike is inactive and does not constrain current work.
   active questions, risks, assumptions, dependencies, evidence gaps,
   architecture requirements, work items, and issues. Context documents use its
   stable identifiers rather than maintaining parallel registers.
+- Seventeen proposed overarching project principles now provide one numbered
+  catalogue for value, BIAN integrity, authority, evidence, security, synthetic
+  validation, open source, bank adoption, interoperability, portability,
+  generation, change, simplicity, and architecture governance.
+- Twenty proposed cross-cutting requirements provide the initial bridge from
+  product outcomes and principles to Business, Data, Application, Technology,
+  security, operational, and future solution requirements.
 - Horizon Synthetic Bank will provide repeatable fictional scenarios and
   synthetic information.
 - The project is intended to be independently open source.
@@ -67,6 +73,9 @@ individual platform capabilities are not assumed to be differentiated.
 
 Stage 2 is ready to close only when:
 
+- the overarching project principles have been reviewed and accepted or revised;
+- the cross-cutting requirements baseline has been reviewed, its records have
+  explicit outcomes, and its traceability model is accepted;
 - the Architecture Vision is reviewed and accepted;
 - the Business Architecture is reviewed and its leading user, decision, value
   stream, capability, operating-model, and measure hypotheses are accepted or

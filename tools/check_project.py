@@ -27,6 +27,7 @@ REQUIRED_FILES = (
     "architecture/README.md",
     "architecture/ARCHITECTURE_VISION.md",
     "architecture/BUSINESS_ARCHITECTURE.md",
+    "architecture/REQUIREMENTS_AND_TRACEABILITY.md",
     "governance/PROJECT_STATUS.md",
     "governance/ARCHITECTURE_REGISTER.md",
     "governance/PROJECT_CONTEXT.md",
@@ -72,6 +73,19 @@ REQUIRED_CONTENT = {
         "Initial HSB business scenario",
         "Failure and stop signals",
     ),
+    "architecture/REQUIREMENTS_AND_TRACEABILITY.md": (
+        "sole authoritative record",
+        "REQ-001",
+        "REQ-020",
+        "Requirement quality tests",
+        "Lifecycle and change control",
+    ),
+    "product/PROJECT_PRINCIPLES.md": (
+        "authoritative catalogue",
+        "PRN-001",
+        "PRN-017",
+        "Governing decision rule",
+    ),
     "product/VALUE_AND_VALIDATION.md": (
         "Continue product discovery and conceptual architecture",
         "Primary value hypothesis",
@@ -89,15 +103,18 @@ REQUIRED_CONTENT = {
         "single canonical control record",
         "## Decisions",
         "DEC-015",
+        "DEC-016",
         "## Open questions",
         "## Risks",
         "## Assumptions",
         "## Dependencies",
         "## Evidence gaps",
         "## Requirements",
+        "REQ-020",
         "BAR-014",
         "## Work items",
         "WRK-014",
+        "WRK-018",
         "## Issues",
     ),
     "governance/DECISION_LOG.md": (
@@ -113,11 +130,15 @@ FORBIDDEN_PHRASES = (
     "BIAN Adoption & " + "Transformation Platform",
 )
 MARKDOWN_LINK = re.compile(r"!?\[[^\]]*\]\(([^)]+)\)")
-GOVERNED_ID = re.compile(r"\b(?:DEC|OQ|RSK|ASM|DEP|EVD|BAR|WRK|ISS)-\d{3}\b")
+GOVERNED_ID = re.compile(
+    r"\b(?:DEC|OQ|RSK|ASM|DEP|EVD|REQ|BAR|WRK|ISS)-\d{3}\b"
+)
 REGISTER_ROW = re.compile(
-    r"^\| ((?:DEC|OQ|RSK|ASM|DEP|EVD|BAR|WRK|ISS)-\d{3}) \|",
+    r"^\| ((?:DEC|OQ|RSK|ASM|DEP|EVD|REQ|BAR|WRK|ISS)-\d{3}) \|",
     re.MULTILINE,
 )
+PRINCIPLE_ID = re.compile(r"\bPRN-\d{3}\b")
+PRINCIPLE_HEADING = re.compile(r"^## (PRN-\d{3}):", re.MULTILINE)
 EM_DASH = chr(0x2014)
 
 
@@ -244,6 +265,34 @@ def check_architecture_register(files: list[Path], errors: list[str]) -> None:
             )
 
 
+def check_project_principles(files: list[Path], errors: list[str]) -> None:
+    principles_path = ROOT / "product/PROJECT_PRINCIPLES.md"
+    if not principles_path.is_file():
+        return
+
+    principles_text = principles_path.read_text(encoding="utf-8")
+    definitions = PRINCIPLE_HEADING.findall(principles_text)
+    defined_ids = set(definitions)
+
+    for identifier in sorted(defined_ids):
+        if definitions.count(identifier) > 1:
+            errors.append(
+                "product/PROJECT_PRINCIPLES.md: "
+                f"duplicate principle definition: {identifier}"
+            )
+
+    for path in files:
+        if path.suffix.lower() != ".md" or path == principles_path:
+            continue
+        text = path.read_text(encoding="utf-8")
+        for identifier in sorted(set(PRINCIPLE_ID.findall(text))):
+            if identifier not in defined_ids:
+                errors.append(
+                    f"{path.relative_to(ROOT)}: undefined project principle "
+                    f"reference: {identifier}"
+                )
+
+
 def main() -> int:
     errors: list[str] = []
     check_required_files(errors)
@@ -252,6 +301,7 @@ def main() -> int:
 
     files = active_text_files()
     check_architecture_register(files, errors)
+    check_project_principles(files, errors)
     for path in files:
         text = check_text(path, errors)
         if text is not None and path.suffix.lower() == ".md":

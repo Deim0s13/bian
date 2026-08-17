@@ -1,11 +1,16 @@
-# Architecture and engineering principles
+# Architecture and engineering application guidance
 
 ## Status
 
-This document establishes the method and quality direction for architecture.
+The authoritative overarching principles are maintained in the
+[project principles catalogue](../product/PROJECT_PRINCIPLES.md). This document
+applies `PRN-002`, `PRN-004`, `PRN-006`, `PRN-007`, `PRN-010`, `PRN-013`,
+`PRN-016`, and `PRN-017` to architecture method and future engineering. It does
+not create a second principle catalogue.
+
 The active conceptual direction is in the
 [Architecture Vision](../architecture/ARCHITECTURE_VISION.md). This principles
-document is not a solution architecture and does not approve an implementation
+guidance is not a solution architecture and does not approve an implementation
 style or technology stack.
 
 ## How TOGAF and BIAN will work together

@@ -10,7 +10,7 @@ product definition.
 | `ARCHITECTURE_REGISTER.md` | Canonical decisions, questions, risks, assumptions, dependencies, evidence gaps, requirements, work items, and issues |
 | `PROJECT_CONTEXT.md` | Audience, enterprise framing, and stakeholder lenses |
 | `WRITING_STYLE.md` | Documentation and communication conventions |
-| `ARCHITECTURE_AND_ENGINEERING_PRINCIPLES.md` | TOGAF, BIAN, and cloud-native direction |
+| `ARCHITECTURE_AND_ENGINEERING_PRINCIPLES.md` | Application guidance for TOGAF, BIAN, and cloud-native direction |
 | `QUALITY_AND_REVIEW.md` | Review, testing, simplicity, and quality expectations |
 | `DECISION_LOG.md` | Compatibility pointer to the Architecture Register |
 | `OPEN_QUESTIONS.md` | Compatibility pointer to the Architecture Register |
@@ -23,3 +23,9 @@ the only place where a project rule or decision is recorded.
 Governed records have one authoritative home in `ARCHITECTURE_REGISTER.md`.
 Other documents provide context and reference stable identifiers without
 duplicating lifecycle status, ownership, or resolution.
+
+The authoritative overarching principle catalogue is
+[`product/PROJECT_PRINCIPLES.md`](../product/PROJECT_PRINCIPLES.md). The
+requirements-management view is
+[`architecture/REQUIREMENTS_AND_TRACEABILITY.md`](../architecture/REQUIREMENTS_AND_TRACEABILITY.md),
+while requirement records remain in the Architecture Register.
