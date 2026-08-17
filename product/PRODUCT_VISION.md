@@ -282,11 +282,12 @@ separate extensions and must never be presented as BIAN definitions.
 
 ## Questions carried into architecture
 
-The full vision is intentionally broad. Active product and architecture
-questions are maintained only in the
+The full vision is intentionally broad. Question history and remaining active
+product and architecture questions are maintained only in the
 [Architecture Register](../governance/ARCHITECTURE_REGISTER.md#open-questions),
-principally `OQ-001` through `OQ-017`. The evidence still needed to answer them
-is recorded as `EVD-001` through `EVD-007` in the same register.
+principally `OQ-001` through `OQ-017`. Accepted working answers do not remove
+the related evidence limitations. Evidence gaps are recorded as `EVD-001`
+through `EVD-007` in the same register.
 
 Conceptual architecture and continuing product discovery must address those
 records through authoritative sources, public evidence, HSB scenarios, and

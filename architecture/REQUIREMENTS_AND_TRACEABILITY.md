@@ -2,7 +2,7 @@
 
 ## Document status
 
-**Status:** Proposed baseline for project-owner review
+**Status:** Accepted working baseline under `DEC-017`
 
 **Scope:** Cross-cutting project and architecture requirements
 
@@ -135,10 +135,13 @@ Requirement status is governed by the Architecture Register vocabulary:
 - Material requirement changes trigger review of related principles, decisions,
   architecture views, risks, work items, tests, evidence, and downstream assets.
 
-## Review outcome required
+## Review outcome
 
-Project-owner review should determine for each `PRN` and `REQ` record whether it
-is accepted, revised, deferred, rejected, or requires further analysis. Once
-that review is recorded through `WRK-016` and `WRK-018`, the project can address
-the minimum Business Architecture questions without relying on unstated
-constraints.
+The project owner accepted `PRN-001` through `PRN-017` and `REQ-001` through
+`REQ-020` as evolving working baselines under `DEC-017`. Acceptance confirms
+that they govern subsequent architecture work. It does not prove that the
+future product satisfies them or authorise implementation.
+
+Material changes must retain their previous outcome, record the supporting
+decision and evidence, and review affected Business, Data, Application,
+Technology, security, operational, and solution requirements.

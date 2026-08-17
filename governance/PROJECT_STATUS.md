@@ -8,10 +8,12 @@
 
 ## Current focus
 
-Review the proposed overarching project principles and cross-cutting
-requirements baseline. Record explicit acceptance, revision, deferral, or
-rejection through `WRK-016` and `WRK-018` before returning to the minimum
-Business Architecture questions or beginning Information Systems Architecture.
+The project principles, cross-cutting requirements, and minimum Business
+Architecture decision baseline are accepted as evolving foundations. The next
+architecture task may begin Information Systems Architecture with the
+conceptual Data Architecture, provenance model, and system context. Remaining
+Business Architecture refinements and open evidence questions continue through
+the Architecture Register rather than blocking all progress.
 
 No software implementation or solution architecture is approved. The archived
 technical spike is inactive and does not constrain current work.
@@ -31,18 +33,26 @@ technical spike is inactive and does not constrain current work.
   must be demonstrated before implementation scope is approved.
 - The Architecture Vision covers the full platform. A bounded HSB payments
   assessment is an initial validation scenario rather than the product centre.
-- The initial Business Architecture defines six connected value streams, seven
+- The accepted Business Architecture defines six connected value streams, seven
   project-defined platform capabilities, business services, decision rights,
-  candidate requirements, measures, and a bounded HSB decision scenario.
+  measures, accepted `BAR-001` through `BAR-014`, and a bounded HSB decision
+  scenario.
+- The first working proposition helps an enterprise or payments domain architect
+  decide the target allocation and transition of one contested banking
+  responsibility. HSB customer-payment initiation is the initial synthetic
+  scope, subject to exact BIAN R14 source qualification.
+- Existing enterprise systems remain authoritative for their source records.
+  The platform is authoritative only for its governed mappings, review,
+  traceability, connected decisions, workflow, and audit records.
 - The Architecture Register is the single canonical record for decisions,
   active questions, risks, assumptions, dependencies, evidence gaps,
   architecture requirements, work items, and issues. Context documents use its
   stable identifiers rather than maintaining parallel registers.
-- Seventeen proposed overarching project principles now provide one numbered
+- Seventeen accepted overarching project principles provide one numbered
   catalogue for value, BIAN integrity, authority, evidence, security, synthetic
   validation, open source, bank adoption, interoperability, portability,
   generation, change, simplicity, and architecture governance.
-- Twenty proposed cross-cutting requirements provide the initial bridge from
+- Twenty accepted cross-cutting requirements provide the initial bridge from
   product outcomes and principles to Business, Data, Application, Technology,
   security, operational, and future solution requirements.
 - Horizon Synthetic Bank will provide repeatable fictional scenarios and

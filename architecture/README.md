@@ -8,6 +8,11 @@ Engineering Platform.
 The project is developing its conceptual architecture. No solution architecture,
 technology stack, deployment topology, or implementation is approved.
 
+The next planned work begins Information Systems Architecture with the
+conceptual Data Architecture, provenance model, and system context. Application
+Architecture follows from those information and authority boundaries rather
+than starting with components or products.
+
 ## Architecture work products
 
 1. [Architecture Vision](ARCHITECTURE_VISION.md)

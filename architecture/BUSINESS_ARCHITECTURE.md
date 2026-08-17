@@ -36,11 +36,13 @@ Authoritative BIAN context
         -> ownership and change response
 ```
 
-The leading user hypothesis is a BIAN lead, enterprise architect, banking domain
-architect, or architecture enablement team. The leading sponsor hypothesis is a
-Head of Enterprise Architecture or a funded transformation programme. Both
-remain unvalidated outside public evidence, HSB scenarios, and future qualified
-review.
+The accepted working architecture uses an enterprise or payments domain
+architect as the primary user, a Chief Architect or Head of Enterprise
+Architecture as sponsor, and a payments transformation sponsor as the funding
+and sequencing role. Architecture enablement or BIAN stewardship represents the
+operational owner. These roles are sufficient for HSB and conceptual
+architecture; real-world buyer demand and operating fit remain unvalidated
+under `EVD-001`.
 
 ## 2. Purpose and questions
 
@@ -381,7 +383,121 @@ Information Architecture.
 All information groups require identity, provenance, version, responsible owner,
 time, review state, sensitivity, and limitations appropriate to their authority.
 
-## 13. Initial Business Architecture requirements
+## 13. Accepted working proposition and decision boundary
+
+`DEC-018` establishes the following as the working Business Architecture
+baseline. It may evolve through evidence and governed review. It does not
+validate real-bank demand, qualify exact BIAN R14 relationships, or authorise
+implementation.
+
+### Bounded proposition
+
+> Help an architect decide where one contested banking responsibility should sit
+> in the target architecture, using qualified BIAN context and reviewed
+> bank-estate evidence, with uncertainty, ownership, and transition consequences
+> made explicit.
+
+The initial HSB scenario concerns customer-payment initiation. That phrase
+describes project and HSB scope until authorised BIAN R14 sources establish the
+exact BIAN Service Domains, Business Capabilities, Business Scenarios, and
+relationships that apply.
+
+The first outcome is a reviewed responsibility-allocation and transition
+decision. It is not a generic BIAN adoption report, automatic target
+architecture, bank-wide estate inventory, service-generation demonstration, or
+claim that the full platform should be built.
+
+### Roles and decision rights
+
+| Role | Working accountability |
+|---|---|
+| Primary user | An HSB payments domain architect, or an enterprise architect exercising delegated payments-domain authority, develops the assessment and options. |
+| Sponsor | The HSB Chief Architect or Head of Enterprise Architecture owns the architecture outcome and continued use of the model. |
+| Funding role | An HSB payments transformation sponsor represents programme funding and sequencing. A real-world economic buyer remains unvalidated under `EVD-001`. |
+| Operational owner | An architecture enablement or BIAN stewardship function operates the workflow and source context without assuming asset-owner accountability. |
+| Application and API owners | Approve or challenge factual assertions about their assets, interfaces, lifecycle, ownership, and implementation responsibilities. |
+| Architecture authority | Approves mappings as bank or HSB architecture interpretations and decides the target responsibility allocation within delegated authority. |
+| Architecture Review Board or Chief Architect | Approves material target and transition decisions that exceed delegated domain authority. |
+| Security and control owners | Approve only their scoped requirements, control conclusions, evidence judgements, and exceptions. |
+| Engineering owners | Remain accountable for any later implementation; generated output does not transfer ownership or authorise delivery. |
+
+Automation may propose mappings, findings, options, and impacts. It cannot
+approve an asset assertion, material mapping, architecture decision, exception,
+risk acceptance, or attestation.
+
+### Named decision and change in process
+
+The named decision is:
+
+> Which HSB assets should own, support, or relinquish the bounded
+> customer-payment initiation responsibility in the target state, and how should
+> the transition be sequenced?
+
+| Concern | Baseline process | Proposed platform-enabled process |
+|---|---|---|
+| Context | Reconstruct BIAN, application, API, ownership, and dependency context from separate sources for each review. | Reuse a versioned, source-qualified context while preserving every source boundary. |
+| Mapping | Record unstructured or implicit interpretations in diagrams and working files. | Propose, explain, review, dispute, accept, and supersede mappings with evidence and uncertainty. |
+| Options | Develop target options with inconsistent connection to current assets and owners. | Compare at least two options, including justified no change, against reviewed mappings, dependencies, risks, and constraints. |
+| Decision | Approve a design whose assumptions and evidence may be difficult to reconstruct. | Record the selected allocation, rationale, authority, rejected options, limitations, affected owners, and transition actions. |
+| Change | Reconstruct impact manually when BIAN or the estate changes. | Identify potentially affected mappings, decisions, assets, owners, controls, and evidence for accountable review. |
+
+The scenario tests whether this connected thread improves the effort,
+reproducibility, and completeness of the decision. It cannot prove that the
+selected architecture is universally correct.
+
+### Minimum information boundary
+
+The bounded scenario requires only:
+
+- the decision question, in-scope customer-payment context, constraints,
+  criteria, sponsor, and approving authority;
+- stable identity, type, lifecycle, and accountable owner for relevant HSB
+  applications, APIs, and integrations;
+- evidence describing current responsibilities, providers, consumers,
+  interactions, and dependencies material to the decision;
+- source, capture time, version, steward, quality, uncertainty, and limitations
+  for each material assertion;
+- candidate mappings with rationale, evidence, confidence, conflicts, and review
+  state; and
+- target options, risks, decisions, affected owners, and transition actions.
+
+It does not require a complete bank-wide CMDB, production transactions,
+personal information, full source-code analysis, the complete API estate, a
+complete technology topology, or a full regulatory control library.
+
+### Systems of record and platform authority
+
+| Information | Authoritative home | Platform responsibility |
+|---|---|---|
+| BIAN definitions and relationships | Authorised, release-qualified BIAN source | Preserve a qualified, versioned import or projection with provenance; never redefine BIAN meaning. |
+| Application identity, ownership, and lifecycle | Bank APM, CMDB, catalogue, or the equivalent HSB estate source | Retain imported assertions, source identity, version, quality, and reconciliation state. |
+| API and event contracts | Engineering source repository, API-management system, or equivalent HSB source | Analyse and relate the contract without becoming its delivery system of record. |
+| Architecture decisions and target-state approval | Bank architecture decision repository and delegated governance authority | Connect the decision to evidence, mappings, options, owners, and impacts; export it where another repository is authoritative. |
+| Bank-to-BIAN mapping | Accountable bank or HSB mapping review governed through the platform | Maintain the reviewed mapping, rationale, uncertainty, review history, and relationship to exact BIAN sources. It remains a bank or HSB assertion, not BIAN truth. |
+| Controls and assurance evidence | Bank GRC, control, evidence, or assurance system | Maintain scoped links, assessment context, findings, gaps, and provenance without replacing the external authority. |
+| Generated engineering artefacts | Engineering source repository after adoption | Maintain generation lineage, input versions, compatibility, and impact relationships. |
+| Platform workflow and audit history | BIAN Adoption & Engineering Platform | Be authoritative only for its own proposals, reviews, approvals, workflow events, and audit record. |
+
+Imported changes create versioned, reviewable deltas. They do not silently
+overwrite reviewed mappings or decisions. Attribute-level source precedence,
+identity matching, freshness expectations, conflicts, reconciliation ownership,
+and re-review triggers will be refined by Data and Application Architecture.
+
+### Measures and stewardship constraint
+
+Decision-value measures focus on elapsed and active decision effort,
+reproducibility, material unresolved conflicts, ownership coverage, review
+effort, and impact-identification completeness. Record or feature counts are not
+evidence of value by themselves.
+
+The primary architect must receive useful value before broad organisational
+participation is required. Asset owners review only assertions and actions
+within their accountability. HSB will measure initial reconciliation,
+subsequent maintenance, ageing, review backlog, and escalation effort.
+Sustainable real-bank stewardship remains in analysis under `OQ-016`,
+`ASM-007`, and `EVD-004`.
+
+## 14. Initial Business Architecture requirements
 
 Candidate requirements `BAR-001` through `BAR-014`, including their rationale,
 owner, status, source, and acceptance evidence, are maintained only in the
@@ -395,9 +511,9 @@ accessibility, and customer data portability. This document explains the
 Business Architecture context from which those requirements arose; it does not
 maintain a second requirements register.
 
-## 14. Initial HSB business scenario
+## 15. Initial HSB business scenario
 
-### Scenario: decide how to rationalise a bounded payments responsibility
+### Scenario: allocate a bounded customer-payment initiation responsibility
 
 The exact BIAN Service Domains, Business Capabilities, Business Scenarios, and
 relationships used in this scenario must be confirmed from authorised R14
@@ -405,8 +521,8 @@ sources before they are represented as BIAN. Until then, the scenario describes
 project and HSB intent only.
 
 **Trigger:** HSB has overlapping payment-related applications and APIs and needs
-to decide how one bounded responsibility should be allocated in its target
-architecture.
+to decide how the bounded customer-payment initiation responsibility should be
+allocated in its target architecture.
 
 **Primary actor:** HSB enterprise or payments domain architect.
 
@@ -464,7 +580,7 @@ evidence to explain why the selected allocation and transition were preferred.
 - the scenario requires several teams to operate the platform before the primary
   user receives useful value.
 
-## 15. Operating-model hypothesis
+## 16. Operating-model hypothesis
 
 The platform is expected to use a federated stewardship model (`ASM-007`):
 
@@ -483,7 +599,7 @@ unclear, or contributors receive no local value for maintaining information. The
 HSB scenario must measure maintenance effort and incentive, not only initial
 workflow completion.
 
-## 16. Business measures and value evidence
+## 17. Business measures and value evidence
 
 Measures are hypotheses until a baseline and observation method exist.
 
@@ -498,23 +614,29 @@ Measures are hypotheses until a baseline and observation method exist.
 | Stewardship sustainability | Effort, ageing, unresolved ownership, and review backlog for maintained information | More records are not inherently more valuable |
 | External desirability | Independent usage, qualified feedback, contribution, or sponsorship behaviour | HSB cannot satisfy this measure |
 
-## 17. Gaps and open decisions
+## 18. Gaps and open decisions
 
 Active questions are maintained only in the
 [Architecture Register](../governance/ARCHITECTURE_REGISTER.md#open-questions).
-The Business Architecture is principally shaped by:
+The accepted working answers to `OQ-001` through `OQ-003`, `OQ-012`, `OQ-013`,
+`OQ-015`, and `OQ-017` are expressed in section 13 and governed through
+`DEC-018`. `OQ-016` remains in analysis because synthetic evidence cannot prove
+a sustainable real-bank stewardship model.
 
-- proposition, user, sponsor, differentiation, validation, and stop questions
-  `OQ-001` through `OQ-007`;
+The remaining Business Architecture and investment position is principally
+shaped by:
+
+- differentiation, validation, build-authorisation, and stop questions `OQ-004`
+  through `OQ-007`;
 - BIAN source rights and independent review questions `OQ-008` through
   `OQ-011`; and
-- bank information, decision rights, integration, measures, stewardship, and
-  system ownership questions `OQ-012` through `OQ-017`.
+- integration boundary question `OQ-014` and sustainable stewardship question
+  `OQ-016`.
 
 Their wording, ownership, status, decisions required, and review dates are not
 repeated here.
 
-## 18. Next Business Architecture work
+## 19. Next Business Architecture work
 
 The Business Architecture work products are governed as `WRK-001` through
 `WRK-008` in the

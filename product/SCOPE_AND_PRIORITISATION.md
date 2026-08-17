@@ -18,7 +18,26 @@ Architecture components and technologies must contribute to a customer outcome.
 Their selection and packaging should follow the product capability and evidence
 needed, rather than becoming the definition of the platform.
 
-## Candidate first propositions
+## Selected working proposition
+
+Under `DEC-018`, conceptual architecture will use a bounded, BIAN-informed
+responsibility-allocation decision as its first working proposition:
+
+> Help an architect decide where one contested banking responsibility should sit
+> in the target architecture, using qualified BIAN context and reviewed
+> bank-estate evidence, with uncertainty, ownership, and transition consequences
+> made explicit.
+
+HSB customer-payment initiation provides the initial synthetic scope. Exact
+BIAN R14 concepts and relationships remain subject to authorised source
+qualification. The proposition combines the estate understanding of UC-07, a
+focused part of UC-08, and the decision outcome of UC-09. It does not make
+payments the product centre or authorise implementation.
+
+The selection is an evolving architecture baseline. External desirability,
+real-bank input feasibility, and sustainable stewardship remain unvalidated.
+
+## Candidate propositions considered
 
 ### A. BIAN adoption baseline for a bounded domain
 
@@ -96,9 +115,10 @@ differentiation.
 
 ## Current architecture validation recommendation
 
-Use a **connected, model-driven HSB journey** across the north-star structure,
-initially within a bounded payments scope. Payments is a practical synthetic
-scenario, not an assumed market choice or the definition of the platform.
+Use the selected responsibility-allocation proposition as the primary user
+outcome within a **connected, model-driven HSB journey** across the north-star
+structure. Payments is a practical synthetic scenario, not an assumed market
+choice or the definition of the platform.
 
 The journey should progressively demonstrate that one governed model thread can:
 

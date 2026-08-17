@@ -43,19 +43,22 @@ feature in this chain is assumed to be differentiated by itself.
 
 ## Intended first users and decision
 
-The leading user hypothesis is a BIAN lead, enterprise architect, banking domain
-architect, architecture enablement team, or suitably qualified adviser. The
-leading sponsor hypothesis is a Head of Enterprise Architecture or a funded
-transformation programme.
+The accepted working architecture hypothesis under `DEC-018` uses an enterprise
+or payments domain architect as the primary user. A Chief Architect or Head of
+Enterprise Architecture sponsors the architecture outcome, while a payments
+transformation sponsor represents funding and sequencing. Architecture
+enablement or BIAN stewardship represents the operational owner. Real-world
+buyer demand and operating fit remain unvalidated under `EVD-001`.
 
-The platform must improve a decision such as:
+The first named decision is:
 
-- where a banking responsibility is implemented and who owns it;
-- whether an application or API boundary is duplicated, mixed, or misplaced;
-- what a defensible target state and transition option should be;
-- what changes when a BIAN release or bank asset changes; or
-- whether a generated asset and its control evidence remain aligned with an
-  approved architecture decision.
+> Which HSB assets should own, support, or relinquish a bounded
+> customer-payment initiation responsibility in the target state, and how should
+> the transition be sequenced?
+
+This is project and HSB scope until exact BIAN R14 relationships are qualified
+from authorised sources. Other decisions in the fourteen-use-case vision remain
+valid later propositions rather than part of the first user outcome.
 
 CIO dashboards, developer self-service, and compliance reporting are downstream
 benefits. They should not be treated as the first source of adoption.
@@ -110,8 +113,10 @@ The initial HSB hypothesis is that an architect can:
    Control; and
 9. change a BIAN or HSB artefact and identify downstream impact.
 
-This is a validation thread, not a commitment to implement every capability at
-equal depth or to make payments the product centre.
+The first user outcome is reached at step 5 through a reviewed target and
+transition decision. Steps 6 through 9 test the connected value of that decision
+across later platform concerns; they are not permission to implement every
+capability at equal depth or make payments the product centre.
 
 ## Validation tests
 

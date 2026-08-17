@@ -3,9 +3,9 @@
 ## Status and authority
 
 This is the authoritative catalogue of overarching principles for the BIAN
-Adoption & Engineering Platform. The catalogue is proposed for project-owner
-review. It consolidates existing non-negotiable product constraints, accepted
-decisions, and architecture direction without authorising implementation.
+Adoption & Engineering Platform. The catalogue is an accepted working baseline
+under `DEC-017`. It may evolve through governed review, but it does not
+authorise implementation.
 
 These are project-defined principles. They are not presented as BIAN, TOGAF,
 CNCF, regulatory, Red Hat, or bank principles. Detailed policies and

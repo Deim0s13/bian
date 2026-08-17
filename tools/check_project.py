@@ -69,6 +69,7 @@ REQUIRED_CONTENT = {
         "Capability investment hypothesis",
         "Value-stream to capability cross-map",
         "Platform business services",
+        "Accepted working proposition and decision boundary",
         "Initial Business Architecture requirements",
         "Initial HSB business scenario",
         "Failure and stop signals",
@@ -104,6 +105,7 @@ REQUIRED_CONTENT = {
         "## Decisions",
         "DEC-015",
         "DEC-016",
+        "DEC-018",
         "## Open questions",
         "## Risks",
         "## Assumptions",
@@ -139,6 +141,18 @@ REGISTER_ROW = re.compile(
 )
 PRINCIPLE_ID = re.compile(r"\bPRN-\d{3}\b")
 PRINCIPLE_HEADING = re.compile(r"^## (PRN-\d{3}):", re.MULTILINE)
+REGISTER_PIPE_COUNTS = {
+    "DEC": 9,
+    "OQ": 8,
+    "RSK": 9,
+    "ASM": 8,
+    "DEP": 8,
+    "EVD": 8,
+    "REQ": 9,
+    "BAR": 8,
+    "WRK": 8,
+    "ISS": 8,
+}
 EM_DASH = chr(0x2014)
 
 
@@ -240,6 +254,20 @@ def check_architecture_register(files: list[Path], errors: list[str]) -> None:
             errors.append(
                 "governance/ARCHITECTURE_REGISTER.md: "
                 f"duplicate governed record definition: {identifier}"
+            )
+
+    for line_number, line in enumerate(register_text.splitlines(), start=1):
+        match = REGISTER_ROW.match(line)
+        if not match:
+            continue
+        prefix = match.group(1).split("-", maxsplit=1)[0]
+        expected = REGISTER_PIPE_COUNTS[prefix]
+        actual = line.count("|")
+        if actual != expected:
+            errors.append(
+                "governance/ARCHITECTURE_REGISTER.md:"
+                f"{line_number}: {match.group(1)} has {actual - 1} fields; "
+                f"expected {expected - 1}"
             )
 
     for path in files:

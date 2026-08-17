@@ -46,6 +46,9 @@ Registry, three product pillars, Platform Control, and Runtime Targets.
   [Architecture Register](../governance/ARCHITECTURE_REGISTER.md#requirements).
   Their derivation and use are explained in the
   [requirements and traceability view](../architecture/REQUIREMENTS_AND_TRACEABILITY.md).
+- The first working proposition is the bounded responsibility-allocation
+  decision accepted under `DEC-018` and described in the
+  [Business Architecture](../architecture/BUSINESS_ARCHITECTURE.md#13-accepted-working-proposition-and-decision-boundary).
 - The full platform structure is a north-star, not build authorisation. Each
   proposed increment must pass the applicable tests and preserve the stop
   conditions in
