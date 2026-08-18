@@ -13,11 +13,12 @@ These instructions apply to the entire repository unless a more specific
 - No third-party BIAN API portal or similar implementation is a baseline,
   competitor specification, constraint, or architecture input. Do not frame this
   project as a response to one or use one to justify scope.
-- The current stage is conceptual architecture. Develop outcomes, requirements,
-  viewpoints, information concepts, boundaries, risks, and operating concerns.
-  Do not start implementation, select solution technologies, or turn the
-  archived spike into an approved design unless the user explicitly changes the
-  stage or asks for a bounded experiment.
+- The current stage is Information Systems Architecture within conceptual
+  architecture. Develop Data Architecture before logical Application
+  Architecture, allowing both to iterate where necessary. Do not start
+  implementation, select solution technologies, define deployable services, or
+  turn the archived spike into an approved design unless the user explicitly
+  changes the stage or asks for a bounded experiment.
 - The full platform vision is not build authorisation. Use
   `product/VALUE_AND_VALIDATION.md` to test decision value, connected
   differentiation, input feasibility, trust, adoption fit, and sustainable
@@ -42,8 +43,10 @@ Before material work, read the parts of these files relevant to the request:
 9. `architecture/ARCHITECTURE_VISION.md`
 10. `architecture/BUSINESS_ARCHITECTURE.md`
 11. `architecture/REQUIREMENTS_AND_TRACEABILITY.md`
-12. `governance/ARCHITECTURE_AND_ENGINEERING_PRINCIPLES.md`
-13. `governance/QUALITY_AND_REVIEW.md`
+12. `architecture/INFORMATION_SYSTEMS_ARCHITECTURE.md`
+13. `architecture/DATA_ARCHITECTURE.md`
+14. `governance/ARCHITECTURE_AND_ENGINEERING_PRINCIPLES.md`
+15. `governance/QUALITY_AND_REVIEW.md`
 
 ## BIAN integrity
 

@@ -5,27 +5,27 @@ Engineering Platform.
 
 ## Current stage
 
-The project is developing its conceptual architecture. No solution architecture,
-technology stack, deployment topology, or implementation is approved.
+The project is developing Information Systems Architecture within its
+conceptual architecture stage. No solution architecture, technology stack,
+deployment topology, or implementation is approved.
 
-The next planned work begins Information Systems Architecture with the
-conceptual Data Architecture, provenance model, and system context. Application
-Architecture follows from those information and authority boundaries rather
-than starting with components or products.
+The current work begins with conceptual Data Architecture, provenance, and
+system context. Application Architecture follows from those information and
+authority boundaries rather than starting with components or products.
 
 ## Architecture work products
 
 1. [Architecture Vision](ARCHITECTURE_VISION.md)
 2. [Business Architecture](BUSINESS_ARCHITECTURE.md)
 3. [Requirements and traceability](REQUIREMENTS_AND_TRACEABILITY.md)
+4. [Information Systems Architecture](INFORMATION_SYSTEMS_ARCHITECTURE.md)
+5. [Conceptual Data Architecture](DATA_ARCHITECTURE.md)
 
 Future work products will be added only when they answer a named stakeholder
 concern or support a decision. Expected next views include:
 
-- system context and ecosystem view;
-- conceptual information and provenance view;
 - trust-boundary and security view;
-- conceptual component interaction view;
+- logical Application Architecture and interaction view;
 - Horizon Synthetic Bank scenario views;
 - domain and solution requirement refinements where the architecture requires
   them.

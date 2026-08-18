@@ -28,6 +28,8 @@ REQUIRED_FILES = (
     "architecture/ARCHITECTURE_VISION.md",
     "architecture/BUSINESS_ARCHITECTURE.md",
     "architecture/REQUIREMENTS_AND_TRACEABILITY.md",
+    "architecture/INFORMATION_SYSTEMS_ARCHITECTURE.md",
+    "architecture/DATA_ARCHITECTURE.md",
     "governance/PROJECT_STATUS.md",
     "governance/ARCHITECTURE_REGISTER.md",
     "governance/PROJECT_CONTEXT.md",
@@ -81,6 +83,19 @@ REQUIRED_CONTENT = {
         "Requirement quality tests",
         "Lifecycle and change control",
     ),
+    "architecture/INFORMATION_SYSTEMS_ARCHITECTURE.md": (
+        "Information Systems Architecture",
+        "Data and Application Architecture boundary",
+        "Stage review criteria",
+        "DAR-017",
+    ),
+    "architecture/DATA_ARCHITECTURE.md": (
+        "Conceptual Data Architecture",
+        "Relationship assertion",
+        "Authority and truth classification",
+        "Explicit non-decisions",
+        "DAR-017",
+    ),
     "product/PROJECT_PRINCIPLES.md": (
         "authoritative catalogue",
         "PRN-001",
@@ -106,6 +121,7 @@ REQUIRED_CONTENT = {
         "DEC-015",
         "DEC-016",
         "DEC-018",
+        "DEC-019",
         "## Open questions",
         "## Risks",
         "## Assumptions",
@@ -114,6 +130,9 @@ REQUIRED_CONTENT = {
         "## Requirements",
         "REQ-020",
         "BAR-014",
+        "DAR-017",
+        "OQ-038",
+        "RSK-023",
         "## Work items",
         "WRK-014",
         "WRK-018",
@@ -133,10 +152,10 @@ FORBIDDEN_PHRASES = (
 )
 MARKDOWN_LINK = re.compile(r"!?\[[^\]]*\]\(([^)]+)\)")
 GOVERNED_ID = re.compile(
-    r"\b(?:DEC|OQ|RSK|ASM|DEP|EVD|REQ|BAR|WRK|ISS)-\d{3}\b"
+    r"\b(?:DEC|OQ|RSK|ASM|DEP|EVD|REQ|BAR|DAR|WRK|ISS)-\d{3}\b"
 )
 REGISTER_ROW = re.compile(
-    r"^\| ((?:DEC|OQ|RSK|ASM|DEP|EVD|REQ|BAR|WRK|ISS)-\d{3}) \|",
+    r"^\| ((?:DEC|OQ|RSK|ASM|DEP|EVD|REQ|BAR|DAR|WRK|ISS)-\d{3}) \|",
     re.MULTILINE,
 )
 PRINCIPLE_ID = re.compile(r"\bPRN-\d{3}\b")
@@ -150,6 +169,7 @@ REGISTER_PIPE_COUNTS = {
     "EVD": 8,
     "REQ": 9,
     "BAR": 8,
+    "DAR": 8,
     "WRK": 8,
     "ISS": 8,
 }

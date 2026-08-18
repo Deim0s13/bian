@@ -49,6 +49,11 @@ Registry, three product pillars, Platform Control, and Runtime Targets.
 - The first working proposition is the bounded responsibility-allocation
   decision accepted under `DEC-018` and described in the
   [Business Architecture](../architecture/BUSINESS_ARCHITECTURE.md#13-accepted-working-proposition-and-decision-boundary).
+- Information Systems Architecture is governed by `DEC-019`. Its
+  [conceptual Data Architecture](../architecture/DATA_ARCHITECTURE.md) defines
+  subjects, assertions, relationship assertions, authority, provenance, time,
+  quality, system-of-record boundaries, and exchange needs before logical
+  Application Architecture is developed.
 - The full platform structure is a north-star, not build authorisation. Each
   proposed increment must pass the applicable tests and preserve the stop
   conditions in

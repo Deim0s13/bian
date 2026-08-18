@@ -6,9 +6,10 @@
 
 **Scope:** Cross-cutting project and architecture requirements
 
-**Excluded:** Resolution of the minimum Business Architecture questions,
-Information Systems Architecture, solution requirements, technology selection,
-and implementation specifications
+**Excluded:** Satisfaction evidence, Application Architecture, Technology
+Architecture, solution requirements, technology selection, and implementation
+specifications. Data Architecture requirements are linked from this view rather
+than duplicated here.
 
 ## Purpose
 
@@ -23,18 +24,18 @@ requirements catalogue.
 
 ## Requirements model
 
-The current baseline uses two requirement levels:
+The current baseline uses three requirement levels:
 
 | Identifier | Level | Purpose |
 |---|---|---|
 | `REQ` | Overarching project and architecture requirement | Governs enduring cross-cutting outcomes and constraints across architecture domains and lifecycle stages |
 | `BAR` | Business Architecture requirement | Expresses the business behaviour, governance, value, information, and operating-model needs derived from the Business Architecture |
+| `DAR` | Data Architecture requirement | Refines the information meaning, identity, authority, provenance, relationship, lifecycle, quality, exchange, and governance obligations needed by the platform |
 
-Future Data, Application, Technology, security, operational, and solution
-requirements will be introduced only when the relevant architecture work needs
-them. They must refine or trace to an accepted `REQ`, `BAR`, stakeholder concern,
-or approved scope change. They must not silently weaken an overarching
-requirement.
+Future Application, Technology, security, operational, and solution requirements
+will be introduced only when the relevant architecture work needs them. They
+must refine or trace to an accepted `REQ`, `BAR`, `DAR`, stakeholder concern, or
+approved scope change. They must not silently weaken an overarching requirement.
 
 Principles guide judgement; requirements state something that must be satisfied
 or evaluated. A principle is not treated as implemented merely because a
@@ -61,7 +62,7 @@ and what is affected when it changes.
 
 ## Baseline coverage
 
-The proposed `REQ-001` through `REQ-020` baseline covers:
+The accepted `REQ-001` through `REQ-020` baseline covers:
 
 | Concern | Requirement references |
 |---|---|
@@ -100,6 +101,24 @@ baseline as follows:
 The absence of a direct `BAR` refinement does not make an overarching
 requirement optional. Some concerns will be refined primarily through later
 Data, Application, Technology, security, or operational architecture work.
+
+## Initial relationship to Data Architecture requirements
+
+The proposed `DAR-001` through `DAR-017` requirements are maintained only in the
+[Architecture Register](../governance/ARCHITECTURE_REGISTER.md#data-architecture-requirements).
+They refine the accepted baseline in these principal groups:
+
+| Data Architecture concern | Principal requirement relationships |
+|---|---|
+| Identity, namespaces, source identity, and version | `DAR-001`, `DAR-002`, `DAR-006`; refining `REQ-004`, `REQ-005`, `BAR-002`, and `BAR-005` |
+| Authority, assertions, relationships, mappings, and review | `DAR-003`, `DAR-007`, `DAR-008`, `DAR-012`; refining `REQ-002`, `REQ-003`, `REQ-007`, `BAR-003`, `BAR-004`, and `BAR-007` |
+| Provenance, immutable capture, evidence, and reproducibility | `DAR-004`, `DAR-005`, `DAR-013`, `DAR-017`; refining `REQ-006`, `REQ-008`, `REQ-017`, and `BAR-008` through `BAR-010` |
+| Quality, uncertainty, systems of record, and reconciliation | `DAR-009` through `DAR-011`; refining `REQ-003`, `REQ-013`, `BAR-005`, and `BAR-014` |
+| Information protection, extension, portability, and exit | `DAR-014` through `DAR-016`; refining `REQ-009`, `REQ-014`, `REQ-016`, `BAR-011`, and `BAR-012` |
+
+The `DAR` records remain proposed until their architecture review. Their
+presence guides analysis but does not authorise implementation or prove that a
+future product satisfies them.
 
 ## Requirement quality tests
 

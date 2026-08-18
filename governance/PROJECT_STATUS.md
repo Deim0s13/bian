@@ -4,16 +4,19 @@
 
 **Lifecycle state:** Concept
 
-**Current stage:** Conceptual architecture
+**Current stage:** Information Systems Architecture
 
 ## Current focus
 
-The project principles, cross-cutting requirements, and minimum Business
-Architecture decision baseline are accepted as evolving foundations. The next
-architecture task may begin Information Systems Architecture with the
-conceptual Data Architecture, provenance model, and system context. Remaining
-Business Architecture refinements and open evidence questions continue through
-the Architecture Register rather than blocking all progress.
+The required Business Architecture baseline is accepted as sufficient to begin
+Information Systems Architecture under `DEC-019`. The current focus is review
+of the initial Information Systems Architecture scope and conceptual Data
+Architecture, including identity, assertions, relationships, provenance, time,
+authority, quality, systems of record, reconciliation, information lifecycle,
+and exchange. Logical Application Architecture follows this information
+baseline. Remaining Business Architecture refinements and open evidence
+questions continue through the Architecture Register rather than blocking all
+progress.
 
 No software implementation or solution architecture is approved. The archived
 technical spike is inactive and does not constrain current work.
@@ -37,6 +40,15 @@ technical spike is inactive and does not constrain current work.
   project-defined platform capabilities, business services, decision rights,
   measures, accepted `BAR-001` through `BAR-014`, and a bounded HSB decision
   scenario.
+- `DEC-019` establishes Information Systems Architecture as the current stage
+  and sequences conceptual Data Architecture before logical Application
+  Architecture without selecting physical storage, products, protocols,
+  deployment topology, or implementation frameworks.
+- The initial conceptual Data Architecture separates subjects from assertions,
+  treats relationships as attributable and versioned assertions, and makes
+  authority, provenance, temporal context, quality, conflict, review, evidence,
+  protection, and portability explicit. Its `DAR-001` through `DAR-017`
+  requirements remain proposed pending review.
 - The first working proposition helps an enterprise or payments domain architect
   decide the target allocation and transition of one contested banking
   responsibility. HSB customer-payment initiation is the initial synthetic
@@ -91,8 +103,8 @@ Stage 2 is ready to close only when:
   stream, capability, operating-model, and measure hypotheses are accepted or
   explicitly carried as open questions;
 - architecture requirements and stakeholder concerns are traceable;
-- conceptual capability, information, context, trust, scenario, and operating
-  model views are coherent;
+- conceptual capability, Data Architecture, Application Architecture, context,
+  trust, scenario, and operating-model views are coherent;
 - the first HSB scenario has defined inputs, expected decisions, and evidence;
 - the first proposition has passed the applicable decision-value,
   connected-differentiation, input-feasibility, trust, adoption-fit, and

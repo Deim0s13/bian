@@ -27,7 +27,8 @@ should not constrain the product vision.
   defines the requirements-management model while the Architecture Register
   retains authoritative requirement records and status.
 - [Architecture repository](architecture/README.md) contains the active
-  Architecture Vision and future conceptual views.
+  Architecture Vision, Business Architecture, Information Systems Architecture,
+  and conceptual Data Architecture views.
 - [Governance and working context](governance/README.md) holds shared audience,
   writing, architecture, quality, and governance context.
 - [Contributing](CONTRIBUTING.md) defines the current contribution scope.
@@ -84,7 +85,7 @@ Read these in order:
 10. [End-to-end journeys](product/END_TO_END_JOURNEYS.md)
 11. [Outline traceability](product/TRACEABILITY.md)
 12. [Scope and prioritisation](product/SCOPE_AND_PRIORITISATION.md)
-12. [Discovery questions](product/DISCOVERY_QUESTIONS.md)
+13. [Discovery questions](product/DISCOVERY_QUESTIONS.md)
 
 ## Stage gates
 
@@ -104,9 +105,12 @@ direction. The initial
 [Business Architecture](architecture/BUSINESS_ARCHITECTURE.md) defines the
 value streams, platform capabilities, business services, roles, decision rights,
 operating-model hypothesis, and HSB decision scenario. This stage will continue
-with requirements, information domains, system boundaries, conceptual
-components, trust boundaries, and capability interactions without prematurely
-selecting detailed technology.
+through the
+[Information Systems Architecture](architecture/INFORMATION_SYSTEMS_ARCHITECTURE.md),
+beginning with the
+[conceptual Data Architecture](architecture/DATA_ARCHITECTURE.md), then logical
+Application Architecture, trust boundaries, scenario views, and capability
+interactions without prematurely selecting detailed technology.
 
 ### Stage 3: Solution architecture and experiments
 
