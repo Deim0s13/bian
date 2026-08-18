@@ -30,10 +30,16 @@ REQUIRED_FILES = (
     "architecture/REQUIREMENTS_AND_TRACEABILITY.md",
     "architecture/INFORMATION_SYSTEMS_ARCHITECTURE.md",
     "architecture/DATA_ARCHITECTURE.md",
+    "architecture/PHASE_C_MODEL_VALIDATION.md",
+    "architecture/PHASE_C_TRACEABILITY.md",
+    "architecture/ADM_TAILORING.md",
+    "architecture/TRUST_BOUNDARY_AND_SECURITY_ARCHITECTURE.md",
+    "architecture/ARCHITECTURE_LIFECYCLE.md",
     "governance/PROJECT_STATUS.md",
     "governance/ARCHITECTURE_REGISTER.md",
     "governance/PROJECT_CONTEXT.md",
     "governance/WRITING_STYLE.md",
+    "governance/GLOSSARY.md",
     "governance/ARCHITECTURE_AND_ENGINEERING_PRINCIPLES.md",
     "governance/QUALITY_AND_REVIEW.md",
     "governance/DECISION_LOG.md",
@@ -43,6 +49,9 @@ REQUIRED_FILES = (
     "product/VALUE_AND_VALIDATION.md",
 )
 REQUIRED_CONTENT = {
+    "AGENTS.md": (
+        "Keep governance proportionate to the decisions and evidence it improves",
+    ),
     "README.md": ("BIAN Adoption & Engineering Platform", "BIAN Model Registry"),
     "product/PRODUCT_VISION.md": (
         "BIAN Adoption & Engineering Platform",
@@ -81,13 +90,14 @@ REQUIRED_CONTENT = {
         "REQ-001",
         "REQ-020",
         "Requirement quality tests",
+        "Initial relationship to trust and security architecture",
         "Lifecycle and change control",
     ),
     "architecture/INFORMATION_SYSTEMS_ARCHITECTURE.md": (
         "Information Systems Architecture",
         "Data and Application Architecture boundary",
         "Stage review criteria",
-        "DAR-017",
+        "DAR-028",
     ),
     "architecture/DATA_ARCHITECTURE.md": (
         "Conceptual Data Architecture",
@@ -95,6 +105,56 @@ REQUIRED_CONTENT = {
         "Authority and truth classification",
         "Explicit non-decisions",
         "DAR-017",
+        "DAR-028",
+        "View definition",
+        "View materialisation",
+    ),
+    "architecture/PHASE_C_MODEL_VALIDATION.md": (
+        "Phase C model validation",
+        "Entity and record type catalogue exercised",
+        "SUBJ-PRJ-BIAN-SCOPE-001",
+        "VIEWDEF-HSB-001",
+        "EVD-011",
+    ),
+    "architecture/PHASE_C_TRACEABILITY.md": (
+        "Phase C gap and traceability analysis",
+        "Phase C baseline-to-target gap analysis",
+        "Information domain to platform capability matrix",
+        "Information domain by role and authority matrix",
+        "First-proposition depth",
+    ),
+    "architecture/ADM_TAILORING.md": (
+        "ADM tailoring statement",
+        "Work products produced",
+        "Deliberately consolidated work products",
+        "Deliberately deferred or omitted work products",
+        "DEC-025",
+    ),
+    "architecture/TRUST_BOUNDARY_AND_SECURITY_ARCHITECTURE.md": (
+        "Trust-boundary and security architecture",
+        "Protected information and assets",
+        "Logical trust zones",
+        "Lifecycle boundaries outside the runtime zone model",
+        "Trust-boundary catalogue",
+        "Identity, access and decision authority",
+        "Privacy position",
+        "Threat and abuse-case analysis",
+        "TB-11",
+        "THR-15",
+        "Unclassified",
+        "HSB negative security scenarios",
+        "Explicit non-decisions",
+        "EVD-012",
+    ),
+    "architecture/ARCHITECTURE_LIFECYCLE.md": (
+        "Architecture lifecycle and ADM tailoring",
+        "Phase D: Technology Architecture plan",
+        "Phase E: Opportunities and Solutions plan",
+        "Phase F: Migration Planning plan",
+        "Phase G: Implementation Governance plan",
+        "Phase H: Architecture Change Management plan",
+        "Iteration and improvement model",
+        "GAT-016",
     ),
     "product/PROJECT_PRINCIPLES.md": (
         "authoritative catalogue",
@@ -115,6 +175,22 @@ REQUIRED_CONTENT = {
         "not to authorise a full platform build",
         "Connected decision value",
     ),
+    "governance/GLOSSARY.md": (
+        "authoritative glossary",
+        "Accountable owner",
+        "ADM cycle",
+        "Architecture baseline",
+        "Delivery horizon",
+        "Material",
+        "Solution Architecture",
+        "Supported export",
+        "Subject",
+        "Technology Architecture",
+        "Transition architecture",
+        "Truth class",
+        "View Definition",
+        "View materialisation",
+    ),
     "governance/ARCHITECTURE_REGISTER.md": (
         "single canonical control record",
         "## Decisions",
@@ -122,6 +198,18 @@ REQUIRED_CONTENT = {
         "DEC-016",
         "DEC-018",
         "DEC-019",
+        "DEC-020",
+        "DEC-021",
+        "DEC-022",
+        "DEC-023",
+        "DEC-024",
+        "DEC-025",
+        "GAT-001",
+        "GAT-011",
+        "GAT-012",
+        "GAT-016",
+        "ROL-001",
+        "ROL-013",
         "## Open questions",
         "## Risks",
         "## Assumptions",
@@ -131,11 +219,32 @@ REQUIRED_CONTENT = {
         "REQ-020",
         "BAR-014",
         "DAR-017",
+        "DAR-028",
         "OQ-038",
+        "OQ-039",
+        "OQ-041",
+        "OQ-047",
+        "OQ-049",
+        "OQ-051",
+        "OQ-052",
         "RSK-023",
+        "RSK-024",
+        "RSK-028",
+        "RSK-032",
+        "RSK-035",
+        "RSK-038",
+        "RSK-041",
         "## Work items",
         "WRK-014",
         "WRK-018",
+        "WRK-019",
+        "WRK-020",
+        "WRK-021",
+        "WRK-024",
+        "WRK-027",
+        "WRK-034",
+        "WRK-040",
+        "WRK-042",
         "## Issues",
     ),
     "governance/DECISION_LOG.md": (
@@ -152,26 +261,84 @@ FORBIDDEN_PHRASES = (
 )
 MARKDOWN_LINK = re.compile(r"!?\[[^\]]*\]\(([^)]+)\)")
 GOVERNED_ID = re.compile(
-    r"\b(?:DEC|OQ|RSK|ASM|DEP|EVD|REQ|BAR|DAR|WRK|ISS)-\d{3}\b"
+    r"\b(?:GAT|ROL|DEC|OQ|RSK|ASM|DEP|EVD|REQ|BAR|DAR|WRK|ISS)-\d{3}\b"
 )
 REGISTER_ROW = re.compile(
-    r"^\| ((?:DEC|OQ|RSK|ASM|DEP|EVD|REQ|BAR|DAR|WRK|ISS)-\d{3}) \|",
+    r"^\| ((?:GAT|ROL|DEC|OQ|RSK|ASM|DEP|EVD|REQ|BAR|DAR|WRK|ISS)-\d{3}) \|",
     re.MULTILINE,
 )
 PRINCIPLE_ID = re.compile(r"\bPRN-\d{3}\b")
 PRINCIPLE_HEADING = re.compile(r"^## (PRN-\d{3}):", re.MULTILINE)
 REGISTER_PIPE_COUNTS = {
+    "GAT": 9,
+    "ROL": 7,
     "DEC": 9,
     "OQ": 8,
-    "RSK": 9,
+    "RSK": 11,
     "ASM": 8,
-    "DEP": 8,
-    "EVD": 8,
-    "REQ": 9,
-    "BAR": 8,
-    "DAR": 8,
+    "DEP": 9,
+    "EVD": 9,
+    "REQ": 11,
+    "BAR": 10,
+    "DAR": 10,
     "WRK": 8,
     "ISS": 8,
+}
+DAR_HORIZONS = {
+    "GAT-004",
+    "GAT-005",
+    "GAT-006",
+    "GAT-008",
+    "GAT-010",
+}
+RISK_RATINGS = {"Low", "Medium", "High"}
+STATUS_VALUES = {
+    "GAT": {
+        "Not started",
+        "In progress",
+        "Passed",
+        "Failed",
+        "Revisit required",
+        "Continuous",
+    },
+    "DEC": {"Accepted", "Declined", "Revisit required", "Superseded"},
+    "OQ": {"Open", "In analysis", "Answered", "Deferred"},
+    "RSK": {"Open", "Mitigating", "Accepted", "Closed"},
+    "ASM": {"Untested", "Supported", "Invalidated"},
+    "DEP": {"Unmet", "In progress", "Met", "Removed"},
+    "EVD": {"Open", "Partial", "Closed", "Not obtainable"},
+    "REQ": {"Proposed", "Accepted", "Deferred", "Rejected", "Superseded"},
+    "BAR": {"Proposed", "Accepted", "Deferred", "Rejected", "Superseded"},
+    "DAR": {"Proposed", "Accepted", "Deferred", "Rejected", "Superseded"},
+    "WRK": {"Planned", "In progress", "Blocked", "Complete", "Cancelled"},
+    "ISS": {"Open", "In progress", "Resolved", "Closed"},
+}
+STATUS_FIELD_INDEX = {
+    "GAT": 6,
+    "DEC": 6,
+    "OQ": 3,
+    "RSK": 7,
+    "ASM": 4,
+    "DEP": 4,
+    "EVD": 4,
+    "REQ": 5,
+    "BAR": 4,
+    "DAR": 4,
+    "WRK": 4,
+    "ISS": 4,
+}
+OWNER_FIELD_INDEX = {
+    "GAT": 2,
+    "DEC": 5,
+    "OQ": 2,
+    "RSK": 6,
+    "ASM": 3,
+    "DEP": 3,
+    "EVD": 3,
+    "REQ": 4,
+    "BAR": 3,
+    "DAR": 3,
+    "WRK": 3,
 }
 EM_DASH = chr(0x2014)
 
@@ -313,6 +480,157 @@ def check_architecture_register(files: list[Path], errors: list[str]) -> None:
             )
 
 
+def check_data_architecture_requirements(errors: list[str]) -> None:
+    register_path = ROOT / "governance/ARCHITECTURE_REGISTER.md"
+    if not register_path.is_file():
+        return
+
+    for line_number, line in enumerate(
+        register_path.read_text(encoding="utf-8").splitlines(), start=1
+    ):
+        if not line.startswith("| DAR-"):
+            continue
+
+        fields = [field.strip() for field in line.strip("|").split("|")]
+        if len(fields) != 9:
+            continue
+
+        identifier, requirement, _, owner, status, horizon, _, related, _ = fields
+        lower_requirement = requirement.lower()
+        for phrase in ("as applicable", "where applicable"):
+            if phrase in lower_requirement:
+                errors.append(
+                    "governance/ARCHITECTURE_REGISTER.md:"
+                    f"{line_number}: {identifier} uses discretionary qualifier: "
+                    f"{phrase}"
+                )
+        if re.search(r"\bmaterial\b", lower_requirement):
+            errors.append(
+                "governance/ARCHITECTURE_REGISTER.md:"
+                f"{line_number}: {identifier} must use an explicit scope rule "
+                "instead of material"
+            )
+        if " and " in owner.lower() or "&" in owner:
+            errors.append(
+                "governance/ARCHITECTURE_REGISTER.md:"
+                f"{line_number}: {identifier} must have one accountable owner"
+            )
+        horizon_identifier = horizon.strip("`")
+        if horizon_identifier not in DAR_HORIZONS:
+            errors.append(
+                "governance/ARCHITECTURE_REGISTER.md:"
+                f"{line_number}: {identifier} has unknown delivery horizon: "
+                f"{horizon}"
+            )
+        if status == "Deferred" and horizon_identifier in {"GAT-006", "GAT-008"}:
+            errors.append(
+                "governance/ARCHITECTURE_REGISTER.md:"
+                f"{line_number}: {identifier} is deferred but assigned to {horizon}"
+            )
+        if not related:
+            errors.append(
+                "governance/ARCHITECTURE_REGISTER.md:"
+                f"{line_number}: {identifier} has no related-record traceability"
+            )
+
+
+def check_register_controls(errors: list[str]) -> None:
+    register_path = ROOT / "governance/ARCHITECTURE_REGISTER.md"
+    if not register_path.is_file():
+        return
+
+    rows: list[tuple[int, list[str]]] = []
+    for line_number, line in enumerate(
+        register_path.read_text(encoding="utf-8").splitlines(), start=1
+    ):
+        if REGISTER_ROW.match(line):
+            rows.append(
+                (line_number, [field.strip() for field in line.strip("|").split("|")])
+            )
+
+    canonical_roles = {
+        fields[1] for _, fields in rows if fields[0].startswith("ROL-")
+    }
+    canonical_gates = {
+        fields[0] for _, fields in rows if fields[0].startswith("GAT-")
+    }
+    for line_number, fields in rows:
+        identifier = fields[0]
+        prefix = identifier.split("-", maxsplit=1)[0]
+        owner_index = OWNER_FIELD_INDEX.get(prefix)
+        if owner_index is not None and fields[owner_index] not in canonical_roles:
+            errors.append(
+                "governance/ARCHITECTURE_REGISTER.md:"
+                f"{line_number}: {identifier} uses non-canonical owner: "
+                f"{fields[owner_index]}"
+            )
+
+        status_index = STATUS_FIELD_INDEX.get(prefix)
+        if (
+            status_index is not None
+            and fields[status_index] not in STATUS_VALUES[prefix]
+        ):
+            errors.append(
+                "governance/ARCHITECTURE_REGISTER.md:"
+                f"{line_number}: {identifier} has invalid status: "
+                f"{fields[status_index]}"
+            )
+
+        if not re.fullmatch(r"\d{4}-\d{2}-\d{2}", fields[-1]):
+            errors.append(
+                "governance/ARCHITECTURE_REGISTER.md:"
+                f"{line_number}: {identifier} has invalid last-reviewed date: "
+                f"{fields[-1]}"
+            )
+
+        if prefix == "RSK":
+            for label, rating in (("likelihood", fields[3]), ("impact", fields[4])):
+                if rating not in RISK_RATINGS:
+                    errors.append(
+                        "governance/ARCHITECTURE_REGISTER.md:"
+                        f"{line_number}: {identifier} has invalid {label}: {rating}"
+                    )
+            if fields[7] == "Accepted" and not re.search(
+                r"\bDEC-\d{3}\b", fields[5]
+            ):
+                errors.append(
+                    "governance/ARCHITECTURE_REGISTER.md:"
+                    f"{line_number}: {identifier} is accepted without a recorded "
+                    "decision reference"
+                )
+
+        related_index = {"DEP": 6, "REQ": 8, "BAR": 7, "DAR": 7}.get(prefix)
+        if related_index is not None and not fields[related_index]:
+            errors.append(
+                "governance/ARCHITECTURE_REGISTER.md:"
+                f"{line_number}: {identifier} has no related-record traceability"
+            )
+
+        gate_index = {
+            "OQ": 4,
+            "RSK": 8,
+            "ASM": 5,
+            "DEP": 5,
+            "EVD": 6,
+            "REQ": 6,
+            "BAR": 5,
+            "DAR": 5,
+        }.get(prefix)
+        if gate_index is not None:
+            gate_references = set(re.findall(r"\bGAT-\d{3}\b", fields[gate_index]))
+            if not gate_references:
+                errors.append(
+                    "governance/ARCHITECTURE_REGISTER.md:"
+                    f"{line_number}: {identifier} has no canonical gate reference"
+                )
+            for gate_reference in sorted(gate_references - canonical_gates):
+                errors.append(
+                    "governance/ARCHITECTURE_REGISTER.md:"
+                    f"{line_number}: {identifier} references unknown canonical gate: "
+                    f"{gate_reference}"
+                )
+
+
 def check_project_principles(files: list[Path], errors: list[str]) -> None:
     principles_path = ROOT / "product/PROJECT_PRINCIPLES.md"
     if not principles_path.is_file():
@@ -349,6 +667,8 @@ def main() -> int:
 
     files = active_text_files()
     check_architecture_register(files, errors)
+    check_data_architecture_requirements(errors)
+    check_register_controls(errors)
     check_project_principles(files, errors)
     for path in files:
         text = check_text(path, errors)

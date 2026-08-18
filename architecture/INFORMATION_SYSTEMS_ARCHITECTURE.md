@@ -6,7 +6,7 @@
 
 **Architecture stage:** Information Systems Architecture
 
-**Decision authority:** `DEC-019`
+**Governing decision:** `DEC-019`
 
 **Scope:** Data Architecture and Application Architecture for the BIAN Adoption
 & Engineering Platform
@@ -192,10 +192,13 @@ provenance for implementation convenience.
 1. **Conceptual Data Architecture:** information domains, core concepts,
    assertion classes, relationships, identity, provenance, time, review,
    quality, system-of-record boundaries, and lifecycle.
-2. **HSB information scenario:** apply the model to the bounded
-   customer-payment initiation decision, including ambiguity and change.
-3. **Trust and sensitive-information view:** identify identity, tenancy,
-   sensitivity, access, retention, evidence, and boundary concerns.
+2. **Trust and sensitive-information view:** identify identity, tenancy,
+   sensitivity, access, retention, evidence, threat, abuse, failure and boundary
+   concerns through the
+   [Trust-boundary and security architecture](TRUST_BOUNDARY_AND_SECURITY_ARCHITECTURE.md).
+3. **HSB information scenario:** apply the model to the bounded
+   customer-payment initiation decision, including ambiguity, negative trust
+   paths and change.
 4. **Logical Application Architecture:** define application responsibilities,
    interactions, information ownership, integration seams, and user services.
 5. **Cross-architecture traceability:** show how Data and Application
@@ -207,35 +210,36 @@ not prematurely settle unresolved information semantics.
 
 ## 11. Initial architecture requirements
 
-The proposed Data Architecture requirements are `DAR-001` through `DAR-017` in
+The proposed and deferred Data Architecture requirements are `DAR-001` through
+`DAR-028` in
 the
 [Architecture Register](../governance/ARCHITECTURE_REGISTER.md#data-architecture-requirements).
-They refine `REQ-002` through `REQ-018` and `BAR-002` through `BAR-014` where
-applicable. Their status and wording are not duplicated here.
+Their explicit related-record links identify which `REQ` and `BAR` obligations
+they refine. Their status, canonical gate and wording are not duplicated here.
 
 Application Architecture requirements will be proposed only after the logical
 responsibilities and interactions have been developed.
 
 ## 12. Stage review criteria
 
-Information Systems Architecture is ready for its next gate when:
+Information Systems Architecture is ready for `GAT-003` only when every test
+below passes. The named judge records the outcome in the Architecture Register.
+One person may hold several roles during this project, but that does not turn
+self-review into independent assurance; `EVD-008` remains open until competent
+external review exists.
 
-- conceptual Data and Application Architecture views are coherent;
-- exact BIAN assertions remain source-qualified and separate from project
-  concepts;
-- identity, authority, provenance, relationships, time, quality, review, and
-  evidence have explicit semantics;
-- system-of-record and reconciliation responsibilities are clear;
-- sensitive information, tenancy, retention, export, and trust concerns are
-  visible even where unresolved;
-- the HSB scenario can traverse the architecture without hidden information or
-  authority changes;
-- proposed domain requirements have explicit review outcomes;
-- material risks and open questions have owners and later gates;
-- no physical technology choice has been smuggled into the conceptual model;
-  and
-- the project owner agrees that Solution Architecture may be considered after
-  the remaining conceptual views and gates are complete.
+| Test | Required artefact or evidence | Accountable judge | Failure condition |
+|---|---|---|---|
+| Business baseline and requirement disposition | `GAT-001`, `GAT-002`, `WRK-020` and `WRK-022` outcomes with unresolved records assigned to an owner and gate | Project owner | A governing requirement is accepted by implication, duplicated without disposition, or left without an accountable owner and gate |
+| Data semantics | Conceptual Data Architecture, record-level model validation, and explicit disposition of every `DAR` | Information model steward | The worked records cannot distinguish identity, authority, time, provenance, relationship, projection, view, conflict, review or evidence without contradiction |
+| BIAN integrity | Source qualification or an explicit project-placeholder boundary for every BIAN-attributed scenario input | BIAN source steward | Project, HSB, inferred or unqualified content is represented as a BIAN assertion or relationship |
+| Cross-domain traceability | Phase C gap analysis and capability, value-stream and role-authority matrices | Architecture owner | A required business capability, value-stream step or information domain has no explained relationship, or depends on an undisclosed duplicate source of truth |
+| Trust boundary | Reviewed trust-boundary and security architecture plus the negative HSB outcomes under `WRK-041` | Security owner | Sensitive information crosses a boundary without declared ownership, purpose, classification, policy reference, accountable decision or explicit unresolved record |
+| Connected HSB scenario | `WRK-012` outputs using the same governed records, including an exact reconstructable View Definition and expected negative results | Architecture owner | The scenario needs hidden information, silently changes authority, cannot reproduce the decision view, or presents synthetic evidence as external validation |
+| Logical application responsibilities | Logical Application Architecture and disposition of the `DEP-013` requirements | Architecture owner | A capture, validation, view, review, projection, export, protection or impact responsibility is orphaned, duplicated without rationale, or changes Data Architecture semantics |
+| Requirement traceability | Architecture Register evidence and outcome for each in-scope `REQ`, `BAR`, `DAR` and later application requirement | Project owner | A requirement lacks an explicit outcome, gate, owner, acceptance evidence or parent and dependant trace where required |
+| Explicit non-decisions | Data and Application Architecture non-decision lists plus architecture-review record | Architecture owner | Storage, framework, protocol, product, topology or other Phase D choice has been selected without an approved architecture decision |
+| Stage outcome | Consolidated `GAT-003` review recording each test, unresolved limits and the Phase D authorisation decision | Project owner | Any required test fails, evidence is absent, or Technology Architecture is allowed to absorb an unresolved Phase C responsibility |
 
 ## 13. Current limitations
 
@@ -245,12 +249,24 @@ Information Systems Architecture is ready for its next gate when:
   remain unvalidated.
 - The conceptual model has not been tested against a physical storage or query
   workload.
+- The record-level model validation uses one synthetic HSB example and a project
+  BIAN placeholder. It does not establish source-qualified BIAN fidelity,
+  real-bank feasibility or broad model coverage; `EVD-011` records that limit.
 - Tenancy, residency, retention, evidence, and rights rules require further
   security, legal, and operational analysis.
 - Logical Application Architecture has not yet been defined.
+- No independent BIAN, Data Architecture, security or overall architecture
+  review has yet been completed; `DEP-008`, `EVD-008` and `WRK-024` govern that
+  limitation.
 
 These limitations are deliberate register inputs, not reasons to invent an
 answer or stop conceptual progress.
+
+The later lifecycle from Technology Architecture through Architecture Change
+Management is planned in the
+[Architecture lifecycle and ADM tailoring](ARCHITECTURE_LIFECYCLE.md). That
+plan does not change the current stage or permit Phase D to absorb unresolved
+Data or Application Architecture decisions.
 
 ## References
 
@@ -259,9 +275,14 @@ answer or stop conceptual progress.
 - [Architecture Vision](ARCHITECTURE_VISION.md)
 - [Business Architecture](BUSINESS_ARCHITECTURE.md)
 - [Requirements and traceability](REQUIREMENTS_AND_TRACEABILITY.md)
+- [Phase C model validation](PHASE_C_MODEL_VALIDATION.md)
+- [Phase C gap and traceability analysis](PHASE_C_TRACEABILITY.md)
+- [Trust-boundary and security architecture](TRUST_BOUNDARY_AND_SECURITY_ARCHITECTURE.md)
+- [ADM tailoring](ADM_TAILORING.md)
 - [Project principles](../product/PROJECT_PRINCIPLES.md)
 - [BIAN alignment policy](../product/BIAN_ALIGNMENT_POLICY.md)
 - [Fictional bank and synthetic validation](../product/FICTIONAL_BANK_AND_SYNTHETIC_VALIDATION.md)
+- [Project glossary](../governance/GLOSSARY.md)
 - [Architecture Register](../governance/ARCHITECTURE_REGISTER.md)
 
 ### Method context

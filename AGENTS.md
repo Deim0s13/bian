@@ -19,6 +19,11 @@ These instructions apply to the entire repository unless a more specific
   implementation, select solution technologies, define deployable services, or
   turn the archived spike into an approved design unless the user explicitly
   changes the stage or asks for a bounded experiment.
+- The complete tailored lifecycle is planned in
+  `architecture/ARCHITECTURE_LIFECYCLE.md`. Technology Architecture, TOGAF
+  Phases E through H, bounded Solution Architecture and later ADM iterations
+  remain future work controlled by their canonical gates. Planning them does
+  not change the current stage or authorise their execution.
 - The full platform vision is not build authorisation. Use
   `product/VALUE_AND_VALIDATION.md` to test decision value, connected
   differentiation, input feasibility, trust, adoption fit, and sustainable
@@ -38,15 +43,21 @@ Before material work, read the parts of these files relevant to the request:
 4. `governance/PROJECT_CONTEXT.md`
 5. `governance/ARCHITECTURE_REGISTER.md`
 6. `governance/WRITING_STYLE.md`
-7. `product/PROJECT_PRINCIPLES.md`
-8. `product/BIAN_ALIGNMENT_POLICY.md`
-9. `architecture/ARCHITECTURE_VISION.md`
-10. `architecture/BUSINESS_ARCHITECTURE.md`
-11. `architecture/REQUIREMENTS_AND_TRACEABILITY.md`
-12. `architecture/INFORMATION_SYSTEMS_ARCHITECTURE.md`
-13. `architecture/DATA_ARCHITECTURE.md`
-14. `governance/ARCHITECTURE_AND_ENGINEERING_PRINCIPLES.md`
-15. `governance/QUALITY_AND_REVIEW.md`
+7. `governance/GLOSSARY.md`
+8. `product/PROJECT_PRINCIPLES.md`
+9. `product/BIAN_ALIGNMENT_POLICY.md`
+10. `architecture/ARCHITECTURE_VISION.md`
+11. `architecture/BUSINESS_ARCHITECTURE.md`
+12. `architecture/REQUIREMENTS_AND_TRACEABILITY.md`
+13. `architecture/INFORMATION_SYSTEMS_ARCHITECTURE.md`
+14. `architecture/DATA_ARCHITECTURE.md`
+15. `architecture/ARCHITECTURE_LIFECYCLE.md`
+16. `architecture/ADM_TAILORING.md`
+17. `architecture/PHASE_C_MODEL_VALIDATION.md`
+18. `architecture/PHASE_C_TRACEABILITY.md`
+19. `architecture/TRUST_BOUNDARY_AND_SECURITY_ARCHITECTURE.md`
+20. `governance/ARCHITECTURE_AND_ENGINEERING_PRINCIPLES.md`
+21. `governance/QUALITY_AND_REVIEW.md`
 
 ## BIAN integrity
 
@@ -92,16 +103,29 @@ Before material work, read the parts of these files relevant to the request:
 - Avoid consultant language, hype, generic vendor claims, robotic phrasing,
   unnecessary theory, and low-level implementation detail unless it is needed.
 - Distinguish fact, decision, assumption, hypothesis, inference, and open question.
+- Use recurring project terms as defined in `governance/GLOSSARY.md`. Do not use
+  qualifiers such as "material" or "applicable" as unrecorded scope escape
+  hatches.
 
 ## Change discipline
 
 - Keep changes small, coherent, reviewable, and free of speculative scaffolding.
+- Keep governance proportionate to the decisions and evidence it improves. If a
+  register field, role, gate, check, or work product creates more recurring
+  maintenance than decision value, propose a governed simplification rather
+  than letting it become stale or silently abandoning it. Prefer removing,
+  consolidating, or automating redundant control information over adding a
+  parallel record.
 - Update `governance/PROJECT_STATUS.md` when the project stage, current focus, or
   next gate changes.
 - Record decisions, active questions, risks, assumptions, dependencies, evidence
   gaps, architecture requirements, work items, and issues only in
   `governance/ARCHITECTURE_REGISTER.md`. Context documents reference register
   identifiers and must not maintain competing status or resolution records.
+- Use the Architecture Register's canonical `GAT` identifiers for approval,
+  readiness, delivery and review events, and its canonical `ROL` vocabulary for
+  accountable owners. Architecture phases and job titles are not substitute
+  gate or owner identifiers.
 - Maintain overarching principles only in `product/PROJECT_PRINCIPLES.md` and
   reference their stable `PRN` identifiers from policies, requirements, and
   architecture documents.

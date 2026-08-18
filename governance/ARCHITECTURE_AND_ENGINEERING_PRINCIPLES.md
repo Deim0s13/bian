@@ -45,19 +45,25 @@ original project analysis and provide attribution where needed.
 
 ## Architecture sequence
 
-The project will progress through explicit gates:
+The tailored lifecycle is defined in
+[Architecture lifecycle and ADM tailoring](../architecture/ARCHITECTURE_LIFECYCLE.md).
+Its intended progression is:
 
-1. product definition and prioritised customer outcomes;
-2. conceptual architecture and information concepts;
-3. logical architecture, trust boundaries, quality attributes, and operating
-   model;
-4. solution architecture and technology decisions;
-5. bounded experiments where uncertainty needs evidence;
-6. implementation, release evidence, and operational learning;
-7. governed change as the product and BIAN releases evolve.
+1. Architecture Vision and Business Architecture;
+2. Information Systems Architecture, covering Data and Application
+   Architecture;
+3. Technology Architecture;
+4. Opportunities and Solutions;
+5. Migration Planning and bounded build authorisation;
+6. bounded Solution Architecture and implementation readiness;
+7. Implementation Governance, release evidence and operational learning; and
+8. Architecture Change Management, targeted revision and later ADM cycles.
 
-The sequence is iterative, but iteration does not justify silently skipping an
-unresolved gate.
+Requirements Management and continuous architecture governance operate across
+the entire lifecycle. The sequence is iterative, but iteration does not justify
+silently skipping an unresolved gate. Solution Architecture is a project
+delivery activity for a bounded authorised scope; it does not replace TOGAF
+Technology Architecture.
 
 ## Cloud-native position
 

@@ -159,29 +159,45 @@ Conceptually, it holds and relates:
 Its defining quality is not storage. It is the ability to say **what is known,
 where it came from, how confident the platform is, and who has reviewed it**.
 
-## Four classes of truth
+## User-facing truth classes
 
 The platform must never blend different claims together without explanation.
 It should distinguish at least:
 
-### 1. External framework assertions
+### 1. Authoritative external assertions
 
 Content imported from an authorised BIAN release or another recognised source.
 The original source, release, licence context, and import status must be known.
 
-### 2. Customer assertions
+### 2. Derived external projections
+
+Deterministic representations of an authoritative source that add no meaning.
+They must disclose the source and method and remain visibly derived.
+
+### 3. Project context
+
+Project-owned namespaces, workflow states, configuration and planning context.
+Project context is neither authoritative BIAN content nor a platform inference.
+
+### 4. Customer assertions
 
 Information supplied by the bank, such as application ownership, lifecycle,
 technology, API purpose, or an architect-approved mapping.
 
-### 3. Platform inferences
+### 5. Platform inferences
 
 Mappings, duplication warnings, proposed target states, or recommendations
 produced through rules, analysis, or AI. These require confidence, supporting
 evidence, and a review state. They are not facts merely because a model produced
 them.
 
-### 4. Verified evidence
+### 6. Third-party assertions
+
+Claims supplied by a regulator, standards body, vendor or other external party.
+They retain their own source, rights, scope and review state and do not acquire
+BIAN or bank authority.
+
+### 7. Verified evidence
 
 Results tied to an explicit test, scope, time, version, and control. Evidence can
 support a narrow conclusion; it must not be inflated into a broad compliance

@@ -60,7 +60,9 @@ Defined by this open-source project, such as review state, confidence, evidence
 status, workflow, security-profile application, or transformation planning.
 
 It must use a project namespace and documentation. It may refer to Class A but
-must not be stored or displayed as a BIAN artefact.
+must not be stored or displayed as a BIAN artefact. Class C is project context,
+not an analytical inference. A project-generated claim or recommendation is
+Class E even when it uses a Class C method or workflow.
 
 ### Class D: Customer or fictional-bank assertion
 

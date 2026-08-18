@@ -104,8 +104,11 @@ acceptance, or realised bank value.
 
 ## 5. Stakeholders and concerns
 
-The current project owner acts as sponsor and architecture authority during the
-concept stage. Bank roles remain product personas until a real adopter exists.
+The current Project owner also performs the Product owner and Architecture owner
+roles during the concept stage. This is not independent review or segregation
+of duties. The canonical accountabilities and current limitations are recorded
+in `ROL-001` through `ROL-013`. Bank roles remain product personas until a real
+adopter maps them to named roles and delegated decision rights.
 
 | Stakeholder | Concern this architecture must address | Initial viewpoint |
 |---|---|---|
@@ -284,11 +287,12 @@ The operational assertion classes in the BIAN alignment policy remain mandatory:
 - Class E: inference or recommendation;
 - Class F: third-party assertion.
 
-The product vision's four classes of truth are a simpler user-facing grouping.
-The conceptual information model must reconcile the two views explicitly rather
-than allowing competing classifications. Evidence records should link a source,
-requirement or assertion to a method, result, scope, time, version, reviewer, and
-limitations. Evidence does not change an inference into BIAN fact.
+The product vision uses seven user-facing truth classes that correspond to these
+operational classes plus evidence. The conceptual information model must keep
+them explicit rather than allowing competing or context-dependent
+classifications. Evidence records should link a source, requirement or assertion
+to a method, result, scope, time, version, reviewer, and limitations. Evidence
+does not change an inference into BIAN fact.
 
 Every material record or relationship will need an appropriate subset of:
 
@@ -350,8 +354,10 @@ the system of record and does not replace or determine the BIAN Model Registry.
 | Tenant and deployment environment | Cross-tenant exposure, residency, encryption, recovery, and operator access | Explicit tenancy model, isolation, customer-controlled policy, audit export, backup, restore, and exit |
 | Open-source build and release | Compromised contributors, dependencies, workflows, or artefacts | Protected review, pinned dependencies, SBOM, signing, reproducible evidence, and security response |
 
-Detailed threat models and data-flow diagrams follow after conceptual boundaries
-and sensitive information flows are agreed.
+The initial conceptual detail is developed in the
+[Trust-boundary and security architecture](TRUST_BOUNDARY_AND_SECURITY_ARCHITECTURE.md).
+Implementation threat models and physical data-flow diagrams remain later work
+because no deployable topology or technology has been selected.
 
 ## 12. Architecture principles applied to the vision
 
@@ -520,6 +526,7 @@ claims, TOGAF conformance, or production use.
 - [Fictional bank and synthetic validation](../product/FICTIONAL_BANK_AND_SYNTHETIC_VALIDATION.md)
 - [Project principles](../product/PROJECT_PRINCIPLES.md)
 - [Requirements and traceability](REQUIREMENTS_AND_TRACEABILITY.md)
+- [Trust-boundary and security architecture](TRUST_BOUNDARY_AND_SECURITY_ARCHITECTURE.md)
 - [Architecture and engineering application guidance](../governance/ARCHITECTURE_AND_ENGINEERING_PRINCIPLES.md)
 - [Open-source and production readiness](../product/OPEN_SOURCE_AND_PRODUCTION_READINESS.md)
 

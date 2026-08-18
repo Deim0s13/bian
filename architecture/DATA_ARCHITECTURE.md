@@ -6,7 +6,7 @@
 
 **Architecture stage:** Information Systems Architecture, Data Architecture
 
-**Decision authority:** `DEC-019`
+**Governing decision:** `DEC-019`
 
 **Scope:** Information semantics and governance for the BIAN Adoption &
 Engineering Platform
@@ -40,6 +40,22 @@ The Data Architecture must:
 - support customer control, portable export, retention, deletion, and exit;
 - permit governed extension without changing authoritative BIAN semantics; and
 - remain implementable through more than one credible storage architecture.
+
+The depth of each information domain is deliberate:
+
+| Information domain | Current proposition depth |
+|---|---|
+| BIAN source context | Core authority and provenance boundary; source-qualified content remains pending |
+| Bank or HSB estate | Core synthetic decision input |
+| Mapping and analysis | Core decision value |
+| Architecture and transformation | Core decision outcome |
+| Engineering projection | Thin connected proof only |
+| Assurance and evidence | Thin connected proof only |
+| Governance and operation | Supporting foundation; broad platform control remains north-star scope |
+
+The [Phase C gap and traceability analysis](PHASE_C_TRACEABILITY.md) applies
+these labels to each Data Architecture section, capability and value stream.
+They constrain validation depth and do not remove the full-platform north star.
 
 ## 3. Baseline information problem
 
@@ -77,6 +93,7 @@ flowchart LR
     Relationship --> Review
     Projection["Derived Projection"] --> Provenance
     Assertion --> Projection
+    View["View Definition"] --> Projection
 ```
 
 These are project-defined conceptual terms. They are not presented as BIAN
@@ -84,9 +101,14 @@ artefact types.
 
 ### Subject
 
-An identifiable thing about which assertions may be made. Examples include a
-BIAN model element, HSB application, API, integration, architecture option,
-control, test, generated artefact, or owner role.
+A platform-minted identity anchor for a thing about which assertions may be
+made. Examples include a BIAN model element, HSB application, API, integration,
+architecture option, control, test, generated artefact, or owner role.
+
+Registering a subject establishes only that the model needs a stable referent.
+It does not assert that the thing exists, that an external source recognises it,
+or that two source records identify the same thing. Those are separate,
+attributable assertions.
 
 A subject does not contain an unquestioned latest truth. Its usable view is
 formed from assertions selected according to authority, scope, time, review,
@@ -94,9 +116,10 @@ and policy.
 
 ### Assertion
 
-A claim by an identified authority about a subject. It carries its authority
-class, source, provenance, version, time, ownership, review state, quality, and
-limitations as applicable.
+A claim by an identified authority about a subject. It records its authority
+class, source, provenance, time context, ownership, review state and known
+limitations. A required value that is unavailable is represented by an explicit
+absence state rather than silently omitted.
 
 Examples include:
 
@@ -111,8 +134,12 @@ assertion into authoritative BIAN content.
 
 ### Relationship assertion
 
-A claim that two or more subjects are related in a particular way. It is
-independently sourced, versioned, reviewed, and limited.
+A claim that exactly two endpoint subjects are related in a particular way. It
+is independently identified, sourced, versioned, reviewed, and limited.
+Context that would otherwise produce a three-or-more-way link is represented by
+an identified context subject or by assertions about the reified relationship
+assertion. This preserves one relationship identity for review, history and
+provenance without hiding extra participants in an edge.
 
 This permits the model to represent:
 
@@ -158,7 +185,30 @@ timeless fact.
 A deterministic representation generated from declared model inputs. A
 normalised BIAN representation, API contract, event definition, report, view,
 test, SDK, catalogue record, or other asset may be a projection. Its authority
-and lineage remain distinct from its inputs.
+and lineage remain distinct from its inputs. A projection is not an assertion.
+If the platform or a user makes a claim based on it, that claim is a separate
+assertion linked to the projection through provenance.
+
+Class B applies only to a deterministic projection of source-qualified BIAN
+content that adds no BIAN meaning. Reports and views that mix BIAN, bank,
+project or inferred content retain the classes of their inputs and do not become
+Class B merely because their production is deterministic.
+
+### View definition
+
+A governed, versioned selection policy that states which records may contribute
+to a view, how authority, time, review state and unresolved conflict are handled,
+which parameters apply, and what happens when a required value is absent. A
+view definition produces a derived projection or materialisation. It does not
+rewrite assertions or create a silent winning source.
+
+### View materialisation
+
+The reproducible result of evaluating a named and versioned View Definition
+against an exact input set, evaluation time, parameters and transformation
+version. It is a Derived Projection, not an assertion or a silent replacement
+for the underlying records. `DAR-026` governs the information required to
+reconstruct the exact materialisation used by a decision.
 
 ## 5. Authority and truth classification
 
@@ -169,8 +219,8 @@ policy. The simpler product classes are presentation groupings, not replacements
 |---|---|---|---|
 | Class A | Authoritative BIAN assertion | External framework assertion | Only an authorised BIAN source can establish it |
 | Class B | Mechanically derived BIAN projection | External framework assertion, clearly labelled as derived | Deterministic derivation never adds BIAN meaning |
-| Class C | Project extension | Platform inference or project context, depending on use | Cannot become BIAN or bank truth by review alone |
-| Class D | Customer or HSB assertion | Customer assertion | Accountable bank or HSB authority governs review |
+| Class C | Project context or extension | Project context | Cannot become BIAN, bank truth or platform inference by review alone |
+| Class D | Customer or HSB assertion | Customer assertion | Bank information steward or accountable asset owner governs review |
 | Class E | Inference or recommendation | Platform inference | May be accepted as a bank or HSB decision input, never as BIAN fact |
 | Class F | Third-party assertion | External framework assertion or third-party context | Retains external source, rights, scope, and review state |
 | Evidence record | Scoped verification material rather than an assertion authority | Verified evidence | Supports a scoped conclusion without changing source authority |
@@ -178,14 +228,18 @@ policy. The simpler product classes are presentation groupings, not replacements
 Storage, APIs, exports, reports, and user interfaces must preserve the detailed
 class even when displaying the simpler grouping.
 
+Class C and Class E are deliberately separate. Project-authored namespaces,
+workflow states and configuration are Class C. Analytical matches,
+recommendations and other platform-produced claims are Class E.
+
 ## 6. Information domains
 
 | Information domain | Primary concepts | Authority boundary |
 |---|---|---|
 | BIAN source context | release, artefact, model element, definition, relationship, lifecycle, integrity, rights | Authorised BIAN source; platform source steward qualifies capture and import |
-| Bank or HSB estate | application, API, event, integration, data asset, vendor, owner, lifecycle, criticality | Bank source system or HSB information steward |
+| Bank or HSB estate | application, API, event, integration, data asset, vendor, owner, lifecycle, criticality | Bank source system and Bank information steward |
 | Mapping and analysis | mapping proposal, rationale, evidence, confidence, conflict, finding, review | Analytical method proposes; accountable architecture and asset authorities decide |
-| Architecture and transformation | current state, target state, option, constraint, dependency, decision, exception, action, roadmap | Delegated bank or HSB architecture authority |
+| Architecture and transformation | current state, target state, option, constraint, dependency, decision, exception, action, roadmap | Architecture owner or recorded bank architecture approver |
 | Engineering projection | model input, profile, generator, contract, schema, test, SDK, documentation, deployment asset, compatibility | Platform records lineage; engineering repository owns adopted delivery assets |
 | Assurance and evidence | obligation, requirement, control, implementation, assessment, test, evidence, finding, exception, conclusion, expiry | External or bank authority defines obligation and control; scoped assessor and control owner govern conclusion |
 | Governance and operation | identity, role, permission, policy, approval, workflow, audit, release, support, incident | Relevant bank, platform, or open-source governance authority |
@@ -222,40 +276,25 @@ design choice.
 
 ## 8. Temporal and version model
 
-The model distinguishes:
+The foundational distinction is between when an asserted condition applied and
+when the platform recorded it. Correction and supersession create new state and
+retain the earlier state.
 
-- **source version:** the release, commit, package, contract, or capture version;
-- **model version:** the canonical model rules used to interpret a source;
-- **recorded time:** when the platform received or created a record;
-- **effective time:** when an assertion is understood to apply in its source or
-  business context;
-- **review time:** when an authority assessed or decided the record;
-- **expiry or next review:** when evidence, approval, or a conclusion requires
-  renewal;
-- **supersession:** which record or decision replaced another; and
-- **correction:** a new record that corrects prior state without erasing it.
-
-Not every source supplies every time dimension. Absence remains explicit. The
-required temporal precision by information class remains `OQ-033`.
+Source release, model version, review time, evidence validity and other temporal
+needs remain record-specific design concerns under `OQ-033`. They are not
+mandatory fields on every record and will not be fixed as one universal set in
+this conceptual requirement baseline.
 
 ## 9. Provenance and derivation
 
-The minimum provenance chain for a material output identifies:
+Provenance is a network of versioned links between governed records. It must be
+navigable from a record to its immediate origins and from an origin to its
+recorded dependants.
 
-```text
-source authority and rights
-        -> immutable source capture and integrity
-        -> validation result
-        -> normalisation or transformation method and version
-        -> resulting assertion or relationship assertion
-        -> review and decision history
-        -> derived projection or conclusion
-        -> evidence, limitation, owner, and affected scope
-```
-
-A stage that did not participate is recorded as absent or unsupported where its
-absence affects interpretation. The platform must not fabricate a complete
-lineage path for presentation.
+Source capture, customer mapping, review, evidence and deterministic generation
+retain their own semantics under `DAR-005`, `DAR-008`, `DAR-012`, `DAR-013` and
+`DAR-017`. The model does not prescribe a universal pipeline or create duplicate
+review and evidence records merely to complete a diagram.
 
 ## 10. Quality, uncertainty, and conflict
 
@@ -285,16 +324,23 @@ The platform distinguishes:
 2. **immutable source capture:** what the platform received or referenced;
 3. **normalised assertion:** a deterministic representation retaining source
    identity and provenance;
-4. **identity or reconciliation proposal:** a candidate relationship between
-   records;
+4. **derived identity relationship:** a separately attributable claim that
+   records refer to the same or related subjects;
 5. **reviewed mapping or decision:** a project, bank, or HSB governance record;
    and
-6. **current view:** a policy-selected presentation of applicable records, not
-   an erasure of alternatives or history.
+6. **current view:** a materialisation produced by a named and versioned View
+   Definition, not an erasure of alternatives or history.
 
-Reconciliation may produce matched, unmatched, ambiguous, conflicting, merged,
-split, stale, or withdrawn states. Changes create deltas and review work. They
-do not silently replace accepted mappings or architecture decisions.
+No derived match, split or merge may rewrite its source records. A complete
+workflow for matching, conflicts, splits and merges is deferred under `DAR-021`.
+Contradictory assertions remain visible until an authorised decision selects an
+outcome under `DAR-018`.
+
+Any decision or output that relies on a current or selected view must retain the
+exact View Definition version, evaluation parameters and time, input record
+versions, transformation version, result identity or digest, and known
+limitations required by `DAR-026`. A later policy or source change must not make
+the view used for an earlier decision impossible to reconstruct.
 
 Attribute-level source precedence, refresh expectations, conflict ownership,
 and retained-versus-referenced information remain `OQ-038` and later
@@ -325,20 +371,15 @@ sensitive information, including application vulnerabilities, ownership gaps,
 target states, control failures, integration paths, vendor positions, and
 transformation plans.
 
-The conceptual model therefore attaches:
+The foundation therefore records customer or tenant ownership, sensitivity and
+an access-policy reference for every governed record. Detailed access design
+remains part of the trust-boundary and security view under `OQ-034`.
 
-- customer or tenant ownership scope;
-- sensitivity and sharing classification;
-- permitted purpose and audience;
-- access and decision authority;
-- residency or location constraint;
-- retention, deletion, archive, and legal-hold policy;
-- export and portability classification;
-- source-rights and redistribution conditions; and
-- audit and review requirements.
-
-The exact tenancy and policy model remains `OQ-034`. Physical encryption,
-isolation, policy engines, and key management are later architecture decisions.
+Residency, retention, deletion, archival and legal hold are deferred to the
+bank-production gate under `DAR-022`, where approved legal, regulatory and
+customer policies exist. Source use and redistribution are governed separately
+by `DAR-023`. Physical encryption, isolation, policy engines and key management
+remain later architecture decisions.
 
 ## 14. Extension and schema evolution
 
@@ -355,23 +396,24 @@ An extension may:
 - create a projection for an external tool.
 
 It may not rename, redefine, or silently enrich a BIAN concept while continuing
-to present the result as BIAN. Model changes require compatibility,
-migration, impact, and historical-readability rules.
+to present the result as BIAN. Compatibility, migration, rollback and
+historical-readability obligations enter scope at the platform-evolution
+increment under `DAR-025`.
 
 ## 15. Portable exchange and customer control
 
-Supported exchange must preserve the semantic scope promised by `DAR-016`, not
-merely serialise current values. An export may include or reference:
+For the bounded proposition, `DAR-016` gives the customer a minimum export set:
 
-- stable and source-native identities;
-- authority and assertion class;
-- source and derivation provenance;
-- applicable versions and time;
-- relationship assertions;
-- quality, conflict, uncertainty, and limitations;
-- review and decision history;
-- evidence links and integrity; and
-- customer ownership, sensitivity, rights, and lifecycle constraints.
+- all customer-supplied records;
+- all platform-created mappings, reviews, decisions, findings and evidence that
+  the customer owns or is entitled to retain;
+- the relationships connecting those records; and
+- the identity, authority, provenance, version and limitation information
+  needed to interpret the exported set.
+
+When rights prevent export of external content, the export retains its
+identifier, release and source reference rather than silently omitting the
+dependency or redistributing the content.
 
 The project will not invent a general enterprise-architecture interchange
 standard. Candidate formats and round-trip scope remain `OQ-035`.
@@ -397,23 +439,35 @@ Expected results must be defined before the scenario is used as evidence.
 Nothing in this slice represents a real bank or proves a BIAN relationship until
 the exact source is qualified.
 
+The first record-level instantiation is documented in
+[Phase C model validation](PHASE_C_MODEL_VALIDATION.md). It uses synthetic HSB
+records and an explicit project placeholder for the unresolved BIAN scope. It
+therefore tests model coherence, not BIAN fidelity or real-bank feasibility.
+
 ## 17. Data governance responsibilities
+
+Project accountability uses the canonical `ROL` vocabulary in the Architecture
+Register. Asset owner and platform operator describe adopting-organisation
+participants; each must be mapped to a named organisation role and decision
+mandate when real-bank scope exists.
 
 | Role | Data Architecture accountability |
 |---|---|
 | BIAN source steward | Qualify BIAN source identity, release, integrity, rights, import status, and detected source ambiguity |
 | Source-rights reviewer | Determine allowed capture, transformation, retention, display, export, and redistribution |
-| Bank or HSB information steward | Govern source ownership, quality, sensitivity, currency, correction, and reconciliation of estate assertions |
-| Architecture authority | Govern mapping meaning, review, architecture decisions, exceptions, and supersession |
+| Bank information steward | Govern source ownership, quality, sensitivity, currency, correction, and reconciliation of bank or HSB estate assertions |
+| Architecture owner | Govern mapping meaning, review, architecture decisions, exceptions, and supersession |
 | Asset owner | Confirm or dispute factual assertions and actions for owned assets |
-| Security and information authority | Govern classification, access, tenancy, retention, deletion, residency, evidence, and sensitive flows |
-| Assurance authority | Govern evidence scope, sufficiency, finding, expiry, exception, and conclusion |
+| Security owner | Govern classification, access, tenancy and sensitive information flows |
+| Information governance owner | Govern approved residency, retention, deletion, archival and legal-hold obligations before real bank production use |
+| Assurance owner | Govern evidence scope, sufficiency, finding, expiry, exception, and conclusion |
 | Platform operator | Operate storage and exchange controls later selected without assuming semantic authority |
 | Open-source maintainer | Govern public schemas, compatibility, migrations, releases, and disclosed support boundaries |
 
 ## 18. Requirements and risk traceability
 
-The proposed `DAR-001` through `DAR-017` requirements are maintained in the
+The proposed and deferred `DAR-001` through `DAR-028` requirements are
+maintained in the
 [Architecture Register](../governance/ARCHITECTURE_REGISTER.md#data-architecture-requirements).
 They principally refine:
 
@@ -425,12 +479,13 @@ They principally refine:
 - `BAR-002` through `BAR-005`, `BAR-007`, `BAR-008`, `BAR-010`, `BAR-011`, and
   `BAR-014` for Business Architecture refinement.
 
-The main Data Architecture risks are `RSK-005`, `RSK-006`, `RSK-013`, and
-`RSK-019` through `RSK-023`.
+The main Data Architecture risks are `RSK-005`, `RSK-006`, `RSK-013`,
+`RSK-019` through `RSK-023`, and `RSK-033` through `RSK-035`.
 
 ## 19. Open questions and next analysis
 
-The active Data Architecture questions are `OQ-032` through `OQ-038`. The next
+The active Data Architecture questions are `OQ-032` through `OQ-038`, `OQ-048`
+and `OQ-049`. The next
 review should determine:
 
 - whether the subject, assertion, and relationship-assertion separation is
@@ -441,6 +496,16 @@ review should determine:
   the first HSB slice;
 - which exact BIAN R14 sources can validate the model lawfully; and
 - which logical application responsibilities are required to operate the model.
+
+The record-level example resolves the earlier conceptual ambiguity about
+subject registration, relationship arity, projection classification, Class C
+and current-view governance under `DEC-024`. It does not settle the physical
+schema or the evaluation language for View Definitions.
+
+`DAR-010`, `DAR-011`, `DAR-014`, `DAR-019`, `DAR-020` and `DAR-026` remain
+proposed because their acceptance evidence depends on logical Application
+Architecture responsibilities. `DEP-013` and `WRK-040` keep that dependency
+visible rather than allowing Data Architecture concerns to migrate silently.
 
 ## 20. Explicit non-decisions
 
@@ -463,9 +528,13 @@ operational objectives, and evidence.
 ### Internal
 
 - [Information Systems Architecture](INFORMATION_SYSTEMS_ARCHITECTURE.md)
+- [Trust-boundary and security architecture](TRUST_BOUNDARY_AND_SECURITY_ARCHITECTURE.md)
+- [Phase C model validation](PHASE_C_MODEL_VALIDATION.md)
+- [Phase C gap and traceability analysis](PHASE_C_TRACEABILITY.md)
 - [Architecture Vision](ARCHITECTURE_VISION.md)
 - [Business Architecture](BUSINESS_ARCHITECTURE.md)
 - [Requirements and traceability](REQUIREMENTS_AND_TRACEABILITY.md)
 - [BIAN alignment policy](../product/BIAN_ALIGNMENT_POLICY.md)
 - [Fictional bank and synthetic validation](../product/FICTIONAL_BANK_AND_SYNTHETIC_VALIDATION.md)
+- [Project glossary](../governance/GLOSSARY.md)
 - [Architecture Register](../governance/ARCHITECTURE_REGISTER.md)

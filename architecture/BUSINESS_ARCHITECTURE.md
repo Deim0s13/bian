@@ -332,19 +332,24 @@ Services and not deployable software services.
 
 ## 11. Roles, accountability, and decision rights
 
-One person may hold several roles in an HSB scenario or small adopter. Material
-decisions must still record the role and authority exercised.
+Register accountability uses the canonical roles in `ROL-001` through
+`ROL-013`. An adopting organisation may use different job titles, but must map
+them to one accountable role before a governed record is approved. One person
+may hold several roles in an HSB scenario or small adopter. Material decisions
+must still record the accountable role and delegated decision right exercised.
 
 | Business role | Core accountability |
 |---|---|
-| Product sponsor and product authority | Value, scope, investment position, priorities, and release proposition |
+| Project owner | Investment position, stage progression, accepted baselines, and final project decisions |
+| Product owner | User, value, scope, priorities, measures, stop conditions, and release proposition |
 | BIAN source steward | Source identity, release qualification, integrity, provenance, and import status |
 | Source-rights reviewer | Permitted access, transformation, redistribution, attribution, and usage conditions |
-| Bank or HSB information steward | Quality, sensitivity, ownership, currency, and correction of estate assertions |
-| Enterprise or domain architect | Mapping review, architecture findings, options, target states, and transition decisions within delegated authority |
+| Bank information steward | Quality, sensitivity, ownership, currency, and correction of bank or HSB estate assertions |
+| Architecture owner | Mapping review, architecture findings, options, target states, transition decisions, and architecture coherence |
 | Application, API, or service owner | Accuracy, ownership, impact, lifecycle, implementation action, and accepted risk for owned assets |
-| Security and control owner | Security profile, control intent, assessment scope, evidence sufficiency, exceptions, and assurance conclusions |
-| Platform operator | Identity, access, availability, recovery, monitoring, tenant boundaries, and operational change |
+| Security owner | Security profile, sensitive information, trust boundaries, threats, and security risk |
+| Assurance owner | Control intent, assessment scope, evidence sufficiency, exceptions, and assurance conclusions |
+| Operations owner | Identity, access, availability, recovery, monitoring, tenant boundaries, and operational change |
 | Open-source maintainer | Contribution review, product integrity, release evidence, vulnerability response, and support status |
 | Independent reviewer | Challenge of BIAN fidelity, architecture reasoning, security, evidence, usability, or production readiness within stated competence |
 
@@ -354,10 +359,10 @@ decisions must still record the role and authority exercised.
 - A mapping proposal becomes a reviewed bank or HSB assertion only through an
   accountable architecture and asset-owner decision.
 - Target architecture and transition decisions remain with the delegated bank or
-  HSB architecture authority.
+  HSB architecture decision owner or approving body.
 - Generated output does not authorise implementation or change ownership.
 - Security and control conclusions remain with the named control or assurance
-  authority and within the assessed scope.
+  owner, within the assessed scope and recorded decision mandate.
 - AI and automated analysis may propose or verify within a declared method. They
   cannot approve a material mapping, architecture decision, exception, or
   attestation.
@@ -367,18 +372,19 @@ decisions must still record the role and authority exercised.
 ## 12. Business information map
 
 The Business Architecture depends on the following information groups. Detailed
-entities, relationships, cardinality, temporal rules, and storage remain for the
-Information Architecture.
+entities, relationships, cardinality and temporal rules are developed through
+Information Systems Architecture, beginning with conceptual Data Architecture.
+Physical storage remains outside the current stage.
 
 | Information group | Examples | Accountable source |
 |---|---|---|
 | Authoritative BIAN context | release, artefact identity, term, relationship, lifecycle status, source integrity | Authorised BIAN source and project BIAN source steward |
-| Bank or HSB estate | application, API, integration, data asset, vendor, owner, lifecycle, criticality | Bank system or HSB information steward |
+| Bank or HSB estate | application, API, integration, data asset, vendor, owner, lifecycle, criticality | Bank source system and Bank information steward |
 | Mapping and analysis | candidate mapping, rationale, confidence, conflict, duplication finding, review state | Analytical method plus accountable reviewer |
-| Architecture state and decision | current, target, transition, option, dependency, risk, decision, exception, roadmap | Delegated architecture authority |
+| Architecture state and decision | current, target, transition, option, dependency, risk, decision, exception, roadmap | Named architecture decision owner or approving body |
 | Engineering projection | input model, profile, generator version, output, ownership boundary, consumer, compatibility | Engineering workflow and asset owner |
 | Assurance | requirement, control, implementation, assessment, test, evidence, finding, gap, exception, attestation, expiry | External authority or bank control owner, with assessor evidence |
-| Governance and operation | identity, role, approval, policy, lifecycle, audit event, service level, incident, release, support status | Relevant governance or operational authority |
+| Governance and operation | identity, role, approval, policy, lifecycle, audit event, service level, incident, release, support status | Named governance or operations owner |
 
 All information groups require identity, provenance, version, responsible owner,
 time, review state, sensitivity, and limitations appropriate to their authority.
@@ -416,9 +422,9 @@ claim that the full platform should be built.
 | Funding role | An HSB payments transformation sponsor represents programme funding and sequencing. A real-world economic buyer remains unvalidated under `EVD-001`. |
 | Operational owner | An architecture enablement or BIAN stewardship function operates the workflow and source context without assuming asset-owner accountability. |
 | Application and API owners | Approve or challenge factual assertions about their assets, interfaces, lifecycle, ownership, and implementation responsibilities. |
-| Architecture authority | Approves mappings as bank or HSB architecture interpretations and decides the target responsibility allocation within delegated authority. |
+| Architecture owner or delegated bank architecture approver | Approves mappings as bank or HSB architecture interpretations and decides the target responsibility allocation within a recorded decision mandate. |
 | Architecture Review Board or Chief Architect | Approves material target and transition decisions that exceed delegated domain authority. |
-| Security and control owners | Approve only their scoped requirements, control conclusions, evidence judgements, and exceptions. |
+| Security owner and Assurance owner | Approve only their respective scoped security requirements, control conclusions, evidence judgements, and exceptions. |
 | Engineering owners | Remain accountable for any later implementation; generated output does not transfer ownership or authorise delivery. |
 
 Automation may propose mappings, findings, options, and impacts. It cannot

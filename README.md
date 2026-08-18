@@ -19,8 +19,10 @@ should not constrain the product vision.
 - [Project status](governance/PROJECT_STATUS.md) records the current stage and
   next gate.
 - [Architecture Register](governance/ARCHITECTURE_REGISTER.md) is the canonical
-  record of decisions, questions, risks, assumptions, dependencies, evidence
-  gaps, requirements, work items, and issues.
+  record of gates, roles, provenance, decisions, questions, risks, assumptions,
+  dependencies, evidence gaps, requirements, work items, and issues.
+- [Project glossary](governance/GLOSSARY.md) defines recurring project terms and
+  prevents scope qualifiers from becoming informal escape hatches.
 - [Project principles](product/PROJECT_PRINCIPLES.md) is the authoritative
   numbered catalogue of overarching project principles.
 - [Requirements and traceability](architecture/REQUIREMENTS_AND_TRACEABILITY.md)
@@ -87,9 +89,14 @@ Read these in order:
 12. [Scope and prioritisation](product/SCOPE_AND_PRIORITISATION.md)
 13. [Discovery questions](product/DISCOVERY_QUESTIONS.md)
 
-## Stage gates
+## Project stages
 
-### Stage 1: Product definition (baseline established)
+These stages describe the architecture sequence. They are not approval gates.
+The canonical `GAT-001` through `GAT-016` entry, exit, blocker, owner and status
+definitions are maintained only in the
+[Architecture Register](governance/ARCHITECTURE_REGISTER.md#canonical-gates).
+
+### Stage 1: Product definition (working baseline established)
 
 - identify users, buyers, problems, triggers, and desired decisions;
 - define the complete use-case set and how the use cases reinforce each other;
@@ -108,14 +115,43 @@ operating-model hypothesis, and HSB decision scenario. This stage will continue
 through the
 [Information Systems Architecture](architecture/INFORMATION_SYSTEMS_ARCHITECTURE.md),
 beginning with the
-[conceptual Data Architecture](architecture/DATA_ARCHITECTURE.md), then logical
-Application Architecture, trust boundaries, scenario views, and capability
+[conceptual Data Architecture](architecture/DATA_ARCHITECTURE.md), followed by
+the
+[trust-boundary and security architecture](architecture/TRUST_BOUNDARY_AND_SECURITY_ARCHITECTURE.md),
+the connected HSB scenario, logical Application Architecture and capability
 interactions without prematurely selecting detailed technology.
 
-### Stage 3: Solution architecture and experiments
+### Stage 3: Technology Architecture
 
-Begins only when the initial customer proposition and architecture questions
-are sufficiently understood. Technology choices and prototypes belong here.
+Begins after the Information Systems Architecture baseline passes. It defines
+baseline and target technology capabilities, logical building blocks, quality
+attributes, standards constraints, trust and operational boundaries, gaps and
+options without prematurely selecting a bounded solution.
+
+### Stage 4: Opportunities, solutions, and migration planning
+
+Translates approved architecture gaps into candidate transition architectures,
+work packages, evidence-generating experiments and a prioritised roadmap. It
+must retain narrower and no-build options and avoid invented cost, resource or
+adopter commitments.
+
+### Stage 5: Bounded solution and implementation governance
+
+Begins only after the applicable architecture, transition, migration and build
+gates permit it. A bounded Solution Architecture, implementation readiness and
+Implementation Governance connect approved requirements to delivery evidence,
+exceptions and release decisions.
+
+### Stage 6: Release, change management, and iteration
+
+Release gates establish the exact supported scope. Architecture Change
+Management monitors BIAN, product, security, regulatory, technology,
+operational and open-source change and triggers targeted revision or a further
+ADM cycle when evidence requires it.
+
+The full project-specific tailoring is maintained in
+[Architecture lifecycle and ADM tailoring](architecture/ARCHITECTURE_LIFECYCLE.md).
+A project stage label never authorises implementation.
 
 ## Status language
 
