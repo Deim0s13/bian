@@ -8,26 +8,26 @@
 
 ## Current focus
 
-The required Business Architecture baseline was accepted as sufficient to begin
-Information Systems Architecture under `DEC-019`. Whole-register review has
-since placed `GAT-001` in `Revisit required` while the Business Architecture
-requirements receive a controlled disposition review. This does not reverse the
-stage decision, but it prevents the earlier baseline from being treated as
-settled. The immediate architecture focus remains `GAT-002`, the conceptual Data
-Architecture baseline. The Phase C pressure test now precedes logical
-Application Architecture: the conceptual model has been instantiated with one
-synthetic HSB record set, cross-domain gaps and traceability are explicit, and
-the stage exit criteria are auditable tests. The initial trust-boundary and
-security baseline is now drafted under `WRK-011`; `WRK-041` must review its
-boundaries, threats, negative paths, failure behaviour and Application
-Architecture hand-off. The first review has added an explicit participant
-access boundary, separated runtime from extension and release lifecycle
-boundaries, made Unclassified information visible, added participant privacy,
-and prioritised workstation, source-control, dependency and intake-exhaustion
-threats. Build-authorisation recalibration then follows under
-`WRK-042`, before it becomes an implementation constraint. `WRK-029` continues the
-project-owner review of the wider lifecycle plan without blocking this Phase C
-refinement.
+The Business Architecture and requirements normalisation is complete under
+`DEC-030`. `GAT-001` has passed, `WRK-020` and `WRK-022` are complete, and the
+active cross-cutting baseline is `REQ-001` through `REQ-025`. `BAR-002` and
+`BAR-006` remain active Business Architecture refinements; the superseded
+records retain their history and replacements. The conceptual Data Architecture
+baseline has passed `GAT-002` under
+`DEC-028`, with six Proposed requirements and source-qualified BIAN, export and
+workload evidence retained as explicit limitations. The conceptual model has
+been instantiated with one synthetic HSB record set, cross-domain gaps and
+traceability are explicit, and the stage exit criteria are auditable tests. The
+trust-boundary and security
+baseline has been accepted under `DEC-026`, and `WRK-011` and `WRK-041` are
+complete. It now constrains the connected HSB scenario and logical Application
+Architecture while unresolved privacy, application-allocation and
+implementation-evidence matters remain explicit. Build-authorisation
+recalibration is complete under `DEC-027` and `WRK-042`: the existing gates
+remain unchanged and no early experimental-build route has been created. The
+immediate work item is the connected HSB scenario under `WRK-012`. `WRK-029`
+continues the project-owner review of the wider lifecycle plan without blocking
+this Phase C refinement.
 
 No software implementation or solution architecture is approved. The archived
 technical spike is inactive and does not constrain current work.
@@ -49,8 +49,9 @@ technical spike is inactive and does not constrain current work.
   assessment is an initial validation scenario rather than the product centre.
 - The accepted Business Architecture defines six connected value streams, seven
   project-defined platform capabilities, business services, decision rights,
-  measures, accepted `BAR-001` through `BAR-014`, and a bounded HSB decision
-  scenario.
+  measures and a bounded HSB decision scenario. `DEC-030` retains `BAR-002` and
+  `BAR-006`, promotes `BAR-010` into `REQ-021` and supersedes the remaining
+  eleven `BAR` records with traceable parent requirements.
 - `DEC-019` establishes Information Systems Architecture as the current stage
   and sequences conceptual Data Architecture before logical Application
   Architecture without selecting physical storage, products, protocols,
@@ -61,8 +62,9 @@ technical spike is inactive and does not constrain current work.
   protection, portability and downstream impact explicit. Following the first
   pressure test under `DEC-020`, its `DAR-001` through `DAR-028` requirements
   have single accountable owners, canonical gates and related blocker records.
-  `DAR-021`, `DAR-022` and `DAR-025` are deferred; the remainder await explicit
-  review outcomes under `WRK-019`.
+  `DEC-028` accepts nineteen, retains six as Proposed and confirms `DAR-021`,
+  `DAR-022` and `DAR-025` as Deferred. `WRK-010` and `WRK-019` are complete,
+  `DEP-003` is met and `GAT-002` has passed with explicit limitations.
 - `DEC-024` resolves five conceptual-model ambiguities through a record-level
   HSB example: subjects are identity anchors, relationship assertions are binary
   and reified, projections remain separate from assertions, Class C is project
@@ -77,11 +79,10 @@ technical spike is inactive and does not constrain current work.
   recorded adopting-organisation decision rights. The register now records
   origin, risk likelihood and impact, event-based review triggers, and the
   limitations of the current single-person role holders.
-- `DEC-022` reopens the accepted `REQ` and `BAR` baselines for controlled review.
-  Every requirement is now assigned to a canonical gate and linked to related
-  register records. `WRK-020` and `WRK-022` will determine whether individual
-  requirements are retained, revised, rejected or superseded without erasing
-  their accepted history.
+- `DEC-022` reopened the accepted `REQ` and `BAR` baselines for controlled
+  review. `DEC-030` records every disposition, accepts the normalised
+  `REQ-001` through `REQ-025` baseline, closes `WRK-020` and `WRK-022` and
+  returns `GAT-001` to Passed without erasing superseded history.
 - `DEC-023` plans the complete tailored architecture lifecycle before the
   project advances beyond Information Systems Architecture. Phase D has its own
   Technology Architecture baseline under `GAT-012`; Phases E through H use
@@ -116,7 +117,7 @@ technical spike is inactive and does not constrain current work.
   catalogue for value, BIAN integrity, authority, evidence, security, synthetic
   validation, open source, bank adoption, interoperability, portability,
   generation, change, simplicity, and architecture governance.
-- Twenty accepted cross-cutting requirements provide the initial bridge from
+- Twenty-five accepted cross-cutting requirements provide the initial bridge from
   product outcomes and principles to Business, Data, Application, Technology,
   security, operational, and future solution requirements.
 - Horizon Synthetic Bank will provide repeatable fictional scenarios and
@@ -148,10 +149,11 @@ individual platform capabilities are not assumed to be differentiated.
 
 ## Next gates
 
-`GAT-002` is the immediate gate. It requires explicit outcomes for all proposed
-`DAR` records, resolution or deliberate carry-forward of their blocker records,
-and a conceptual model whose BIAN validation limits remain explicit. The worked
-example is internal evidence of coherence only; it does not close `EVD-011`.
+`GAT-002` passed under `DEC-028`. Nineteen `DAR` records are Accepted, six remain
+Proposed for later Application Architecture or scenario evidence and three
+remain Deferred. `EVD-011` and `EVD-013` remain explicit limitations; the
+synthetic worked example does not establish source-qualified BIAN fidelity or
+prove the export obligation.
 
 `GAT-003` is the Information Systems Architecture baseline gate. It is ready to
 pass only when every test in the Information Systems Architecture has its named
@@ -182,10 +184,11 @@ evidence and a recorded pass from the accountable judge. In practical terms:
 - the architecture identifies which uncertainties require bounded experiments;
 - the owner explicitly authorises Technology Architecture to begin.
 
-The immediate work sequence is to review the trust baseline under `WRK-041`,
-recalibrate bounded build authorisation under `WRK-042`, then continue with the
-connected HSB scenario and logical Application Architecture. Recalibration does
-not authorise implementation during the current stage.
+The trust baseline review is complete under `DEC-026` and `WRK-041`.
+Build-authorisation recalibration is also complete under `DEC-027` and
+`WRK-042`, with no separate early experimental-build route. The immediate work
+sequence is to complete the connected HSB scenario and then develop the logical
+Application Architecture.
 
 After `GAT-003`, the planned architecture sequence is:
 

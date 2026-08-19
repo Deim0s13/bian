@@ -81,14 +81,15 @@ REQUIRED_CONTENT = {
         "Value-stream to capability cross-map",
         "Platform business services",
         "Accepted working proposition and decision boundary",
-        "Initial Business Architecture requirements",
+        "Business Architecture requirements",
         "Initial HSB business scenario",
         "Failure and stop signals",
     ),
     "architecture/REQUIREMENTS_AND_TRACEABILITY.md": (
         "sole authoritative record",
         "REQ-001",
-        "REQ-020",
+        "REQ-025",
+        "DEC-030",
         "Requirement quality tests",
         "Initial relationship to trust and security architecture",
         "Lifecycle and change control",
@@ -204,6 +205,10 @@ REQUIRED_CONTENT = {
         "DEC-023",
         "DEC-024",
         "DEC-025",
+        "DEC-026",
+        "DEC-027",
+        "DEC-028",
+        "DEC-029",
         "GAT-001",
         "GAT-011",
         "GAT-012",
@@ -216,7 +221,7 @@ REQUIRED_CONTENT = {
         "## Dependencies",
         "## Evidence gaps",
         "## Requirements",
-        "REQ-020",
+        "REQ-025",
         "BAR-014",
         "DAR-017",
         "DAR-028",
@@ -234,6 +239,7 @@ REQUIRED_CONTENT = {
         "RSK-035",
         "RSK-038",
         "RSK-041",
+        "EVD-013",
         "## Work items",
         "WRK-014",
         "WRK-018",
@@ -534,6 +540,43 @@ def check_data_architecture_requirements(errors: list[str]) -> None:
             )
 
 
+def check_crosscutting_requirements(errors: list[str]) -> None:
+    register_path = ROOT / "governance/ARCHITECTURE_REGISTER.md"
+    if not register_path.is_file():
+        return
+
+    for line_number, line in enumerate(
+        register_path.read_text(encoding="utf-8").splitlines(), start=1
+    ):
+        if not line.startswith("| REQ-"):
+            continue
+
+        fields = [field.strip() for field in line.strip("|").split("|")]
+        if len(fields) != 10 or fields[5] != "Accepted":
+            continue
+
+        identifier, requirement = fields[0], fields[2]
+        lower_requirement = requirement.lower()
+        for phrase in (
+            "as applicable",
+            "where applicable",
+            "appropriate to that state",
+            "within the maintained scope",
+        ):
+            if phrase in lower_requirement:
+                errors.append(
+                    "governance/ARCHITECTURE_REGISTER.md:"
+                    f"{line_number}: {identifier} uses an unbounded qualifier: "
+                    f"{phrase}"
+                )
+        if re.search(r"\bproportionate\b", lower_requirement):
+            errors.append(
+                "governance/ARCHITECTURE_REGISTER.md:"
+                f"{line_number}: {identifier} uses proportionate without an "
+                "explicit scope rule"
+            )
+
+
 def check_register_controls(errors: list[str]) -> None:
     register_path = ROOT / "governance/ARCHITECTURE_REGISTER.md"
     if not register_path.is_file():
@@ -668,6 +711,7 @@ def main() -> int:
     files = active_text_files()
     check_architecture_register(files, errors)
     check_data_architecture_requirements(errors)
+    check_crosscutting_requirements(errors)
     check_register_controls(errors)
     check_project_principles(files, errors)
     for path in files:

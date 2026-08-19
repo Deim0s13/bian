@@ -2,7 +2,7 @@
 
 ## Document status
 
-**Status:** Accepted working baseline under `DEC-017`
+**Status:** Normalised accepted working baseline under `DEC-030`
 
 **Scope:** Cross-cutting project and architecture requirements
 
@@ -73,19 +73,22 @@ and what is affected when it changes.
 
 ## Baseline coverage
 
-The accepted `REQ-001` through `REQ-020` baseline covers:
+The accepted `REQ-001` through `REQ-025` baseline covers:
 
 | Concern | Requirement references |
 |---|---|
 | Bounded value and investment discipline | `REQ-001` |
 | Authoritative BIAN use and authority separation | `REQ-002`, `REQ-003` |
 | Canonical model, identity, provenance, and connected traceability | `REQ-004` through `REQ-006` |
-| Human decision rights and evidence-based claims | `REQ-007`, `REQ-008` |
+| Human decision rights and assurance or compliance claims | `REQ-007`, `REQ-008` |
 | Security, privacy, resilience, and synthetic validation | `REQ-009`, `REQ-010` |
 | Open-source trust and bank readiness | `REQ-011`, `REQ-012` |
 | Enterprise coexistence, customer control, and runtime neutrality | `REQ-013` through `REQ-015` |
 | Extensibility, deterministic generation, and change impact | `REQ-016` through `REQ-018` |
-| Consumable experience and proportionate operability | `REQ-019`, `REQ-020` |
+| Consumable experience and operability | `REQ-019`, `REQ-020` |
+| Decision-oriented measures | `REQ-021` |
+| Security, cloud-native and readiness claims | `REQ-022` through `REQ-024` |
+| Architecture minimality | `REQ-025` |
 
 This coverage is deliberately architectural. It does not specify a deployment
 topology, programming language, database, user-interface framework, cloud,
@@ -93,26 +96,19 @@ container platform, service decomposition, or product integration.
 
 ## Initial relationship to Business Architecture requirements
 
-The existing Business Architecture requirements refine the cross-cutting
-baseline as follows:
-
-The relationships are many-to-many: one `BAR` may refine more than one
-overarching requirement. Repeated `BAR` identifiers are therefore intentional,
-not duplicate requirement records. Their necessity and wording remain subject
-to the controlled disposition review under `DEC-022` and `WRK-022`.
+The Business Architecture requirement review under `DEC-030` retained only the
+requirements that add a distinct business-level obligation or scenario-specific
+acceptance condition:
 
 | Overarching requirement | Principal Business Architecture refinements |
 |---|---|
-| `REQ-001` | `BAR-001`, `BAR-006`, `BAR-010` |
-| `REQ-002`, `REQ-003` | `BAR-003`, `BAR-011` |
-| `REQ-004` through `REQ-006` | `BAR-002`, `BAR-005`, `BAR-007` |
-| `REQ-007` | `BAR-004` |
-| `REQ-008` | `BAR-008` |
-| `REQ-010` | `BAR-011` |
-| `REQ-011`, `REQ-012` | `BAR-012` |
-| `REQ-013`, `REQ-014` | `BAR-005`, `BAR-014` |
-| `REQ-017` | `BAR-009` |
-| `REQ-019` | `BAR-013` |
+| `REQ-006` | `BAR-002` |
+| `REQ-019` | `BAR-006` |
+
+`BAR-010` was promoted to `REQ-021`. The other eleven Business Architecture
+requirements are Superseded by their recorded `REQ` replacements. They remain
+in the Architecture Register as historical traceability, not parallel active
+obligations.
 
 The absence of a direct `BAR` refinement does not make an overarching
 requirement optional. Some concerns will be refined primarily through later
@@ -120,23 +116,24 @@ Data, Application, Technology, security, or operational architecture work.
 
 ## Initial relationship to Data Architecture requirements
 
-The proposed and deferred `DAR-001` through `DAR-028` requirements are maintained only in the
+The accepted, proposed and deferred `DAR-001` through `DAR-028` requirements are maintained only in the
 [Architecture Register](../governance/ARCHITECTURE_REGISTER.md#data-architecture-requirements).
 They refine the accepted baseline in these principal groups:
 
 | Data Architecture concern | Principal requirement relationships |
 |---|---|
-| Identity, namespaces, source identity, and time | `DAR-001`, `DAR-002`, `DAR-006`, `DAR-011`, `DAR-015`, `DAR-028`; refining `REQ-004`, `REQ-005`, `BAR-002`, and `BAR-005` |
-| Authority, assertions, relationships, mappings, and review | `DAR-003`, `DAR-007`, `DAR-008`, `DAR-012`, `DAR-018`, `DAR-019`; refining `REQ-002`, `REQ-003`, `REQ-007`, `BAR-003`, `BAR-004`, and `BAR-007` |
-| Provenance, immutable capture, evidence, reproducibility, views, and impact | `DAR-004`, `DAR-005`, `DAR-013`, `DAR-017`, `DAR-020`, `DAR-024`, `DAR-026`, `DAR-027`; refining `REQ-006`, `REQ-008`, `REQ-017`, `REQ-018`, and `BAR-008` through `BAR-010` |
-| Quality, systems of record, and reconciliation | `DAR-009`, `DAR-010`, `DAR-021`; refining `REQ-003`, `REQ-013`, `BAR-005`, and `BAR-014` |
-| Information protection, portability, rights, and lifecycle | `DAR-014`, `DAR-016`, `DAR-022`, `DAR-023`, `DAR-025`; refining `REQ-009`, `REQ-011`, `REQ-012`, `REQ-014`, `REQ-016`, `BAR-011`, and `BAR-012` |
+| Identity, namespaces, source identity, and time | `DAR-001`, `DAR-002`, `DAR-006`, `DAR-011`, `DAR-015`, `DAR-028`; refining `REQ-004` through `REQ-006` and retained `BAR-002` |
+| Authority, assertions, relationships, mappings, and review | `DAR-003`, `DAR-007`, `DAR-008`, `DAR-012`, `DAR-018`, `DAR-019`; refining `REQ-002`, `REQ-003` and `REQ-007` |
+| Provenance, immutable capture, evidence, reproducibility, views, and impact | `DAR-004`, `DAR-005`, `DAR-013`, `DAR-017`, `DAR-020`, `DAR-024`, `DAR-026`, `DAR-027`; refining `REQ-006`, `REQ-008`, `REQ-017`, `REQ-018` and `REQ-021` |
+| Quality, systems of record, and reconciliation | `DAR-009`, `DAR-010`, `DAR-021`; refining `REQ-003`, `REQ-013` and `REQ-014` |
+| Information protection, portability, rights, and lifecycle | `DAR-014`, `DAR-016`, `DAR-022`, `DAR-023`, `DAR-025`; refining `REQ-009`, `REQ-011`, `REQ-012`, `REQ-014`, `REQ-016`, `REQ-022` and `REQ-024` |
 
 Each `DAR` record identifies a canonical `GAT` delivery event and the register
-records that constrain, support or refine it. `DAR-021`, `DAR-022` and
-`DAR-025` are explicitly deferred. The remaining records stay proposed until
-review. Neither status nor sequencing authorises implementation or proves that
-a future product satisfies a requirement.
+records that constrain, support or refine it. Under `DEC-028`, nineteen are
+Accepted, `DAR-010`, `DAR-011`, `DAR-014`, `DAR-019`, `DAR-020` and `DAR-026`
+remain Proposed, and `DAR-021`, `DAR-022` and `DAR-025` remain Deferred.
+Acceptance confirms an agreed requirement, not implementation or satisfaction
+evidence. Neither status nor sequencing authorises implementation.
 
 ## Initial relationship to trust and security architecture
 
@@ -150,10 +147,10 @@ accepted requirements to the first proposition through these principal groups:
 | Source authenticity, operational validation and BIAN authority | `REQ-002`, `REQ-003`, `REQ-005`; `DAR-002` through `DAR-005`, `DAR-023` |
 | Ownership, sensitivity, access and tenant scope | `REQ-009`, `REQ-014`; `DAR-014`, `OQ-034` |
 | Participant privacy and accountable decision history | `REQ-009`; `DAR-012`, `DAR-022`, `OQ-052`, `RSK-024` |
-| Inference, human decision and point-of-use authority | `REQ-007`, `REQ-008`, `REQ-019`; `DAR-008`, `DAR-012`, `DAR-018`, `DAR-019`, `DAR-026` |
+| Inference, human decision and point-of-use authority | `REQ-007`, `REQ-008`, `REQ-019`, `REQ-022`; `DAR-008`, `DAR-012`, `DAR-018`, `DAR-019`, `DAR-026` |
 | Extension, generation, export and external integration | `REQ-013` through `REQ-017`; `DAR-015` through `DAR-017`, `DAR-027` |
 | Intake safety, failure, impact and recovery | `REQ-009`, `REQ-018`, `REQ-020`; `DAR-020`, `DAR-024`, `RSK-041`, `EVD-012` |
-| Open-source and production-supported trust | `REQ-011`, `REQ-012`; `RSK-039`, `RSK-040`, `GAT-009`, `GAT-010` |
+| Open-source and production-supported trust | `REQ-011`, `REQ-012`, `REQ-024`; `RSK-039`, `RSK-040`, `GAT-009`, `GAT-010` |
 
 Logical enforcement and interaction responsibilities remain `OQ-050`,
 `DEP-014` and `WRK-013`. No security product or physical control is selected by
@@ -199,17 +196,12 @@ Requirement status is governed by the Architecture Register vocabulary:
 
 ## Review outcome
 
-The project owner accepted `PRN-001` through `PRN-017` and `REQ-001` through
-`REQ-020` as evolving working baselines under `DEC-017`. Acceptance confirms
-that they govern subsequent architecture work. It does not prove that the
-future product satisfies them or authorise implementation.
-
-`DEC-022` has reopened the accepted `REQ` and `BAR` baselines for controlled
-normalisation. `WRK-020` and `WRK-022` will test bundled obligations, weak or
-duplicate refinements, qualifiers, ownership, gates and blocker links. Existing
-statuses remain authoritative until the project owner records explicit retained,
-revised, rejected or superseded outcomes. This prevents a review comment from
-silently rewriting an accepted baseline.
+`DEC-017` accepted the original cross-cutting baseline. `DEC-030` now accepts
+the normalised `REQ-001` through `REQ-025` baseline, closes `WRK-020` and
+`WRK-022`, retains `BAR-002` and `BAR-006`, promotes `BAR-010` to `REQ-021` and
+supersedes the other eleven `BAR` records. Acceptance confirms that an
+obligation governs subsequent architecture work. It does not prove that the
+future product satisfies it or authorise implementation.
 
 Material changes must retain their previous outcome, record the supporting
 decision and evidence, and review affected Business, Data, Application,

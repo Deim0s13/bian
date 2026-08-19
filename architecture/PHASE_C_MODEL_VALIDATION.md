@@ -226,14 +226,16 @@ reconstruction.
 ## 12. Validation outcome
 
 The example supports the conceptual separation of Subject, Assertion, Source
-Capture, Relationship Assertion, Review, Evidence and Provenance, but it does
-not justify accepting the complete Data Architecture.
+Capture, Relationship Assertion, Review, Evidence and Provenance. On its own,
+it did not justify accepting the complete Data Architecture or claiming that
+its requirements were satisfied.
 
-It found four required model clarifications and one new governed concept. It
-also confirms that `DAR-010`, `DAR-011`, `DAR-014`, `DAR-019`, `DAR-020` and
-`DAR-026` require logical Application Architecture responsibilities before
-their acceptance evidence can be completed. Those requirements remain
-Proposed.
+It found four required model clarifications and one new governed concept. The
+subsequent requirement disposition under `DEC-028` accepted the conceptual Data
+Architecture with explicit limitations. `DAR-010`, `DAR-011`, `DAR-014`,
+`DAR-019`, `DAR-020` and `DAR-026` remain Proposed pending logical Application
+Architecture or further scenario evidence. `EVD-013` separately records that
+the accepted `DAR-016` export obligation has not been exercised.
 
 The next validation should replace the BIAN placeholder with exact authorised,
 release-qualified Class A content after `GAT-004`, then repeat the mapping and

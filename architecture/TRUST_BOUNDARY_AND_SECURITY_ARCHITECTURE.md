@@ -2,12 +2,13 @@
 
 ## Document status
 
-**Status:** Initial conceptual baseline for review
+**Status:** Accepted conceptual baseline under `DEC-026`
 
 **Architecture stage:** Information Systems Architecture, cross-cutting trust and
 security view
 
-**Governing records:** `PRN-007`, `REQ-009`, `DAR-014`, `WRK-011`
+**Governing records:** `PRN-007`, `REQ-009`, `DAR-014`, `DEC-026`, `WRK-011`,
+`WRK-041`
 
 **Scope:** Trust boundaries, protected information, threat and abuse cases,
 control outcomes, failure behaviour and security evidence for the first HSB
@@ -426,9 +427,7 @@ This view principally refines:
 
 - `PRN-003`, `PRN-005` through `PRN-007`, `PRN-011` through `PRN-015`;
 - `REQ-002`, `REQ-003`, `REQ-005` through `REQ-009`, `REQ-011` through
-  `REQ-018`, and `REQ-020`;
-- `BAR-003` through `BAR-005`, `BAR-008`, `BAR-009`, `BAR-011`, `BAR-012` and
-  `BAR-014`; and
+  `REQ-018`, `REQ-020`, `REQ-022`, `REQ-024` and `REQ-025`; and
 - `DAR-002` through `DAR-005`, `DAR-007` through `DAR-020`, `DAR-023`,
   `DAR-026` and `DAR-027`.
 

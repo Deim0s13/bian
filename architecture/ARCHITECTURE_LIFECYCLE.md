@@ -56,8 +56,8 @@ decision to be overwritten without history.
 |---|---|---|---|
 | Preliminary and method preparation | Repository instructions, principles, role model, governance, register, tailoring and evidence boundaries | `GAT-011` | Established and continuously governed |
 | Phase A: Architecture Vision | Product direction, stakeholders, concerns, scope, value hypothesis and investment boundary | Accepted working Architecture Vision; `DEC-011` through `DEC-013` | Working baseline |
-| Phase B: Business Architecture | Value streams, capabilities, business services, roles, information needs, decision rights and bounded proposition | `GAT-001` | Revisit required under `WRK-022` |
-| Phase C: Data Architecture | Identity, assertions, relationships, provenance, authority, time, quality, lifecycle and exchange | `GAT-002` | In progress under `WRK-019` |
+| Phase B: Business Architecture | Value streams, capabilities, business services, roles, information needs, decision rights and bounded proposition | `GAT-001` | Passed after requirement normalisation under `DEC-030` |
+| Phase C: Data Architecture | Identity, assertions, relationships, provenance, authority, time, quality, lifecycle and exchange | `GAT-002` | Passed with explicit limitations under `DEC-028` |
 | Phase C: Application Architecture | Logical application responsibilities, interactions, ownership and integration seams | Contributes to `GAT-003` | Not started; `WRK-013` planned |
 | Phase D: Technology Architecture | Baseline and target technology capabilities, logical technology building blocks, standards constraints, quality attributes, trust and operational boundaries, and gaps | `GAT-012` | Not started |
 | Phase E: Opportunities and Solutions | Candidate transition architectures, delivery approaches and work packages that address architecture gaps | `GAT-013` | Not started |
@@ -78,20 +78,17 @@ The project remains in Information Systems Architecture. The following work is
 required before Phase D begins:
 
 The record-level model pressure test and initial Phase C gap and cross-domain
-traceability analysis are complete under `WRK-035` and `WRK-036`. They are
-inputs to the remaining work, not evidence that `GAT-002` or `GAT-003` has
-passed.
+traceability analysis are complete under `WRK-035` and `WRK-036`. `GAT-002` has
+passed under `DEC-028` with its validation limits explicit; this is not evidence
+that `GAT-003` has passed. The trust-boundary and security baseline has also
+been accepted under `DEC-026`; `WRK-011` and `WRK-041` are complete.
+Build-authorisation review is complete under `DEC-027` and `WRK-042`, with no
+separate early experimental-build route.
 
-1. Complete the `DAR` pressure test and give each proposed Data Architecture
-   requirement an explicit outcome under `WRK-019`.
-2. Complete the `REQ` and `BAR` normalisation and disposition work under
-   `WRK-020` and `WRK-022`.
-3. Review and pressure-test the trust-boundary and security baseline under
-   `WRK-011` and `WRK-041`.
-4. Exercise the information and trust boundaries through the connected HSB
+1. Exercise the information and trust boundaries through the connected HSB
    scenario under `WRK-012`.
-5. Develop the logical Application Architecture under `WRK-013`.
-6. Review the complete Information Systems Architecture against every auditable
+2. Develop the logical Application Architecture under `WRK-013`.
+3. Review the complete Information Systems Architecture against every auditable
    `GAT-003` stage test, including explicit non-decisions.
 
 Work may iterate across these activities. Phase D starts only after `GAT-003`

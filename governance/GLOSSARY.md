@@ -154,6 +154,15 @@ When "material" is used, the accountable owner must be able to identify which
 of these consequences makes the item material. The term must not be used to
 omit records solely because recording them is inconvenient or expensive.
 
+### Maintained scope
+
+The explicitly recorded set of sources, records, relationships, capabilities or
+outputs for which an accountable owner has committed to monitor change, retain
+the required history and perform impact analysis. The scope record must identify
+its owner, inclusions, exclusions, review trigger and effective period. An item
+cannot be omitted from impact analysis merely because it is difficult or costly
+to maintain.
+
 ### Platform inference
 
 A project or product-generated interpretation, match, recommendation or

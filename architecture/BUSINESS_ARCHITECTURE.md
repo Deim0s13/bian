@@ -4,13 +4,13 @@
 
 | Field | Value |
 |---|---|
-| Status | Initial baseline for project-owner review |
+| Status | Accepted working baseline under `DEC-030` |
 | Architecture stage | Conceptual architecture |
 | Architecture domain | Business Architecture |
 | Scope | Full BIAN Adoption & Engineering Platform vision |
 | Initial validation context | Horizon Synthetic Bank bounded payments decision journey |
 | Method | TOGAF-informed and value-led |
-| Last updated | 17 August 2026 |
+| Last updated | 19 August 2026 |
 
 This document defines how the platform is expected to create value, which
 platform capabilities are required, who participates, and how decisions and
@@ -503,19 +503,19 @@ subsequent maintenance, ageing, review backlog, and escalation effort.
 Sustainable real-bank stewardship remains in analysis under `OQ-016`,
 `ASM-007`, and `EVD-004`.
 
-## 14. Initial Business Architecture requirements
+## 14. Business Architecture requirements
 
-Candidate requirements `BAR-001` through `BAR-014`, including their rationale,
-owner, status, source, and acceptance evidence, are maintained only in the
+The original `BAR-001` through `BAR-014` records, including their rationale,
+owner, status, source and acceptance evidence, are maintained only in the
 [Architecture Register](../governance/ARCHITECTURE_REGISTER.md#requirements).
 
-Together they govern bounded value propositions, end-to-end traceability,
-authority separation, human accountability, system-of-record boundaries,
-consumable journeys, change analysis, scoped assurance, safe regeneration,
-decision-oriented measures, synthetic evidence, open-source release trust,
-accessibility, and customer data portability. This document explains the
-Business Architecture context from which those requirements arose; it does not
-maintain a second requirements register.
+`DEC-030` retains `BAR-002` for participating-stage traceability and `BAR-006`
+for independent journey completion. It promotes the decision-measure obligation
+from `BAR-010` into `REQ-021` and supersedes the other eleven records with their
+stated cross-cutting replacements. Supersession removes duplicate active
+obligations without deleting their history. This document explains the Business
+Architecture context from which the requirements arose; it does not maintain a
+second requirements register.
 
 ## 15. Initial HSB business scenario
 

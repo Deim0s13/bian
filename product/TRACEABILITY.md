@@ -42,7 +42,7 @@ Registry, three product pillars, Platform Control, and Runtime Targets.
 - The authoritative project principles are `PRN-001` through `PRN-017` in
   [PROJECT_PRINCIPLES.md](PROJECT_PRINCIPLES.md). Architecture and product work
   references those identifiers rather than restating the principles.
-- The cross-cutting requirements are `REQ-001` through `REQ-020` in the
+- The cross-cutting requirements are `REQ-001` through `REQ-025` in the
   [Architecture Register](../governance/ARCHITECTURE_REGISTER.md#requirements).
   Their derivation and use are explained in the
   [requirements and traceability view](../architecture/REQUIREMENTS_AND_TRACEABILITY.md).

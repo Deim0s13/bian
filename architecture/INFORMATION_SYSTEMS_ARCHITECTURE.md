@@ -51,8 +51,9 @@ The principal inputs are:
 - the product north-star and fourteen use cases;
 - the accepted bounded responsibility-allocation proposition under `DEC-018`;
 - project principles `PRN-001` through `PRN-017`;
-- cross-cutting requirements `REQ-001` through `REQ-020`;
-- Business Architecture requirements `BAR-001` through `BAR-014`;
+- cross-cutting requirements `REQ-001` through `REQ-025`;
+- retained Business Architecture requirements `BAR-002` and `BAR-006`, with
+  superseded records preserved for traceability;
 - the Business Architecture value streams, roles, information groups, decision
   rights, system-of-record boundaries, and HSB scenario;
 - the six operational assertion classes in the BIAN alignment policy;
@@ -210,8 +211,8 @@ not prematurely settle unresolved information semantics.
 
 ## 11. Initial architecture requirements
 
-The proposed and deferred Data Architecture requirements are `DAR-001` through
-`DAR-028` in
+The accepted, proposed and deferred Data Architecture requirements are
+`DAR-001` through `DAR-028` in
 the
 [Architecture Register](../governance/ARCHITECTURE_REGISTER.md#data-architecture-requirements).
 Their explicit related-record links identify which `REQ` and `BAR` obligations

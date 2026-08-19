@@ -2,11 +2,11 @@
 
 ## Document status
 
-**Status:** Initial conceptual baseline for review
+**Status:** Accepted conceptual baseline under `DEC-028`
 
 **Architecture stage:** Information Systems Architecture, Data Architecture
 
-**Governing decision:** `DEC-019`
+**Governing decisions:** `DEC-019`, `DEC-024`, `DEC-028`, `DEC-029`
 
 **Scope:** Information semantics and governance for the BIAN Adoption &
 Engineering Platform
@@ -364,6 +364,27 @@ flowchart LR
 Quarantine, rejection, withdrawal, rights restriction, legal hold, and deletion
 are valid lifecycle paths and must not be hidden as errors.
 
+### Retention and reconstruction boundary
+
+Reconstructable does not mean that every derived materialisation must be stored.
+Under `DEC-029`, the platform retains irreducible governed records and the
+information needed to establish the exact definition, input identities and
+versions, evaluation context, transformation version, result identity or
+digest and limitations used by a decision.
+
+A deterministic projection may be recomputed when its exact inputs and method
+remain available. A non-deterministic result, an unavailable transformation or
+a result that cannot otherwise be reproduced requires an adequate snapshot or
+evidence package. Search indexes, caches and replaceable current-view
+materialisations are not authoritative records merely because they improve
+access or performance.
+
+Rights, privacy, approved deletion or source unavailability may prevent later
+reconstruction. In that case, the loss, reason and affected decisions remain
+explicit; the platform must not claim that the earlier view is still
+reconstructable. Physical retention periods, archival tiers and storage choices
+remain later decisions.
+
 ## 13. Sensitivity, tenancy, and lifecycle control
 
 The platform may hold no transaction or personal data and still contain highly
@@ -372,8 +393,9 @@ target states, control failures, integration paths, vendor positions, and
 transformation plans.
 
 The foundation therefore records customer or tenant ownership, sensitivity and
-an access-policy reference for every governed record. Detailed access design
-remains part of the trust-boundary and security view under `OQ-034`.
+an access-policy reference for every governed record. The conceptual
+classification model is accepted under `DEC-026`; bank-specific policy and
+logical enforcement remain `OQ-052` and Application Architecture concerns.
 
 Residency, retention, deletion, archival and legal hold are deferred to the
 bank-production gate under `DAR-022`, where approved legal, regulatory and
@@ -466,7 +488,7 @@ mandate when real-bank scope exists.
 
 ## 18. Requirements and risk traceability
 
-The proposed and deferred `DAR-001` through `DAR-028` requirements are
+The accepted, proposed and deferred `DAR-001` through `DAR-028` requirements are
 maintained in the
 [Architecture Register](../governance/ARCHITECTURE_REGISTER.md#data-architecture-requirements).
 They principally refine:
@@ -476,16 +498,17 @@ They principally refine:
 - `REQ-007` through `REQ-010` for accountability, evidence, security, and HSB;
 - `REQ-013` through `REQ-018` for coexistence, portability, runtime neutrality,
   extensibility, deterministic generation, and change impact; and
-- `BAR-002` through `BAR-005`, `BAR-007`, `BAR-008`, `BAR-010`, `BAR-011`, and
-  `BAR-014` for Business Architecture refinement.
+- `REQ-021`, `REQ-022` and `REQ-024` for decision-oriented measures and scoped
+  security and readiness claims, with retained `BAR-002` as the distinct
+  Business Architecture traceability refinement.
 
 The main Data Architecture risks are `RSK-005`, `RSK-006`, `RSK-013`,
 `RSK-019` through `RSK-023`, and `RSK-033` through `RSK-035`.
 
 ## 19. Open questions and next analysis
 
-The active Data Architecture questions are `OQ-032` through `OQ-038`, `OQ-048`
-and `OQ-049`. The next
+The active Data Architecture questions are `OQ-032`, `OQ-033`, `OQ-035` through
+`OQ-038`, `OQ-048` and `OQ-049`. The next
 review should determine:
 
 - whether the subject, assertion, and relationship-assertion separation is
@@ -502,10 +525,13 @@ subject registration, relationship arity, projection classification, Class C
 and current-view governance under `DEC-024`. It does not settle the physical
 schema or the evaluation language for View Definitions.
 
-`DAR-010`, `DAR-011`, `DAR-014`, `DAR-019`, `DAR-020` and `DAR-026` remain
-proposed because their acceptance evidence depends on logical Application
-Architecture responsibilities. `DEP-013` and `WRK-040` keep that dependency
-visible rather than allowing Data Architecture concerns to migrate silently.
+`DEC-028` accepts nineteen requirements, retains `DAR-010`, `DAR-011`,
+`DAR-014`, `DAR-019`, `DAR-020` and `DAR-026` as Proposed, and confirms
+`DAR-021`, `DAR-022` and `DAR-025` as Deferred. The Proposed requirements need
+logical Application Architecture responsibility or further scenario evidence.
+`DEP-013` and `WRK-040` keep that dependency visible rather than allowing Data
+Architecture concerns to migrate silently. Acceptance records an agreed
+obligation; it does not claim implementation or satisfaction evidence.
 
 ## 20. Explicit non-decisions
 
