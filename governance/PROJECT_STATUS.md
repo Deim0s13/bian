@@ -26,7 +26,11 @@ implementation-evidence matters remain explicit. Build-authorisation
 recalibration is complete under `DEC-027` and `WRK-042`: the existing gates
 remain unchanged and no early experimental-build route has been created. The
 immediate work item is the connected HSB scenario under `WRK-012`, now in
-progress. `DEC-031` requires the payments case to remain a deep reference
+progress. `HSB-SCN-001/v0.1` now provides the first detailed design of the
+synthetic estate, decision rights, conflicts, options, expected decision rule,
+kernel-stage participation, negative paths, controlled change, measures and
+portable decision package. It has not been executed or accepted as scenario
+evidence. `DEC-031` requires the payments case to remain a deep reference
 instance of a reusable adoption kernel and adds a materially different
 domain-transferability probe before `GAT-003` can pass. `DEC-032` establishes
 `ADOPTION-KERNEL/v1`, minimum probe coverage, structural variation and semantic

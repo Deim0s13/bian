@@ -238,7 +238,7 @@ external review exists.
 | BIAN integrity | Source qualification or an explicit project-placeholder boundary for every BIAN-attributed scenario input | BIAN source steward | Project, HSB, inferred or unqualified content is represented as a BIAN assertion or relationship |
 | Cross-domain traceability | Phase C gap analysis and capability, value-stream and role-authority matrices | Architecture owner | A required business capability, value-stream step or information domain has no explained relationship, or depends on an undisclosed duplicate source of truth |
 | Trust boundary | Reviewed trust-boundary and security architecture plus the negative HSB outcomes under `WRK-041` | Security owner | Sensitive information crosses a boundary without declared ownership, purpose, classification, policy reference, accountable decision or explicit unresolved record |
-| Connected HSB scenario | `WRK-012` outputs using the same governed records and the adoption scenario contract, including an exact reconstructable View Definition and expected negative results | Architecture owner | The scenario needs hidden information, silently changes authority, cannot reproduce the decision view, or presents synthetic evidence as external validation |
+| Connected HSB scenario | `WRK-012` outputs using the same governed records, the adoption scenario contract and `HSB-SCN-001`, including an exact reconstructable View Definition and expected negative results | Architecture owner | The scenario needs hidden information, silently changes authority, cannot reproduce the decision view, or presents synthetic evidence as external validation |
 | Domain transferability | A non-payment, non-API-dominant probe identifies the kernel version, exercises the required nine-stage floor and six variation dimensions, and records either an empty semantic diff or a governed finding, requirement impact and architecture decision | Architecture owner | Coverage is below the floor, a mandatory dimension is unchanged, the semantic diff is absent, a core change is hidden as configuration, or the current kernel version relies on a failed and unresolved transferability result |
 | Logical application responsibilities | Logical Application Architecture and disposition of the `DEP-013` requirements | Architecture owner | A capture, validation, view, review, projection, export, protection or impact responsibility is orphaned, duplicated without rationale, or changes Data Architecture semantics |
 | Requirement traceability | Architecture Register evidence and outcome for each in-scope `REQ`, `BAR`, `DAR` and later application requirement | Project owner | A requirement lacks an explicit outcome, gate, owner, acceptance evidence or parent and dependant trace where required |
@@ -259,6 +259,9 @@ external review exists.
 - Domain transferability is now a required test under `REQ-026`, but no
   transferability evidence exists until `WRK-012` exercises the probe defined by
   the adoption scenario contract.
+- `HSB-SCN-001` has a detailed conceptual design, but its governed records,
+  expected negative outcomes, views, controlled change and export have not been
+  executed or accepted as evidence.
 - Tenancy, residency, retention, evidence, and rights rules require further
   security, legal, and operational analysis.
 - Logical Application Architecture has not yet been defined.

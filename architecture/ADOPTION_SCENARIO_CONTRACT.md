@@ -217,9 +217,10 @@ blocks so legitimate banking language does not weaken or disable the control.
 | Intended evidence | Internal architectural coherence, reproducibility, authority separation, transfer-ready responsibilities and explicit failure or stop signals |
 | Prohibited inference | Universal BIAN support, customer demand, real-bank feasibility, regulatory acceptance, implementation security or production readiness |
 
-The detailed payments scenario will be developed separately under `WRK-012`.
-This contract constrains it but does not duplicate its estate records, views or
-decision evidence.
+The [detailed payments scenario](HSB_SCENARIO_001_PAYMENTS_RESPONSIBILITY.md)
+is developed separately under `WRK-012`. This contract constrains it but does
+not duplicate its estate records, views or decision evidence. Its current
+state is a design, not executed scenario evidence.
 
 ## 7. Transferability probe
 
