@@ -2,7 +2,7 @@
 
 ## Document status
 
-**Status:** Initial conceptual contract under `DEC-031`
+**Status:** Revised conceptual contract under `DEC-031` and `DEC-032`
 
 **Architecture stage:** Information Systems Architecture
 
@@ -55,29 +55,55 @@ exercised.
 
 ## 3. Separation model
 
-### 3.1 Shared adoption kernel
+### 3.1 Canonical adoption kernel
 
-The adoption kernel consists of project-defined concepts that remain stable
-when the banking domain or decision changes:
+<!-- domain-neutral:start adoption-kernel -->
 
-```text
-Bounded adoption question
-        -> source-qualified BIAN context or explicit unresolved scope
-        -> customer or HSB estate assertions
-        -> proposed relationships and mappings
-        -> evidence, uncertainty and conflict
-        -> accountable review and decision
-        -> current-state finding
-        -> target and transition options
-        -> selected decision and owned actions
-        -> participating projection, assurance or governance outcome
-        -> source or estate change and downstream impact
-```
+**Kernel version:** `ADOPTION-KERNEL/v1`
 
-The sequence describes a connected decision thread. A scenario may declare a
-stage non-participating or unsupported when the decision does not require it.
-The architecture must not manufacture records or semantics merely to make every
-stage appear populated.
+This subsection is the sole canonical definition of the adoption kernel. The
+version covers the behaviour catalogue, stage catalogue and their mapping. Any
+semantic change to a behaviour, stage or mapping requires a recorded
+architecture decision, an impact review and a new kernel version. Editorial
+changes that do not alter meaning retain the version and record an empty
+semantic diff.
+
+#### Behaviour catalogue
+
+| ID | Stable logical behaviour |
+|---|---|
+| `KB-01` | Qualify, capture, quarantine and validate source context |
+| `KB-02` | Register identity, preserve assertions and reconcile without destructive merge |
+| `KB-03` | Propose and analyse attributable relationships and mappings |
+| `KB-04` | Evaluate purpose-bounded views, evidence, uncertainty, conflict and findings |
+| `KB-05` | Control participant access, review, delegated decision authority and recorded outcomes |
+| `KB-06` | Record current, target and transition options, selection rationale and owned actions |
+| `KB-07` | Produce, verify, exchange and reconcile participating projections, exports and external outcomes |
+| `KB-08` | Analyse governed change, identify maintained dependants and route impact review |
+| `KB-09` | Retain provenance, audit, limitation, failure and recovery evidence across every participating stage |
+
+#### Stage-to-behaviour mapping
+
+| ID | Kernel stage | Required behaviours |
+|---|---|---|
+| `AK-01` | Bounded adoption question, trigger, decision authority and intended outcome | `KB-05`, `KB-09` |
+| `AK-02` | Source-qualified BIAN context or explicit unresolved scope | `KB-01`, `KB-09` |
+| `AK-03` | Customer or HSB estate assertions and source-system boundaries | `KB-01`, `KB-02`, `KB-09` |
+| `AK-04` | Proposed relationships and mappings | `KB-02`, `KB-03`, `KB-09` |
+| `AK-05` | Evidence, uncertainty and conflict | `KB-03`, `KB-04`, `KB-09` |
+| `AK-06` | Accountable review and decision | `KB-04`, `KB-05`, `KB-09` |
+| `AK-07` | Current-state finding | `KB-04`, `KB-09` |
+| `AK-08` | Target, transition and justified no-change options | `KB-04`, `KB-06`, `KB-09` |
+| `AK-09` | Selected decision, rationale and owned actions | `KB-05`, `KB-06`, `KB-09` |
+| `AK-10` | Participating projection, assurance, governance or external outcome | `KB-07`, `KB-09` |
+| `AK-11` | Source, estate, policy or evidence change and downstream impact | `KB-08`, `KB-09` |
+
+A scenario may declare a stage non-participating or unsupported when the
+decision does not require it, subject to the transferability floor in section
+7. The architecture must not manufacture records or semantics merely to make
+every stage appear populated.
+
+<!-- domain-neutral:end adoption-kernel -->
 
 ### 3.2 Scenario instance
 
@@ -91,12 +117,21 @@ A scenario instance supplies the bounded, versioned records that vary:
 - candidate mappings, evidence, conflicts, uncertainty and review outcomes;
 - current, target and transition options;
 - security, assurance, policy and operating context;
+- scenario-specific View Definitions, mapping methods, quality or confidence
+  dimensions, thresholds and evaluation parameters;
 - measures, expected outcomes, negative cases and stop conditions; and
 - controlled changes and expected impact.
 
 These records use their correct authority classes and namespaces. Scenario
 meaning must not be promoted into the shared kernel because it occurs in the
 first reference instance.
+
+The View Definition, quality conclusion, confidence expression, mapping method
+and profile concepts are shared model concepts. Each concrete definition,
+dimension, method, threshold or profile is scenario-scoped by default.
+Promotion into a reusable shared library is a kernel change governed by the
+version and decision rule in section 3.1 and invariant 10. Reuse by two
+scenarios does not create promotion by implication.
 
 ### 3.3 Projections and external systems
 
@@ -113,6 +148,7 @@ Each scenario instance shall record:
 | Contract field | Required content |
 |---|---|
 | Identity | Stable scenario identifier, version, owner, status and change history |
+| Kernel baseline | Exact adoption-kernel version, participating and non-participating stage IDs, and semantic diff outcome |
 | Purpose | Primary user, trigger, decision, intended outcome and existing alternative |
 | Scope | Included and excluded banking context, organisation, estate, source and time boundaries |
 | BIAN context | Exact authorised source and release, or an explicit project placeholder and blocked BIAN attribution |
@@ -138,9 +174,9 @@ The following invariants apply to the shared architecture:
 
 1. Shared subjects, assertions, relationships, provenance, review, evidence,
    view and impact concepts do not contain payment-specific semantics.
-2. Logical responsibilities are named for stable behaviour such as capture,
-   validation, relationship proposal, review, projection, controlled exchange
-   and impact analysis, not for a banking product or Service Domain.
+2. Logical responsibilities are derived only from `KB-01` through `KB-09` in
+   the canonical kernel and are not named for a banking product or Service
+   Domain.
 3. A new scenario may add source-qualified BIAN or customer meaning through
    governed records without changing existing shared meaning.
 4. A scenario-specific workflow variation is expressed through governed state,
@@ -153,11 +189,20 @@ The following invariants apply to the shared architecture:
    and does not cause the platform to invent one.
 8. Source identity, authority, provenance, ownership, sensitivity, review and
    limitations survive every participating view and output.
-9. Domain-specific controls or profiles attach without redefining BIAN content
-   or contaminating the shared information model.
+9. Specific View Definitions, mapping methods, quality or confidence
+   dimensions, thresholds and profiles remain scenario-scoped unless a
+   recorded kernel change explicitly promotes them into a shared library.
 10. A transferability probe may expose a missing shared concept, but a core
-    change requires a recorded architecture decision and impact review rather
-    than being disguised as scenario configuration.
+    change requires a recorded architecture decision, semantic diff, impact
+    review and new kernel version rather than being disguised as scenario
+    configuration.
+11. Domain-specific controls or profiles attach without redefining BIAN content
+    or contaminating the shared information model.
+
+Canonical shared semantic and behaviour catalogues use the repository's
+`domain-neutral` markers. The automated vocabulary check applies inside those
+blocks. Scenario descriptions and explicit risk statements remain outside the
+blocks so legitimate banking language does not weaken or disable the control.
 
 ## 6. First deep reference instance
 
@@ -192,11 +237,19 @@ The probe shall be:
 - small enough to test architecture reuse without creating another full HSB
   estate.
 
+The probe shall exercise at least nine of the eleven kernel stages. `AK-01`
+through `AK-07`, `AK-09` and `AK-11` are mandatory. `AK-08` and `AK-10` may be
+non-participating only when the scenario contract records why the decision does
+not require options or a downstream outcome and which behaviour remains
+unexercised.
+
 The probe passes only when:
 
-- the adoption kernel remains unchanged;
+- it identifies `ADOPTION-KERNEL/v1` as its baseline and records an empty
+  semantic diff for the canonical block in section 3.1;
 - the same information semantics and truth classes remain sufficient;
-- the same logical responsibilities can perform the required behaviours;
+- the same logical responsibilities can perform every behaviour required by
+  its participating stage mappings;
 - scenario variation is carried by governed records, policy, profiles or
   extensions;
 - an absent API specification and every unsupported stage remain explicit;
@@ -204,13 +257,16 @@ The probe passes only when:
 - any unexercised structure remains a declared limitation.
 
 A failure is valuable evidence. It must result in an architecture finding,
-requirement impact and explicit decision to revise the shared model, narrow the
-supported envelope or reject an unjustified scenario demand.
+requirement impact and explicit decision to revise and re-version the shared
+model, narrow the supported envelope or reject an unjustified scenario demand.
+The work item may close after that outcome is dispositioned, but `GAT-003`
+cannot rely on the failed kernel version as transferability evidence.
 
 ## 8. Structural variation matrix
 
-The payments scenario and transferability probe together should vary these
-dimensions:
+The payments scenario and transferability probe together shall differ on at
+least six of these eight dimensions. API dependence, primary decision, mapping
+shape and source mix are mandatory differences.
 
 | Dimension | Payments reference | Transferability expectation |
 |---|---|---|
@@ -243,8 +299,10 @@ claim exhaustive combinatorial coverage.
    earlier decision view.
 7. The HSB export package reconstructs the customer-owned decision and history
    without undocumented platform state or simulated rights leakage.
-8. The transferability probe passes the tests in section 7 without changing the
-   shared adoption kernel.
+8. The transferability probe is executed against a named kernel version and
+   either records an empty semantic diff or produces a recorded architecture
+   finding, requirement impact and decision to re-version the kernel, narrow
+   the supported envelope or reject an unjustified scenario demand.
 9. Every participating and non-participating stage is explicit.
 10. Measures and conclusions state their synthetic scope, method, limitations
     and stop or narrow result.
@@ -255,18 +313,11 @@ production-supported release gates.
 
 ## 10. Application Architecture hand-off
 
-The scenario and transferability probe shall identify the stable logical
-behaviours needed for:
-
-- source qualification, capture, quarantine and validation;
-- identity registration and non-destructive reconciliation;
-- assertion and relationship management;
-- analysis and mapping proposals;
-- purpose-bounded view evaluation;
-- participant access, review and delegated decisions;
-- projection, output verification, export and reconciliation;
-- impact analysis and review routing; and
-- audit, privileged change, failure and recovery evidence.
+The scenario and transferability probe shall map `KB-01` through `KB-09` from
+the canonical kernel to logical application responsibilities. Each mapping
+shall identify the participating stages, required interactions, governed
+records and explicit non-participating behaviour. This section does not define
+a second behaviour list.
 
 `WRK-013` will allocate these behaviours to logical application
 responsibilities. It must not name components from the HSB payments estate or

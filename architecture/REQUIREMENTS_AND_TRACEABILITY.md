@@ -210,6 +210,11 @@ adoption kernel without embedding a single banking domain into shared platform
 semantics. This is bounded architecture evidence, not proof of universal
 scenario support.
 
+`DEC-032` makes that obligation objective through `ADOPTION-KERNEL/v1`, one
+canonical stage-to-behaviour mapping, a probe coverage floor, mandatory
+variation dimensions, a recorded semantic diff and explicit ownership of
+scenario-specific View Definitions and evaluation rules.
+
 Material changes must retain their previous outcome, record the supporting
 decision and evidence, and review affected Business, Data, Application,
 Technology, security, operational, and solution requirements.

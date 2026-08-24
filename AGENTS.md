@@ -95,6 +95,11 @@ Before material work, read the parts of these files relevant to the request:
   and other patterns require an evidenced fit.
 - Prefer the simplest architecture that satisfies domain boundaries, security,
   resilience, operability, portability, and evolution needs.
+- Place every new canonical shared semantic or logical-behaviour catalogue
+  inside named `domain-neutral:start` and `domain-neutral:end` markers so
+  `tools/check_project.py` can reject scenario-domain vocabulary in shared
+  architecture. Keep examples and explicit risk statements outside the marked
+  block.
 - Security, privacy, provenance, accessibility, operability, testability, and
   software supply-chain integrity are design concerns from the first increment.
 - Production readiness is a scoped evidence state, not an aspiration or label.

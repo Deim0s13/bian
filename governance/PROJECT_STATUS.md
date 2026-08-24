@@ -1,6 +1,6 @@
 # Project status
 
-**Last updated:** 24 August 2026
+**Last updated:** 25 August 2026
 
 **Lifecycle state:** Concept
 
@@ -28,7 +28,10 @@ remain unchanged and no early experimental-build route has been created. The
 immediate work item is the connected HSB scenario under `WRK-012`, now in
 progress. `DEC-031` requires the payments case to remain a deep reference
 instance of a reusable adoption kernel and adds a materially different
-domain-transferability probe before `GAT-003` can pass. `WRK-029`
+domain-transferability probe before `GAT-003` can pass. `DEC-032` establishes
+`ADOPTION-KERNEL/v1`, minimum probe coverage, structural variation and semantic
+diff rules, and keeps concrete View Definitions and evaluation rules
+scenario-scoped unless explicitly promoted. `WRK-029`
 continues the project-owner review of the wider lifecycle plan without blocking
 this Phase C refinement.
 

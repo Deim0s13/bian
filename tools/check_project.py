@@ -105,7 +105,10 @@ REQUIRED_CONTENT = {
     ),
     "architecture/ADOPTION_SCENARIO_CONTRACT.md": (
         "Adoption scenario contract",
-        "Shared adoption kernel",
+        "Canonical adoption kernel",
+        "ADOPTION-KERNEL/v1",
+        "AK-11",
+        "KB-09",
         "Scenario instance",
         "Domain-neutrality invariants",
         "HSB-SCN-001",
@@ -226,6 +229,7 @@ REQUIRED_CONTENT = {
         "DEC-028",
         "DEC-029",
         "DEC-031",
+        "DEC-032",
         "GAT-001",
         "GAT-011",
         "GAT-012",
@@ -365,6 +369,19 @@ OWNER_FIELD_INDEX = {
     "WRK": 3,
 }
 EM_DASH = chr(0x2014)
+DOMAIN_NEUTRAL_TERMS = re.compile(
+    r"\b(?:payments?|remittance|settlement|clearing|mandate|debtor|creditor)\b",
+    re.IGNORECASE,
+)
+DOMAIN_NEUTRAL_START = re.compile(
+    r"<!-- domain-neutral:start ([a-z0-9][a-z0-9-]*) -->"
+)
+DOMAIN_NEUTRAL_END = re.compile(
+    r"<!-- domain-neutral:end ([a-z0-9][a-z0-9-]*) -->"
+)
+ADOPTION_KERNEL_VERSION = "ADOPTION-KERNEL/v1"
+ADOPTION_KERNEL_STAGES = {f"AK-{number:02d}" for number in range(1, 12)}
+ADOPTION_KERNEL_BEHAVIOURS = {f"KB-{number:02d}" for number in range(1, 10)}
 
 
 def active_text_files() -> list[Path]:
@@ -595,6 +612,146 @@ def check_crosscutting_requirements(errors: list[str]) -> None:
             )
 
 
+def check_adoption_kernel(errors: list[str]) -> None:
+    contract_path = ROOT / "architecture/ADOPTION_SCENARIO_CONTRACT.md"
+    if not contract_path.is_file():
+        return
+
+    contract_text = contract_path.read_text(encoding="utf-8")
+    start_heading = "### 3.1 Canonical adoption kernel"
+    end_heading = "### 3.2 Scenario instance"
+    start = contract_text.find(start_heading)
+    end = contract_text.find(end_heading, start + len(start_heading))
+    if start < 0 or end < 0:
+        errors.append(
+            "architecture/ADOPTION_SCENARIO_CONTRACT.md: canonical kernel "
+            "section boundaries are missing"
+        )
+        return
+
+    kernel_block = contract_text[start:end]
+    if ADOPTION_KERNEL_VERSION not in kernel_block:
+        errors.append(
+            "architecture/ADOPTION_SCENARIO_CONTRACT.md: canonical kernel "
+            f"must identify {ADOPTION_KERNEL_VERSION}"
+        )
+
+    stage_matches = [
+        (match.group(1), line)
+        for line in kernel_block.splitlines()
+        if (match := re.match(r"^\| `(AK-\d{2})` \|", line))
+    ]
+    behaviour_matches = [
+        (match.group(1), line)
+        for line in kernel_block.splitlines()
+        if (match := re.match(r"^\| `(KB-\d{2})` \|", line))
+    ]
+    stage_rows = dict(stage_matches)
+    behaviour_rows = dict(behaviour_matches)
+    if (
+        set(stage_rows) != ADOPTION_KERNEL_STAGES
+        or len(stage_matches) != len(ADOPTION_KERNEL_STAGES)
+    ):
+        errors.append(
+            "architecture/ADOPTION_SCENARIO_CONTRACT.md: canonical kernel "
+            "must define exactly AK-01 through AK-11"
+        )
+    if (
+        set(behaviour_rows) != ADOPTION_KERNEL_BEHAVIOURS
+        or len(behaviour_matches) != len(ADOPTION_KERNEL_BEHAVIOURS)
+    ):
+        errors.append(
+            "architecture/ADOPTION_SCENARIO_CONTRACT.md: canonical kernel "
+            "must define exactly KB-01 through KB-09"
+        )
+
+    mapped_behaviours: set[str] = set()
+    for identifier, line in stage_rows.items():
+        fields = [field.strip() for field in line.strip("|").split("|")]
+        mappings = set(re.findall(r"\bKB-\d{2}\b", fields[-1]))
+        unknown = mappings - ADOPTION_KERNEL_BEHAVIOURS
+        if not mappings or unknown:
+            errors.append(
+                "architecture/ADOPTION_SCENARIO_CONTRACT.md: "
+                f"{identifier} has missing or unknown behaviour mappings"
+            )
+        mapped_behaviours.update(mappings)
+    if mapped_behaviours != ADOPTION_KERNEL_BEHAVIOURS:
+        errors.append(
+            "architecture/ADOPTION_SCENARIO_CONTRACT.md: every canonical "
+            "behaviour must be mapped to at least one kernel stage"
+        )
+
+
+
+def check_domain_neutral_blocks(files: list[Path], errors: list[str]) -> None:
+    block_names: set[str] = set()
+    for path in files:
+        if path.suffix.lower() != ".md":
+            continue
+
+        active_name: str | None = None
+        active_start = 0
+        active_lines: list[str] = []
+        for line_number, line in enumerate(
+            path.read_text(encoding="utf-8").splitlines(), start=1
+        ):
+            start_match = DOMAIN_NEUTRAL_START.search(line)
+            end_match = DOMAIN_NEUTRAL_END.search(line)
+            if start_match:
+                name = start_match.group(1)
+                if active_name is not None:
+                    errors.append(
+                        f"{path.relative_to(ROOT)}:{line_number}: nested "
+                        "domain-neutral blocks are not permitted"
+                    )
+                elif name in block_names:
+                    errors.append(
+                        f"{path.relative_to(ROOT)}:{line_number}: duplicate "
+                        f"domain-neutral block name: {name}"
+                    )
+                else:
+                    active_name = name
+                    active_start = line_number
+                    active_lines = []
+                    block_names.add(name)
+                continue
+
+            if end_match:
+                name = end_match.group(1)
+                if active_name != name:
+                    errors.append(
+                        f"{path.relative_to(ROOT)}:{line_number}: unmatched "
+                        f"domain-neutral end marker: {name}"
+                    )
+                else:
+                    block = "\n".join(active_lines)
+                    terms = sorted(
+                        {
+                            match.group(0).lower()
+                            for match in DOMAIN_NEUTRAL_TERMS.finditer(block)
+                        }
+                    )
+                    if terms:
+                        errors.append(
+                            f"{path.relative_to(ROOT)}:{active_start}: "
+                            f"domain-neutral block {name} contains domain "
+                            "vocabulary: " + ", ".join(terms)
+                        )
+                    active_name = None
+                    active_lines = []
+                continue
+
+            if active_name is not None:
+                active_lines.append(line)
+
+        if active_name is not None:
+            errors.append(
+                f"{path.relative_to(ROOT)}:{active_start}: unclosed "
+                f"domain-neutral block: {active_name}"
+            )
+
+
 def check_register_controls(errors: list[str]) -> None:
     register_path = ROOT / "governance/ARCHITECTURE_REGISTER.md"
     if not register_path.is_file():
@@ -730,6 +887,8 @@ def main() -> int:
     check_architecture_register(files, errors)
     check_data_architecture_requirements(errors)
     check_crosscutting_requirements(errors)
+    check_adoption_kernel(errors)
+    check_domain_neutral_blocks(files, errors)
     check_register_controls(errors)
     check_project_principles(files, errors)
     for path in files:
