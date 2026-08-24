@@ -30,13 +30,15 @@ prematurely performing them.
 7. [Phase C gap and traceability analysis](PHASE_C_TRACEABILITY.md)
 8. [ADM tailoring statement](ADM_TAILORING.md)
 9. [Trust-boundary and security architecture](TRUST_BOUNDARY_AND_SECURITY_ARCHITECTURE.md)
-10. [Architecture lifecycle and ADM tailoring](ARCHITECTURE_LIFECYCLE.md)
+10. [Adoption scenario contract](ADOPTION_SCENARIO_CONTRACT.md)
+11. [Architecture lifecycle and ADM tailoring](ARCHITECTURE_LIFECYCLE.md)
 
 Future work products will be added only when they answer a named stakeholder
 concern or support a decision. Expected next views include:
 
 - logical Application Architecture and interaction view;
-- Horizon Synthetic Bank scenario views;
+- detailed Horizon Synthetic Bank scenario views governed by the adoption
+  scenario contract;
 - domain and solution requirement refinements where the architecture requires
   them;
 - Technology Architecture after `GAT-003` and `GAT-005` pass;

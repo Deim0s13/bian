@@ -22,6 +22,16 @@ similar, the authority class and source determine their meaning.
 
 ## Terms
 
+### Adoption kernel
+
+The project-defined, banking-domain-neutral structure connecting a bounded
+adoption question to source context, customer or HSB assertions, mappings,
+evidence, review, current and target findings, decisions, participating
+downstream outcomes and change impact. It is a conceptual architecture contract,
+not a deployable component or BIAN-defined construct. Scenario-specific banking
+meaning remains in source-qualified BIAN content, customer or HSB records,
+governed configuration, profiles or extensions.
+
 ### ADM cycle
 
 The project-tailored progression through the architecture phases needed for one

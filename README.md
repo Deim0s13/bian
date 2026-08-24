@@ -118,7 +118,9 @@ beginning with the
 [conceptual Data Architecture](architecture/DATA_ARCHITECTURE.md), followed by
 the
 [trust-boundary and security architecture](architecture/TRUST_BOUNDARY_AND_SECURITY_ARCHITECTURE.md),
-the connected HSB scenario, logical Application Architecture and capability
+the [adoption scenario contract](architecture/ADOPTION_SCENARIO_CONTRACT.md),
+the connected HSB reference scenario and transferability probe, logical
+Application Architecture and capability
 interactions without prematurely selecting detailed technology.
 
 ### Stage 3: Technology Architecture

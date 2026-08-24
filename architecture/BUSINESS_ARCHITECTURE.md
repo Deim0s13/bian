@@ -526,6 +526,13 @@ relationships used in this scenario must be confirmed from authorised R14
 sources before they are represented as BIAN. Until then, the scenario describes
 project and HSB intent only.
 
+Under `DEC-031` and the
+[adoption scenario contract](ADOPTION_SCENARIO_CONTRACT.md), this payments scope
+is the first deep reference instance of a banking-domain-neutral adoption
+kernel. It must not define shared platform semantics, logical responsibilities
+or workflow. A materially different transferability probe is required before
+`GAT-003` can pass.
+
 **Trigger:** HSB has overlapping payment-related applications and APIs and needs
 to decide how the bounded customer-payment initiation responsibility should be
 allocated in its target architecture.

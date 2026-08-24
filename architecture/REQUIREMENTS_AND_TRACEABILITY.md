@@ -73,7 +73,7 @@ and what is affected when it changes.
 
 ## Baseline coverage
 
-The accepted `REQ-001` through `REQ-025` baseline covers:
+The accepted `REQ-001` through `REQ-026` baseline covers:
 
 | Concern | Requirement references |
 |---|---|
@@ -89,6 +89,7 @@ The accepted `REQ-001` through `REQ-025` baseline covers:
 | Decision-oriented measures | `REQ-021` |
 | Security, cloud-native and readiness claims | `REQ-022` through `REQ-024` |
 | Architecture minimality | `REQ-025` |
+| Banking-domain neutrality | `REQ-026` |
 
 This coverage is deliberately architectural. It does not specify a deployment
 topology, programming language, database, user-interface framework, cloud,
@@ -202,6 +203,12 @@ the normalised `REQ-001` through `REQ-025` baseline, closes `WRK-020` and
 supersedes the other eleven `BAR` records. Acceptance confirms that an
 obligation governs subsequent architecture work. It does not prove that the
 future product satisfies it or authorise implementation.
+
+`DEC-031` adds accepted `REQ-026`. It requires the first deep HSB payments
+scenario and a materially different transferability probe to use the same
+adoption kernel without embedding a single banking domain into shared platform
+semantics. This is bounded architecture evidence, not proof of universal
+scenario support.
 
 Material changes must retain their previous outcome, record the supporting
 decision and evidence, and review affected Business, Data, Application,

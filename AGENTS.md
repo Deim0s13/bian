@@ -28,6 +28,12 @@ These instructions apply to the entire repository unless a more specific
   `product/VALUE_AND_VALIDATION.md` to test decision value, connected
   differentiation, input feasibility, trust, adoption fit, and sustainable
   scope. Preserve its explicit stop and narrow conditions.
+- HSB customer-payment initiation is the first deep reference scenario, not the
+  shared platform domain model. Apply `REQ-026` and
+  `architecture/ADOPTION_SCENARIO_CONTRACT.md`: keep shared information
+  concepts, logical responsibilities and workflows banking-domain-neutral,
+  preserve absent or unsupported API structures explicitly, and require the
+  `GAT-003` transferability probe before treating the architecture as reusable.
 - Treat `archive/initial-technical-spike/` as historical reference only. Do not
   edit, revive, or cite it as current architecture without explicit instruction.
 - Confirm the repository root before editing. Do not work from a copied sibling
@@ -56,8 +62,9 @@ Before material work, read the parts of these files relevant to the request:
 17. `architecture/PHASE_C_MODEL_VALIDATION.md`
 18. `architecture/PHASE_C_TRACEABILITY.md`
 19. `architecture/TRUST_BOUNDARY_AND_SECURITY_ARCHITECTURE.md`
-20. `governance/ARCHITECTURE_AND_ENGINEERING_PRINCIPLES.md`
-21. `governance/QUALITY_AND_REVIEW.md`
+20. `architecture/ADOPTION_SCENARIO_CONTRACT.md`
+21. `governance/ARCHITECTURE_AND_ENGINEERING_PRINCIPLES.md`
+22. `governance/QUALITY_AND_REVIEW.md`
 
 ## BIAN integrity
 

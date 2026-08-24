@@ -1,6 +1,6 @@
 # Project status
 
-**Last updated:** 19 August 2026
+**Last updated:** 24 August 2026
 
 **Lifecycle state:** Concept
 
@@ -10,7 +10,7 @@
 
 The Business Architecture and requirements normalisation is complete under
 `DEC-030`. `GAT-001` has passed, `WRK-020` and `WRK-022` are complete, and the
-active cross-cutting baseline is `REQ-001` through `REQ-025`. `BAR-002` and
+active cross-cutting baseline is `REQ-001` through `REQ-026`. `BAR-002` and
 `BAR-006` remain active Business Architecture refinements; the superseded
 records retain their history and replacements. The conceptual Data Architecture
 baseline has passed `GAT-002` under
@@ -25,7 +25,10 @@ Architecture while unresolved privacy, application-allocation and
 implementation-evidence matters remain explicit. Build-authorisation
 recalibration is complete under `DEC-027` and `WRK-042`: the existing gates
 remain unchanged and no early experimental-build route has been created. The
-immediate work item is the connected HSB scenario under `WRK-012`. `WRK-029`
+immediate work item is the connected HSB scenario under `WRK-012`, now in
+progress. `DEC-031` requires the payments case to remain a deep reference
+instance of a reusable adoption kernel and adds a materially different
+domain-transferability probe before `GAT-003` can pass. `WRK-029`
 continues the project-owner review of the wider lifecycle plan without blocking
 this Phase C refinement.
 
@@ -117,9 +120,12 @@ technical spike is inactive and does not constrain current work.
   catalogue for value, BIAN integrity, authority, evidence, security, synthetic
   validation, open source, bank adoption, interoperability, portability,
   generation, change, simplicity, and architecture governance.
-- Twenty-five accepted cross-cutting requirements provide the initial bridge from
+- Twenty-six accepted cross-cutting requirements provide the initial bridge from
   product outcomes and principles to Business, Data, Application, Technology,
   security, operational, and future solution requirements.
+- `REQ-026` prevents the HSB payments scenario from defining shared platform
+  semantics. `RSK-042`, `WRK-012` and `GAT-003` require a non-payment,
+  non-API-dominant transferability probe without implying universal coverage.
 - Horizon Synthetic Bank will provide repeatable fictional scenarios and
   synthetic information.
 - The project is intended to be independently open source.

@@ -120,6 +120,13 @@ Documentation and scorecards must not imply otherwise.
 
 ## Scenario catalogue required before architecture completion
 
+Every bounded scenario follows the
+[adoption scenario contract](../architecture/ADOPTION_SCENARIO_CONTRACT.md).
+The catalogue varies banking context, decision, source shape, participants and
+outputs without embedding the first payments instance into shared platform
+semantics. Scenario breadth expands evidence over time; it does not prove
+universal support by assertion.
+
 At minimum, the future HSB scenario catalogue should cover:
 
 1. map a fragmented payments landscape;

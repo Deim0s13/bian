@@ -86,7 +86,8 @@ Build-authorisation review is complete under `DEC-027` and `WRK-042`, with no
 separate early experimental-build route.
 
 1. Exercise the information and trust boundaries through the connected HSB
-   scenario under `WRK-012`.
+   payments reference scenario and domain-transferability probe under
+   `WRK-012`, `DEC-031` and the adoption scenario contract.
 2. Develop the logical Application Architecture under `WRK-013`.
 3. Review the complete Information Systems Architecture against every auditable
    `GAT-003` stage test, including explicit non-decisions.

@@ -51,7 +51,7 @@ The principal inputs are:
 - the product north-star and fourteen use cases;
 - the accepted bounded responsibility-allocation proposition under `DEC-018`;
 - project principles `PRN-001` through `PRN-017`;
-- cross-cutting requirements `REQ-001` through `REQ-025`;
+- cross-cutting requirements `REQ-001` through `REQ-026`;
 - retained Business Architecture requirements `BAR-002` and `BAR-006`, with
   superseded records preserved for traceability;
 - the Business Architecture value streams, roles, information groups, decision
@@ -197,9 +197,11 @@ provenance for implementation convenience.
    sensitivity, access, retention, evidence, threat, abuse, failure and boundary
    concerns through the
    [Trust-boundary and security architecture](TRUST_BOUNDARY_AND_SECURITY_ARCHITECTURE.md).
-3. **HSB information scenario:** apply the model to the bounded
+3. **HSB information scenario:** apply the reusable
+   [adoption scenario contract](ADOPTION_SCENARIO_CONTRACT.md) to the bounded
    customer-payment initiation decision, including ambiguity, negative trust
-   paths and change.
+   paths and change, then exercise a materially different transferability
+   probe without changing shared semantics.
 4. **Logical Application Architecture:** define application responsibilities,
    interactions, information ownership, integration seams, and user services.
 5. **Cross-architecture traceability:** show how Data and Application
@@ -236,7 +238,8 @@ external review exists.
 | BIAN integrity | Source qualification or an explicit project-placeholder boundary for every BIAN-attributed scenario input | BIAN source steward | Project, HSB, inferred or unqualified content is represented as a BIAN assertion or relationship |
 | Cross-domain traceability | Phase C gap analysis and capability, value-stream and role-authority matrices | Architecture owner | A required business capability, value-stream step or information domain has no explained relationship, or depends on an undisclosed duplicate source of truth |
 | Trust boundary | Reviewed trust-boundary and security architecture plus the negative HSB outcomes under `WRK-041` | Security owner | Sensitive information crosses a boundary without declared ownership, purpose, classification, policy reference, accountable decision or explicit unresolved record |
-| Connected HSB scenario | `WRK-012` outputs using the same governed records, including an exact reconstructable View Definition and expected negative results | Architecture owner | The scenario needs hidden information, silently changes authority, cannot reproduce the decision view, or presents synthetic evidence as external validation |
+| Connected HSB scenario | `WRK-012` outputs using the same governed records and the adoption scenario contract, including an exact reconstructable View Definition and expected negative results | Architecture owner | The scenario needs hidden information, silently changes authority, cannot reproduce the decision view, or presents synthetic evidence as external validation |
+| Domain transferability | A materially different non-payment, non-API-dominant probe reuses the adoption kernel, information semantics, logical responsibilities and control outcomes | Architecture owner | The probe requires payment-specific shared semantics, assumes an API specification exists, hides an unsupported stage or changes the core architecture to accommodate scenario data |
 | Logical application responsibilities | Logical Application Architecture and disposition of the `DEP-013` requirements | Architecture owner | A capture, validation, view, review, projection, export, protection or impact responsibility is orphaned, duplicated without rationale, or changes Data Architecture semantics |
 | Requirement traceability | Architecture Register evidence and outcome for each in-scope `REQ`, `BAR`, `DAR` and later application requirement | Project owner | A requirement lacks an explicit outcome, gate, owner, acceptance evidence or parent and dependant trace where required |
 | Explicit non-decisions | Data and Application Architecture non-decision lists plus architecture-review record | Architecture owner | Storage, framework, protocol, product, topology or other Phase D choice has been selected without an approved architecture decision |
@@ -253,6 +256,9 @@ external review exists.
 - The record-level model validation uses one synthetic HSB example and a project
   BIAN placeholder. It does not establish source-qualified BIAN fidelity,
   real-bank feasibility or broad model coverage; `EVD-011` records that limit.
+- Domain transferability is now a required test under `REQ-026`, but no
+  transferability evidence exists until `WRK-012` exercises the probe defined by
+  the adoption scenario contract.
 - Tenancy, residency, retention, evidence, and rights rules require further
   security, legal, and operational analysis.
 - Logical Application Architecture has not yet been defined.
@@ -279,6 +285,7 @@ Data or Application Architecture decisions.
 - [Phase C model validation](PHASE_C_MODEL_VALIDATION.md)
 - [Phase C gap and traceability analysis](PHASE_C_TRACEABILITY.md)
 - [Trust-boundary and security architecture](TRUST_BOUNDARY_AND_SECURITY_ARCHITECTURE.md)
+- [Adoption scenario contract](ADOPTION_SCENARIO_CONTRACT.md)
 - [ADM tailoring](ADM_TAILORING.md)
 - [Project principles](../product/PROJECT_PRINCIPLES.md)
 - [BIAN alignment policy](../product/BIAN_ALIGNMENT_POLICY.md)
