@@ -2,7 +2,8 @@
 
 ## Document status
 
-**Status:** Revised conceptual contract under `DEC-031` and `DEC-032`
+**Status:** Revised conceptual contract under `DEC-031`, `DEC-032` and
+`DEC-033`
 
 **Architecture stage:** Information Systems Architecture
 
@@ -110,6 +111,8 @@ every stage appear populated.
 A scenario instance supplies the bounded, versioned records that vary:
 
 - banking question, trigger and intended decision;
+- organising decision-subject shape or an explicit statement that the decision
+  requires no separate subject record;
 - authorised BIAN release, artefacts and source-supported relationships;
 - customer or HSB applications, APIs, events, integrations, data assets,
   products, vendors and other estate context;
@@ -150,6 +153,7 @@ Each scenario instance shall record:
 | Identity | Stable scenario identifier, version, owner, status and change history |
 | Kernel baseline | Exact adoption-kernel version, participating and non-participating stage IDs, and semantic diff outcome |
 | Purpose | Primary user, trigger, decision, intended outcome and existing alternative |
+| Decision subject | Scenario-specific subject shape around which the decision is organised, or an explicit no-subject state; a reference instance must not make its subject shape mandatory for another scenario |
 | Scope | Included and excluded banking context, organisation, estate, source and time boundaries |
 | BIAN context | Exact authorised source and release, or an explicit project placeholder and blocked BIAN attribution |
 | Source shape | Participating BIAN artefact types and an explicit API-publication state rather than an assumption that an API specification exists |
@@ -220,7 +224,8 @@ blocks so legitimate banking language does not weaken or disable the control.
 The [detailed payments scenario](HSB_SCENARIO_001_PAYMENTS_RESPONSIBILITY.md)
 is developed separately under `WRK-012`. This contract constrains it but does
 not duplicate its estate records, views or decision evidence. Its current
-state is a design, not executed scenario evidence.
+state is `HSB-SCN-001/v0.2`, a pre-execution refinement rather than executed
+scenario evidence.
 
 ## 7. Transferability probe
 
@@ -233,6 +238,8 @@ The probe shall be:
 - outside payments;
 - not primarily driven by an API specification;
 - based on a different primary adoption decision or trigger;
+- free to declare its own organising decision-subject shape or an explicit
+  no-subject state rather than inherit the payments responsibility subject;
 - able to exercise a different combination of source types, participants,
   mapping shapes and outputs; and
 - small enough to test architecture reuse without creating another full HSB

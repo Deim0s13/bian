@@ -4,7 +4,10 @@
 
 **Status:** Initial detailed scenario design under `WRK-012`
 
-**Scenario version:** `HSB-SCN-001/v0.1`
+**Scenario version:** `HSB-SCN-001/v0.2`
+
+**Pre-registration baseline:** `HSB-SCN-001/v0.1` at Git commit
+`f88b0e370a84cdbf38e7d28157b7772997b3ad2c`
 
 **Kernel baseline:** `ADOPTION-KERNEL/v1`
 
@@ -15,6 +18,19 @@
 **Evidence standing:** Synthetic conceptual test design. No scenario result,
 BIAN mapping, implementation evidence, real-bank validation or production claim
 has been established.
+
+### Change history
+
+| Version | State | Change |
+|---|---|---|
+| `v0.1` | Committed pre-registration baseline | Initial current-state finding, decision hypothesis and fallback, and controlled-change impact set |
+| `v0.2` | Pre-execution refinement | Keeps all three protected `v0.1` byte ranges unchanged; adds mechanical comparison, customer context, mapping lifecycle coverage, the primary-user path, measure executability, a scenario-specific decision-subject rule under `DEC-033`, and a specification-level downstream hand-off |
+
+`tools/check_project.py` compares the exact current-state finding, decision
+hypothesis and original impact-set byte ranges with SHA-256 values taken from
+the baseline commit. A change to any protected range fails the project check.
+The downstream hand-off adds a second impact expectation after the protected
+`v0.1` set rather than rewriting it.
 
 ## 1. Purpose
 
@@ -39,6 +55,14 @@ coherence and failure visibility. It can later provide conceptual evidence
 that the same records support source qualification, estate understanding,
 mapping, review, options, decision, downstream outcomes and impact analysis.
 
+Two claims remain separate. The executable structural measures can test
+whether the information model carries and reconstructs a connected decision.
+The specification-return path can test whether a separately owned response is
+caused by connected provenance. Neither result establishes that the connected
+path produces greater value or lower effort than the manual alternative. That
+comparative claim remains deferred until participants who did not design the
+scenario can run the frozen paths.
+
 It cannot establish:
 
 - that any project placeholder represents a BIAN artefact or relationship;
@@ -56,7 +80,7 @@ can use `ADOPTION-KERNEL/v1` as domain-transferability evidence.
 
 | Contract field | Scenario value |
 |---|---|
-| Identity | `HSB-SCN-001/v0.1`; owned by the Architecture owner; detailed design state |
+| Identity | `HSB-SCN-001/v0.2`; owned by the Architecture owner; pre-execution refinement state |
 | Kernel baseline | `ADOPTION-KERNEL/v1`; all `AK-01` through `AK-11` are intended to participate; semantic diff not yet evaluated |
 | Primary user | HSB enterprise architect exercising delegated payments-domain authority |
 | Trigger | HSB has overlapping payment-related applications and interfaces, unclear responsibility allocation and a proposed modernisation programme |
@@ -66,12 +90,14 @@ can use `ADOPTION-KERNEL/v1` as domain-transferability evidence.
 | Scope | The synthetic estate, sources, participants and time boundary in sections 4 through 7 |
 | BIAN context | `SUBJ-PRJ-BIAN-SCOPE-001`, a Class C project placeholder; exact BIAN scope and relationships unresolved; BIAN attribution blocked |
 | Source shape | HSB application, API, integration, architecture, ownership and control sources participate; BIAN API-publication state is unresolved because exact BIAN scope is absent |
+| Customer context | Horizon Synthetic Bank only; the synthetic estate, participants, sources, contradictions, classifications and limitations are defined in sections 5 through 8 |
+| Decision subject | `SUBJ-HSB-RESP-001`, an HSB scenario-specific subject; it is not an adoption-kernel concept and is not required in the transferability probe |
 | Decision rights | Defined in section 5; information stewardship, review, target decision, control conclusion and funding are separate rights |
 | Maintained scope | Identified records and relationships from baseline time `T0` until scenario change `T1`; additions require a recorded scope decision |
 | Options | Current-state continuation, consolidation into an existing HSB application, and creation of a new HSB responsibility holder |
 | Expected outcome | Pre-registered decision hypothesis and decision rule in section 10; actual result is unevaluated |
 | Trust paths | `TB-01` through `TB-08` and `TB-11` participate; `TB-09` is exercised by a synthetic profile attachment; `TB-10` is non-participating and retained as a limitation |
-| Measures | Decision effort, reconciliation effort, conflict and ownership visibility, review reproducibility, impact completeness and action consequence |
+| Measures | Executable source, conflict, mapping, reconstruction, ownership, impact and connected-return measures; time, independent review and repeated-stewardship measures are explicitly deferred |
 | Change | `HSB-CHG-001` changes an accepted estate foundation at `T1` and requires downstream impact review |
 | View provenance | `VIEWDEF-HSB-SCN-001@1` and its planned baseline and decision materialisations |
 | Export boundary | `HSB-EXPORT-SCN-001@1`, containing the portable HSB decision package without rights-restricted source content |
@@ -96,10 +122,11 @@ events or completed project work.
 > should HSB sequence the transition without hiding existing dependencies,
 > control obligations or uncertainty?
 
-The scenario uses the project-defined responsibility subject
-`SUBJ-HSB-RESP-001`. It does not assert that this responsibility is a BIAN
-Service Domain, Business Capability, Business Scenario, Control Record or
-Service Operation.
+The scenario uses `SUBJ-HSB-RESP-001` as an HSB scenario-specific responsibility
+subject under `DEC-033`. Its registration is useful for this decision shape,
+but it is not an adoption-kernel concept or a mandatory structure for another
+scenario. It does not assert that this responsibility is a BIAN Service Domain,
+Business Capability, Business Scenario, Control Record or Service Operation.
 
 Any option selected by the HSB Architecture owner must satisfy these synthetic
 hard constraints:
@@ -138,6 +165,7 @@ evidence limitation, not independent challenge.
 | Source-rights reviewer | Source-rights reviewer | Permit or block the intended source uses for the exact source and release | Cannot change BIAN meaning or HSB target allocation |
 | HSB security owner | Security owner | Approve the project-defined HSB security profile and decide scoped security risk | Cannot issue regulatory or broad compliance conclusions |
 | HSB assurance owner | Assurance owner | Decide evidence sufficiency for the stated control scope | Cannot approve the target architecture or turn an unverified area into evidence |
+| HSB Engineering owner | Engineering owner | Own the specification-hand-off response and accept, return or reject readiness for later bounded Solution Architecture | Cannot approve the HSB target decision, authorise implementation or close an evidence gap by accepting the hand-off |
 | HSB transformation sponsor | Product owner for the synthetic programme | Decide whether to fund and sequence actions after the architecture decision | Funding does not create semantic or architecture authority |
 | Independent scenario reviewer | Independent reviewer | Challenge reconstruction, reasoning, limitations and domain leakage | Cannot be simulated by the scenario author and described as independent evidence |
 
@@ -247,13 +275,45 @@ records, not accepted truth.
 | `REL-HSB-SCN-004` | `SUBJ-HSB-APP-042` | `depends_on` | `SUBJ-HSB-APP-046` | D | Disputed |
 | `REL-HSB-SCN-005` | `SUBJ-HSB-APP-043` | `depends_on` | `SUBJ-HSB-APP-046` | D | Disputed |
 | `REL-HSB-SCN-006` | `SUBJ-HSB-APP-044` | `depends_on` | `SUBJ-HSB-APP-045` | D | Proposed |
-| `REL-HSB-SCN-007` | `SUBJ-HSB-APP-042` | `candidate_mapping_to` | `SUBJ-PRJ-BIAN-SCOPE-001` | E | Blocked |
-| `REL-HSB-SCN-008` | `SUBJ-HSB-APP-043` | `candidate_mapping_to` | `SUBJ-PRJ-BIAN-SCOPE-001` | E | Blocked |
+| `REL-HSB-SCN-007` | `SUBJ-HSB-APP-042` | `candidate_mapping_to` | `SUBJ-PRJ-MAP-TARGET-001` | E | Proposed at `AK-04` |
+| `REL-HSB-SCN-008` | `SUBJ-HSB-APP-043` | `candidate_mapping_to` | `SUBJ-PRJ-MAP-TARGET-001` | E | Proposed at `AK-04` |
+| `REL-HSB-SCN-009` | `SUBJ-HSB-APP-043` | `candidate_mapping_to` | `SUBJ-PRJ-MAP-TARGET-002` | E | Proposed at `AK-04` |
+| `REL-HSB-SCN-010` | `SUBJ-HSB-APP-043` | `candidate_mapping_to` | `SUBJ-PRJ-MAP-TARGET-003` | E | Proposed at `AK-04` |
+| `REL-HSB-SCN-011` | `SUBJ-HSB-APP-044` | `candidate_mapping_to` | `SUBJ-PRJ-MAP-TARGET-001` | E | Proposed at `AK-04` |
+| `REL-HSB-SCN-012` | `SUBJ-HSB-APP-045` | `candidate_mapping_to` | `SUBJ-PRJ-MAP-TARGET-004` | E | Proposed at `AK-04` |
 
-The candidate relationships to `SUBJ-PRJ-BIAN-SCOPE-001` are project
-inferences. They cannot be reviewed into BIAN facts. Exact source qualification
-must replace the placeholder with source-supported subjects and assertions or
-record that the proposed relationship is unsupported.
+### Structurally neutral mapping targets
+
+| Subject ID | Label | Standing |
+|---|---|---|
+| `SUBJ-PRJ-MAP-TARGET-001` | Unresolved candidate target A | Class C project placeholder with no asserted BIAN identity, type, hierarchy or meaning |
+| `SUBJ-PRJ-MAP-TARGET-002` | Unresolved candidate target B | Class C project placeholder with no asserted BIAN identity, type, hierarchy or meaning |
+| `SUBJ-PRJ-MAP-TARGET-003` | Unresolved candidate target C | Class C project placeholder with no asserted BIAN identity, type, hierarchy or meaning |
+| `SUBJ-PRJ-MAP-TARGET-004` | Unresolved candidate target D | Class C project placeholder with no asserted BIAN identity, type, hierarchy or meaning |
+
+The placeholders exist only to test relationship cardinality and lifecycle.
+Their distinct identities do not assert that BIAN contains three corresponding
+elements or that any relationship exists among them. Every candidate mapping
+remains blocked from BIAN attribution until exact source qualification replaces
+or rejects the placeholder.
+
+### Mapping lifecycle test
+
+Shape and review state are separate. Every relationship is first proposed at
+`AK-04`; rejection and supersession can occur only after evidence and conflict
+analysis at `AK-05` and accountable review at `AK-06`.
+
+| Test | Relationship records | Shape at `AK-04` | `AK-05` evidence or contest | Pre-registered `AK-06` outcome |
+|---|---|---|---|---|
+| `HSB-MAP-001` | `REL-HSB-SCN-007` and `011` | Gateway and Legacy Adapter to target A as a many-to-one candidate | Responsibility boundaries overlap; channel interaction is insufficient evidence and exact target meaning is absent | Reject `007`; keep `011` disputed and blocked; retain both histories |
+| `HSB-MAP-002` | `REL-HSB-SCN-008` through `010` | Hub to targets A, B and C as a one-to-many candidate | One source asset appears to span several unresolved target candidates | Supersede `008` with `009` and `010` only as an HSB review outcome; all remain blocked from BIAN attribution |
+| `HSB-MAP-003` | `REL-HSB-SCN-012` | Core Account Processing to target D as a one-to-one candidate | Exact target meaning and source support are absent | Retain as contested and blocked rather than convert structural uniqueness into confidence |
+| `HSB-MAP-004` | `SUBJ-HSB-APP-046` | Explicitly unmapped; no relationship is created | No source-qualified target candidate exists for the supporting dependency | Confirm unmapped state without inventing a target |
+
+These transitions test that proposed, disputed, rejected, superseded and
+unmapped states remain representable. They do not test whether a BIAN mapping
+is correct. The execution record must retain the `AK-04` proposals and `AK-05`
+evidence when the `AK-06` outcome changes their review state.
 
 ## 9. Current-state finding
 
@@ -322,21 +382,41 @@ the canonical stages and behaviours without creating a second kernel.
 
 | Stage | Scenario work and governed records | Canonical behaviours | Design state |
 |---|---|---|---|
-| `AK-01` | Record the bounded question, trigger, mandate, existing alternative, intended outcome and stop conditions in `HSB-SCN-001/v0.1` | `KB-05`, `KB-09` | Designed; not executed |
+| `AK-01` | Record the bounded question, trigger, mandate, existing alternative, intended outcome and stop conditions in `HSB-SCN-001/v0.2` | `KB-05`, `KB-09` | Designed; not executed |
 | `AK-02` | Qualify the exact BIAN source or retain `SUBJ-PRJ-BIAN-SCOPE-001` and block BIAN attribution | `KB-01`, `KB-09` | Designed; source unresolved |
 | `AK-03` | Capture and validate the HSB source set, subjects, assertions, sensitivity, owners and limits | `KB-01`, `KB-02`, `KB-09` | Designed; not executed |
-| `AK-04` | Propose responsibility, dependency and candidate-scope relationships without destructive reconciliation | `KB-02`, `KB-03`, `KB-09` | Designed; not executed |
-| `AK-05` | Evaluate evidence, gaps and `HSB-CON-001` through `HSB-CON-004` while retaining contrary assertions | `KB-03`, `KB-04`, `KB-09` | Designed; not executed |
-| `AK-06` | Exercise source, asset, security, assurance and architecture review rights, including objection and escalation | `KB-04`, `KB-05`, `KB-09` | Designed; not executed |
+| `AK-04` | Propose responsibility, dependency and candidate-scope relationships, including the initial states in `HSB-MAP-001` through `004` | `KB-02`, `KB-03`, `KB-09` | Designed; not executed |
+| `AK-05` | Evaluate evidence, gaps, `HSB-CON-001` through `004` and mapping contests while retaining contrary assertions | `KB-03`, `KB-04`, `KB-09` | Designed; not executed |
+| `AK-06` | Exercise source, asset, security, assurance and architecture review rights, including mapping rejection, supersession, objection and escalation | `KB-04`, `KB-05`, `KB-09` | Designed; not executed |
 | `AK-07` | Review the Class E current-state finding in section 9 | `KB-04`, `KB-09` | Designed; not executed |
 | `AK-08` | Compare `HSB-OPT-001` through `HSB-OPT-003`, including transition and no-change | `KB-04`, `KB-06`, `KB-09` | Designed; not executed |
 | `AK-09` | Record `HSB-ARC-DEC-001`, rejected alternatives, rationale, uncertainty, owners and actions | `KB-05`, `KB-06`, `KB-09` | Designed; no accepted decision |
-| `AK-10` | Produce the decision view, project-defined assurance path and `HSB-EXPORT-SCN-001@1`; record any external reconciliation result | `KB-07`, `KB-09` | Designed; not executed |
+| `AK-10` | Produce the decision view, specification hand-off, project-defined assurance path and `HSB-EXPORT-SCN-001@1`; record the hand-off return and any external reconciliation result | `KB-07`, `KB-09` | Designed; not executed |
 | `AK-11` | Apply `HSB-CHG-001`, identify every maintained dependant and preserve the `T0` view | `KB-08`, `KB-09` | Designed; not executed |
 
 **Kernel semantic diff state:** Not evaluated. An empty semantic diff may be
 recorded only after scenario execution confirms that no shared semantic or
 logical-behaviour change was required.
+
+### Primary-user action path
+
+This is an experience-neutral walkthrough, not a user-interface or application
+design. It makes the platform-assisted path concrete enough to compare with the
+manual alternative.
+
+| Stage | What the HSB enterprise architect does | Observable result |
+|---|---|---|
+| `AK-01` | States the decision, mandate, maintained scope, intended outcome and stop conditions | A bounded scenario record that another participant can challenge |
+| `AK-02` | Selects a qualified BIAN source context or explicitly records that exact scope and rights are unresolved | BIAN use proceeds with qualified provenance or stops behind the project placeholder |
+| `AK-03` | Supplies or references the six HSB source families, reviews validation results and assigns missing classification or ownership for resolution | Source captures and HSB assertions are available without replacing their systems of record |
+| `AK-04` | Reviews registered estate identities and proposes responsibility, dependency and candidate mapping relationships | Attributable proposals exist, including mixed cardinality and an explicit unmapped state |
+| `AK-05` | Examines supporting and contrary evidence, the four planted conflicts and the three evidence gaps | Conflicts remain visible and each finding records sufficiency and limitations |
+| `AK-06` | Requests bounded review from stewards and asset owners, responds to objections and routes unresolved allocation to the recorded decision authority | Rejected, disputed, superseded and accepted states retain the actors and rationale that produced them |
+| `AK-07` | Reviews the pre-registered current-state finding against the exact evidence and records acceptance, revision, rejection or unresolved status | The finding cannot become HSB truth by inference alone |
+| `AK-08` | Applies the hard constraints and compares all three options without using a numerical score to override a failed gate | A traceable option comparison, including no change |
+| `AK-09` | Records the selected or unresolved outcome, rejected alternatives, rationale, owners, actions and limits | `HSB-ARC-DEC-001` is created only if the delegated decision is exercised |
+| `AK-10` | Sends the specification hand-off to the Engineering owner, receives its return or acceptance, and produces the scoped decision, assurance and export outcomes | A separately owned response can change an action; outputs retain provenance and restrictions |
+| `AK-11` | Introduces `HSB-CHG-001`, reviews both expected impact sets and routes affected records to their owners | The earlier decision remains reconstructable while current records show impact review |
 
 ## 12. Scenario-specific View Definition
 
@@ -421,24 +501,62 @@ either in the impact set or has an attributable exclusion rationale. Finding a
 miss is useful failure evidence and must not be hidden by narrowing the scope
 after the result.
 
+### `v0.2` additive downstream impact expectation
+
+The `v0.1` table above remains the protected original impact set. The
+specification hand-off introduced in `v0.2` creates two new dependant records
+that did not exist at baseline. They extend the execution test without changing
+the original expectation.
+
+| Added record or concern | Expected state at `T1` | Accountable action |
+|---|---|---|
+| `HSB-HO-ENG-001@1` | Impact review because its proposed target depends on the Hub's earlier lifecycle assertion | Engineering owner returns, confirms or supersedes the hand-off response within the changed evidence scope |
+| `HSB-HO-RET-001` | Impact review because the reason for return may change when the target option is no longer credible | Architecture owner retains the original return and determines whether a new hand-off is justified |
+
+Execution reports two results: completeness against the byte-protected `v0.1`
+impact set, and completeness against the expanded `v0.1` plus `v0.2` set. A
+pass against the expanded set cannot conceal a miss from the original set.
+
 ## 15. Downstream outcomes and portable decision package
 
 ### Participating outcomes
 
-The scenario uses three thin consequences to test that the connected model
-changes an owned decision or action:
+The scenario uses one separately owned specification hand-off and three
+decision projections to test whether connected provenance changes an owned
+response:
 
-1. an architecture decision view containing the selected or unresolved option,
+1. `HSB-HO-ENG-001@1`, a specification-level engineering hand-off with its own
+   owner, response and lifecycle;
+2. an architecture decision view containing the selected or unresolved option,
    contrary evidence and owned transition actions;
-2. a project-defined HSB assurance path that distinguishes verified, failed,
+3. a project-defined HSB assurance path that distinguishes verified, failed,
    expired, partial and unverified control conclusions for the exact scenario
    scope; and
-3. a customer-owned export package for independent reconstruction and exit.
+4. a customer-owned export package for independent reconstruction and exit.
 
 No service scaffold, SDK, deployment artefact or implementation change is
-required to establish this conceptual path. Engineering projection remains a
-later scenario extension unless it can influence this decision without
-prematurely authorising a build.
+created or authorised. The hand-off specifies the target responsibility,
+interface ownership, evidence, limitations and questions that a future bounded
+Solution Architecture would need to address. It does not select a solution or
+request implementation.
+
+### Specification hand-off and pre-registered return
+
+| Field | Scenario definition |
+|---|---|
+| Record | `HSB-HO-ENG-001@1` |
+| Sender | Architecture owner after `AK-09` |
+| Receiver and owner | Engineering owner |
+| Content | Selected or unresolved target allocation, affected HSB interfaces, accepted and rejected relationships, exact provenance, hard-constraint result, evidence gaps and prohibited claims |
+| Lifecycle | Draft, offered, returned, reworked, accepted for bounded Solution Architecture, rejected, impact review or superseded |
+| Expected `AK-10` response | Returned as `HSB-HO-RET-001` because `HSB-GAP-003` supplies no production workload, resilience or failure-rate evidence for the proposed Hub target |
+| Effect of return | Target implementation and solution selection remain unauthorised; the Architecture owner must retain the limitation and assign evidence work rather than remove it from the hand-off |
+| Surprising result | Acceptance is permitted only if execution identifies attributable evidence that closes `HSB-GAP-003`; the result and deviation from the pre-registration must be recorded |
+
+The expected return is the connected-value test. A successful delivery action
+is not assumed to be evidence of value. The test asks whether the receiving
+owner can reject an apparently preferred path because the connected provenance
+exposes an exact insufficiency that a disconnected summary could hide.
 
 ### Export package
 
@@ -469,18 +587,25 @@ receiving content the simulated recipient is not entitled to retain.
 
 ## 16. Measures, expected evidence and stop conditions
 
-Measures are evaluated against the synthetic manual alternative, not used to
-predict real-bank economics.
+Measures are evaluated only within their declared execution state. Time-based
+effort comparisons are deferred because the scenario author designed both
+paths and knows the expected outcome. Recording a time would create false
+precision, not useful evidence.
 
-| Measure | Collection method | Baseline or comparator | Limitation and decision use |
+| Measure | Execution state | Collection method and comparator | Limitation and decision use |
 |---|---|---|---|
-| Decision effort | Record active preparation, reconciliation, review and update effort separately from elapsed waiting time | Repeat the same bounded decision using the synthetic manual source pack and document process | One author and synthetic sources cannot establish real organisational cost |
-| Reconciliation effort | Count source conflicts requiring human interpretation and time spent resolving or retaining them | Manual spreadsheet reconciliation of the same captures | A lower count can mean hidden conflict, so visibility is checked first |
-| Ownership coverage | Report in-scope records with accepted owner, disputed owner, missing owner and action owner | Same maintained scope at `T0` and `T1` | Coverage does not prove the owner accepts operational accountability |
-| Reviewer reproducibility | Give the exact decision package to a reviewer not involved in its assembly and compare reconstructed option, evidence and limitations | Decision paper assembled from the same sources | Cannot be recorded as independent until a different reviewer performs it |
-| Impact completeness | Compare the produced `T1` impact set with the pre-registered set in section 14 and explain differences | Manual source-to-decision trace | Completeness is bounded to maintained relationships and may expose model gaps |
-| Connected consequence | Record whether a downstream owner changes, confirms or rejects an action because of the linked finding | The same owner receiving a static report without connected provenance | A generated record count is not an outcome |
-| Stewardship burden | Record initial capture, owner review, ageing, correction, escalation and repeat-update effort by role | Manual maintenance of the same bounded decision pack | HSB cannot prove sustainable real-bank incentives |
+| Source coverage | Executable | Count the eight planted source captures that are present, validly referenced and included or explicitly excluded from the decision view | Presence does not establish source quality or real-bank availability |
+| Conflict-detection coverage | Executable | Compare distinct conflicts surfaced with the four conflicts planted as `HSB-CON-001` through `004`; report the ratio and every miss | Surfacing a conflict does not resolve it or prove that no additional conflict exists |
+| Mapping-lifecycle coverage | Executable | Verify that each pre-registered `AK-04` proposal reaches its specified `AK-05` contest and `AK-06` outcome without losing earlier state | Tests lifecycle representation, not BIAN mapping correctness |
+| Decision reconstruction traversal | Executable | Count the distinct records and relationship edges required by `VIEWDEF-HSB-SCN-001@1` to reproduce the result; compare the count with the exported reconstruction manifest | A smaller count is not better if provenance or contrary evidence is missing |
+| Ownership coverage | Executable | Report maintained records with accepted, disputed or missing owner and actions with one accountable owner at `T0` and `T1` | Recorded ownership does not prove operational acceptance by a real owner |
+| Original impact completeness | Executable | Compare the produced `T1` set with every row in the byte-protected `v0.1` impact table and explain every additional or missing record | A pass is bounded to the original maintained set and cannot be inferred from the expanded result |
+| Expanded impact completeness | Executable | Compare the produced `T1` set with the original table plus the two `v0.2` hand-off additions | Tests the new downstream lifecycle without rewriting the original expectation |
+| Connected return path | Executable as a synthetic structural test | Verify that `HSB-GAP-003` reaches the Engineering owner and produces `HSB-HO-RET-001`, leaving implementation unauthorised | One person acting in several roles cannot establish organisational value or independence |
+| Decision effort | Deferred | A participant who did not design the paths runs both the manual and platform-assisted methods against the same frozen source pack | The current author cannot produce an honest time comparison while knowing the intended winner |
+| Reconciliation effort | Deferred | A participant who did not plant the conflicts runs both methods; time and active interventions are recorded separately | Structural conflict coverage is available now, but comparative effort is not |
+| Reviewer reproducibility | Deferred | A reviewer not involved in scenario assembly reconstructs the option, evidence and limitations from the package | Self-review cannot satisfy this measure |
+| Stewardship burden | Deferred | Observe capture, review, ageing, correction, escalation and repeat updates across more than one controlled change | One designed change cannot establish sustainable maintenance effort or incentives |
 
 The scenario must be stopped or narrowed when:
 
@@ -496,6 +621,11 @@ The scenario must be stopped or narrowed when:
 - the architecture needs payment-specific shared semantics or logical
   responsibilities; or
 - a scenario failure is being hidden through retrospective scope reduction.
+
+The effort and stewardship stop signals cannot be decided during the solo
+synthetic run because their measures are deferred. They remain active limits,
+not silent passes. The structural, provenance, connected-return and impact
+signals can be evaluated during this scenario.
 
 ## 17. Application Architecture hand-off
 
@@ -522,12 +652,13 @@ later open-source release scope.
 
 ## 18. Completion state and next test
 
-This document completes the first design pass of the deep scenario. It does not
-complete `WRK-012`.
+This document records the `v0.2` pre-execution refinement of the deep scenario.
+It does not complete `WRK-012`.
 
 Remaining work is to:
 
-1. pressure-test the scenario contract fields and pre-registered outcomes;
+1. commit and freeze `v0.2`, then verify the three protected ranges against the
+   committed `v0.1` baseline;
 2. instantiate and exercise the governed records and negative paths;
 3. produce and reconstruct the `T0` and `T1` views and export package;
 4. record the kernel semantic diff and architecture findings;

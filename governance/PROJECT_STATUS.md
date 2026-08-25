@@ -26,7 +26,12 @@ implementation-evidence matters remain explicit. Build-authorisation
 recalibration is complete under `DEC-027` and `WRK-042`: the existing gates
 remain unchanged and no early experimental-build route has been created. The
 immediate work item is the connected HSB scenario under `WRK-012`, now in
-progress. `HSB-SCN-001/v0.1` now provides the first detailed design of the
+progress. `HSB-SCN-001/v0.2` now refines the committed `v0.1` design with
+mechanically protected pre-registration blocks, lifecycle mapping tests, a
+primary-user action path, executable measure states and an adversarial
+specification-return outcome. `DEC-033` keeps the HSB responsibility subject
+scenario-specific so it cannot constrain the transferability probe. The design
+provides the
 synthetic estate, decision rights, conflicts, options, expected decision rule,
 kernel-stage participation, negative paths, controlled change, measures and
 portable decision package. It has not been executed or accepted as scenario

@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 
+import hashlib
 import re
 import sys
 from pathlib import Path
@@ -118,14 +119,20 @@ REQUIRED_CONTENT = {
         "REQ-026",
         "RSK-042",
         "GAT-003",
+        "DEC-033",
+        "Decision subject",
     ),
     "architecture/HSB_SCENARIO_001_PAYMENTS_RESPONSIBILITY.md": (
-        "HSB-SCN-001/v0.1",
+        "HSB-SCN-001/v0.2",
         "ADOPTION-KERNEL/v1",
         "Scenario execution state",
+        "f88b0e370a84cdbf38e7d28157b7772997b3ad2c",
         "SUBJ-PRJ-BIAN-SCOPE-001",
+        "SUBJ-PRJ-MAP-TARGET-004",
         "VIEWDEF-HSB-SCN-001@1",
         "HSB-CHG-001",
+        "HSB-HO-ENG-001@1",
+        "HSB-HO-RET-001",
         "HSB-EXPORT-SCN-001@1",
         "Kernel semantic diff state",
         "Trust-boundary and negative-path design",
@@ -244,6 +251,7 @@ REQUIRED_CONTENT = {
         "DEC-029",
         "DEC-031",
         "DEC-032",
+        "DEC-033",
         "GAT-001",
         "GAT-011",
         "GAT-012",
@@ -396,6 +404,26 @@ DOMAIN_NEUTRAL_END = re.compile(
 ADOPTION_KERNEL_VERSION = "ADOPTION-KERNEL/v1"
 ADOPTION_KERNEL_STAGES = {f"AK-{number:02d}" for number in range(1, 12)}
 ADOPTION_KERNEL_BEHAVIOURS = {f"KB-{number:02d}" for number in range(1, 10)}
+HSB_PREREGISTRATION_BLOCKS = (
+    (
+        "current-state finding",
+        "The pre-registered current-state finding is:\n",
+        "This is a Class E platform inference",
+        "473c2daee642b460b19d23910e8a6be83161cb18d4aeb46cead87514acb7fdd7",
+    ),
+    (
+        "decision hypothesis and fallback",
+        "### Expected outcome recorded before execution\n",
+        "## 11. Kernel-stage execution design",
+        "7cbfc935551ac8ab29047ce89013514279aecfca2eff5b1af4f21198d4aeac7f",
+    ),
+    (
+        "original impact set",
+        "The expected impact-review set is:\n",
+        "Execution passes this change test",
+        "4b6c2aeda43bc7aa5ac80c001e47cac7d7dee8e4f01804db99810f9c99c2ff36",
+    ),
+)
 
 
 def active_text_files() -> list[Path]:
@@ -697,6 +725,46 @@ def check_adoption_kernel(errors: list[str]) -> None:
         )
 
 
+def check_hsb_preregistration(errors: list[str]) -> None:
+    scenario_path = (
+        ROOT / "architecture/HSB_SCENARIO_001_PAYMENTS_RESPONSIBILITY.md"
+    )
+    if not scenario_path.is_file():
+        return
+
+    scenario_text = scenario_path.read_text(encoding="utf-8")
+    for block_name, start_marker, end_marker, expected_digest in (
+        HSB_PREREGISTRATION_BLOCKS
+    ):
+        if scenario_text.count(start_marker) != 1 or scenario_text.count(end_marker) != 1:
+            errors.append(
+                "architecture/HSB_SCENARIO_001_PAYMENTS_RESPONSIBILITY.md: "
+                f"protected pre-registration boundaries are ambiguous: {block_name}"
+            )
+            continue
+
+        start = scenario_text.find(start_marker)
+        end = scenario_text.find(
+            end_marker,
+            start + len(start_marker) if start >= 0 else 0,
+        )
+        if start < 0 or end < 0:
+            errors.append(
+                "architecture/HSB_SCENARIO_001_PAYMENTS_RESPONSIBILITY.md: "
+                f"cannot locate protected pre-registration block: {block_name}"
+            )
+            continue
+
+        block = scenario_text[start:end].encode("utf-8")
+        actual_digest = hashlib.sha256(block).hexdigest()
+        if actual_digest != expected_digest:
+            errors.append(
+                "architecture/HSB_SCENARIO_001_PAYMENTS_RESPONSIBILITY.md: "
+                f"protected pre-registration block changed: {block_name}; "
+                "preserve the v0.1 bytes or record a governed exception before "
+                "updating the expected digest"
+            )
+
 
 def check_domain_neutral_blocks(files: list[Path], errors: list[str]) -> None:
     block_names: set[str] = set()
@@ -902,6 +970,7 @@ def main() -> int:
     check_data_architecture_requirements(errors)
     check_crosscutting_requirements(errors)
     check_adoption_kernel(errors)
+    check_hsb_preregistration(errors)
     check_domain_neutral_blocks(files, errors)
     check_register_controls(errors)
     check_project_principles(files, errors)
