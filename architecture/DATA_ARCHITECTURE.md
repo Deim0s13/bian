@@ -443,16 +443,17 @@ standard. Candidate formats and round-trip scope remain `OQ-035`.
 ## 16. HSB information slice
 
 The first HSB Data Architecture exercise should include only information needed
-for the accepted responsibility-allocation decision:
+for the accepted fragmented-payments assessment and its bounded decisions:
 
 - a source-qualified BIAN context for the exact later-confirmed scope;
-- an HSB decision question, criteria, sponsor, and authority;
+- an HSB assessment question, payment journeys, criteria, sponsor and authority;
 - selected HSB applications, APIs, integrations, owners, lifecycle, and
   dependencies;
 - deliberately incomplete and contradictory source assertions;
 - candidate, rejected, disputed, accepted, and superseded mappings;
 - at least two target options, including justified no change;
-- one accepted allocation and transition decision;
+- reviewed current-state findings and one accepted target and transition
+  decision;
 - one model-derived projection linked to the decision;
 - one scoped assurance evidence path with explicit gaps; and
 - one BIAN-source or HSB-estate change that creates reviewable impact.

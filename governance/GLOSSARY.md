@@ -138,9 +138,12 @@ scope, limitations, review and validity state.
 ### First consumable proposition
 
 The smallest bounded product outcome that an intended user can complete and
-evaluate. The current hypothesis is the HSB responsibility-allocation decision
-accepted under `DEC-018`. It is not the complete platform vision and does not
-constitute build authorisation.
+evaluate. The current hypothesis under `DEC-034` is the HSB assessment of a
+fragmented domestic payments estate, producing a reviewed current-state
+diagnosis, BIAN-informed target choices and a transition decision. The
+responsibility-allocation experiment accepted under the superseded `DEC-018`
+is now one subordinate validation thread. The proposition is not the complete
+platform vision and does not constitute build authorisation.
 
 ### Governed record
 

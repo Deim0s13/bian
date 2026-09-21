@@ -1,10 +1,10 @@
-# HSB-SCN-001: customer-payment initiation responsibility
+# HSB-SCN-001: customer-payment initiation validation thread
 
 ## Document status
 
-**Status:** Initial detailed scenario design under `WRK-012`
+**Status:** Preserved subordinate validation design under `WRK-012`
 
-**Scenario version:** `HSB-SCN-001/v0.2`
+**Scenario version:** `HSB-SCN-001/v0.3`
 
 **Pre-registration baseline:** `HSB-SCN-001/v0.1` at Git commit
 `f88b0e370a84cdbf38e7d28157b7772997b3ad2c`
@@ -25,6 +25,7 @@ has been established.
 |---|---|---|
 | `v0.1` | Committed pre-registration baseline | Initial current-state finding, decision hypothesis and fallback, and controlled-change impact set |
 | `v0.2` | Pre-execution refinement | Keeps all three protected `v0.1` byte ranges unchanged; adds mechanical comparison, customer context, mapping lifecycle coverage, the primary-user path, measure executability, a scenario-specific decision-subject rule under `DEC-033`, and a specification-level downstream hand-off |
+| `v0.3` | Use-case disposition | Preserves the complete unexecuted `v0.2` design and all protected ranges; records under `DEC-034` that this is one subordinate validation thread within `HSB-UC-001`, not the primary bank use case or a preselected bank outcome |
 
 `tools/check_project.py` compares the exact current-state finding, decision
 hypothesis and original impact-set byte ranges with SHA-256 values taken from
@@ -34,9 +35,16 @@ The downstream hand-off adds a second impact expectation after the protected
 
 ## 1. Purpose
 
-This scenario tests whether the proposed BIAN Adoption & Engineering Platform
-can help a bank architect make, explain, revisit and act on one contested
-architecture decision across fragmented information.
+This validation thread tests whether the proposed BIAN Adoption & Engineering
+Platform can help a bank architect make, explain, revisit and act on one
+contested architecture decision across fragmented information.
+
+The bank-led context is now defined by
+[HSB-UC-001](HSB_USE_CASE_001_PAYMENTS_MODERNISATION.md). Under `DEC-034`, that
+broader payments-modernisation assessment is the primary use case. This
+document preserves the narrower `v0.2` responsibility-allocation experiment as
+one possible decision thread. Its pre-registered Hub hypothesis is test input,
+not the expected outcome of the wider bank assessment.
 
 The decision concerns Horizon Synthetic Bank (HSB). HSB is fictional, and every
 estate record, participant identity and outcome in this document is
@@ -73,8 +81,9 @@ It cannot establish:
 - regulatory compliance, external assurance or endorsement; or
 - permission to use, transform or redistribute a particular BIAN source.
 
-The separate non-payment transferability probe is required before `GAT-003`
-can use `ADOPTION-KERNEL/v1` as domain-transferability evidence.
+The separate non-payment transferability probe now supplies information-level
+evidence through `HSB-TP-001/v0.1`. `GAT-003` still requires both scenarios to
+reuse the logical application responsibilities developed under `WRK-013`.
 
 ## 3. Scenario contract record
 
@@ -652,23 +661,29 @@ later open-source release scope.
 
 ## 18. Completion state and next test
 
-This document records the `v0.2` pre-execution refinement of the deep scenario.
-It does not complete `WRK-012`.
+This document records the `v0.3` disposition of the preserved `v0.2`
+pre-execution design. It does not complete `WRK-012` and must not be executed as
+the complete bank use case.
 
 Remaining work is to:
 
-1. commit and freeze `v0.2`, then verify the three protected ranges against the
-   committed `v0.1` baseline;
-2. instantiate and exercise the governed records and negative paths;
-3. produce and reconstruct the `T0` and `T1` views and export package;
-4. record the kernel semantic diff and architecture findings;
-5. exercise the non-payment, non-API-dominant transferability probe; and
-6. use both scenario results to inform the `GAT-003` review and logical
+1. verify the three protected ranges against the committed `v0.1` baseline and
+   retain the committed `v0.2` design as history;
+2. align a new execution version to the estate, journeys, evidence boundaries
+   and neutral option space in `HSB-UC-001`;
+3. instantiate and exercise the governed records and negative paths;
+4. produce and reconstruct the baseline and changed views and export package;
+5. record the kernel semantic diff and architecture findings;
+6. apply the completed `HSB-TP-001/v0.1` result when testing logical
+   application-responsibility reuse; and
+7. use both scenario results to inform the `GAT-003` review and logical
    Application Architecture.
 
 ## References
 
 - [Adoption scenario contract](ADOPTION_SCENARIO_CONTRACT.md)
+- [HSB customer-onboarding transferability probe](HSB_TRANSFERABILITY_PROBE_001_CUSTOMER_ONBOARDING.md)
+- [HSB payments-modernisation use case](HSB_USE_CASE_001_PAYMENTS_MODERNISATION.md)
 - [Business Architecture](BUSINESS_ARCHITECTURE.md)
 - [Information Systems Architecture](INFORMATION_SYSTEMS_ARCHITECTURE.md)
 - [Conceptual Data Architecture](DATA_ARCHITECTURE.md)

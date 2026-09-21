@@ -107,10 +107,15 @@ roles or source systems exist in a real adopter.
 | BIAN source context | Core boundary, source-qualified content pending | The proposition must distinguish exact BIAN context from a project placeholder even before import is lawful |
 | Bank or HSB estate | Core | The decision depends on application, API, owner, lifecycle and dependency assertions |
 | Mapping and analysis | Core | Candidate and reviewed relationships, contradiction and uncertainty are central to the decision |
-| Architecture and transformation | Core | The outcome is a responsibility-allocation and transition decision |
+| Architecture and transformation | Core | The outcome is a reviewed current-state diagnosis and target and transition decision; responsibility allocation is one subordinate decision thread |
 | Engineering projection | Thin connected proof | One projection tests lineage and the generated-versus-owned boundary; broad generation is north-star scope |
 | Assurance and evidence | Thin connected proof | One evidence path tests claim discipline; general regulatory or GRC capability is north-star scope |
 | Governance and operation | Supporting foundation | Identity, review, ownership and audit are needed; a portal, scorecard and full operating model are north-star scope |
+
+`HSB-TP-001/v0.1` challenges this depth from a non-payment,
+non-API-dominant customer-onboarding context. It records an empty semantic diff
+against `ADOPTION-KERNEL/v1`; logical application-responsibility reuse remains
+an input to `WRK-013`, not completed evidence.
 
 ## 7. Data Architecture section scope
 

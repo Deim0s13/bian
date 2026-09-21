@@ -1,6 +1,6 @@
 # Project status
 
-**Last updated:** 25 August 2026
+**Last updated:** 21 September 2026
 
 **Lifecycle state:** Concept
 
@@ -20,27 +20,32 @@ been instantiated with one synthetic HSB record set, cross-domain gaps and
 traceability are explicit, and the stage exit criteria are auditable tests. The
 trust-boundary and security
 baseline has been accepted under `DEC-026`, and `WRK-011` and `WRK-041` are
-complete. It now constrains the connected HSB scenario and logical Application
+complete. It now constrains the connected HSB use case and logical Application
 Architecture while unresolved privacy, application-allocation and
 implementation-evidence matters remain explicit. Build-authorisation
 recalibration is complete under `DEC-027` and `WRK-042`: the existing gates
 remain unchanged and no early experimental-build route has been created. The
-immediate work item is the connected HSB scenario under `WRK-012`, now in
-progress. `HSB-SCN-001/v0.2` now refines the committed `v0.1` design with
-mechanically protected pre-registration blocks, lifecycle mapping tests, a
-primary-user action path, executable measure states and an adversarial
-specification-return outcome. `DEC-033` keeps the HSB responsibility subject
-scenario-specific so it cannot constrain the transferability probe. The design
-provides the
-synthetic estate, decision rights, conflicts, options, expected decision rule,
-kernel-stage participation, negative paths, controlled change, measures and
-portable decision package. It has not been executed or accepted as scenario
-evidence. `DEC-031` requires the payments case to remain a deep reference
-instance of a reusable adoption kernel and adds a materially different
-domain-transferability probe before `GAT-003` can pass. `DEC-032` establishes
-`ADOPTION-KERNEL/v1`, minimum probe coverage, structural variation and semantic
-diff rules, and keeps concrete View Definitions and evaluation rules
-scenario-scoped unless explicitly promoted. `WRK-029`
+immediate work item is the connected HSB use case under `WRK-012`, now in
+progress. `DEC-034` supersedes the narrow first proposition in `DEC-018` and
+accepts `HSB-UC-001/v0.2`, a bank-led assessment of a fragmented domestic
+payments estate. It defines a credible transformation trigger, five payment
+journeys plus a sixth for returns, recalls and reversals, a mixed-generation estate,
+clearing and settlement boundaries, imperfect evidence sources, dated and
+external constraints, BIAN adoption questions and a neutral option space.
+`HSB-SCN-001/v0.2` remains mechanically protected and unexecuted; its `v0.3`
+disposition treats it as one subordinate responsibility-allocation validation
+thread rather than the customer use case or expected bank outcome. `RSK-043`
+records the risk that a self-authored scenario could be shaped around the
+platform's desired result. `DEC-031` through `DEC-033` continue to govern
+domain neutrality, the canonical `ADOPTION-KERNEL/v1`, transferability and
+historical pre-registration. A materially different domain-transferability
+probe is now conceptually exercised under `DEC-035` through
+`HSB-TP-001/v0.1`, a customer-onboarding and periodic-review problem. It uses no
+API specification, exercises all eleven kernel stages and all eight variation
+dimensions, and records an empty semantic diff. This passes the
+information-semantics part of the transferability test, but the connected
+payments validation thread and reuse of logical application responsibilities
+remain outstanding before `WRK-012` can close or `GAT-003` can pass. `WRK-029`
 continues the project-owner review of the wider lifecycle plan without blocking
 this Phase C refinement.
 
@@ -60,11 +65,12 @@ technical spike is inactive and does not constrain current work.
 - The current investment position is to continue discovery and conceptual
   architecture, not to authorise a full platform build. Connected decision value
   must be demonstrated before implementation scope is approved.
-- The Architecture Vision covers the full platform. A bounded HSB payments
-  assessment is an initial validation scenario rather than the product centre.
+- The Architecture Vision covers the full platform. `HSB-UC-001` is a bounded
+  bank-led payments-modernisation assessment rather than the product centre.
+  Its validation threads do not prescribe the target architecture.
 - The accepted Business Architecture defines six connected value streams, seven
   project-defined platform capabilities, business services, decision rights,
-  measures and a bounded HSB decision scenario. `DEC-030` retains `BAR-002` and
+  measures and a bounded HSB payments-modernisation use case. `DEC-030` retains `BAR-002` and
   `BAR-006`, promotes `BAR-010` into `REQ-021` and supersedes the remaining
   eleven `BAR` records with traceable parent requirements.
 - `DEC-019` establishes Information Systems Architecture as the current stage
@@ -118,9 +124,10 @@ technical spike is inactive and does not constrain current work.
   implementation, which remains behind `GAT-008` and the Implementation
   Governance readiness controls in `GAT-015`.
 - The first working proposition helps an enterprise or payments domain architect
-  decide the target allocation and transition of one contested banking
-  responsibility. HSB customer-payment initiation is the initial synthetic
-  scope, subject to exact BIAN R14 source qualification.
+  understand a fragmented domestic payments estate, identify gaps, duplication
+  and boundary concerns, compare target choices and decide a safe transition.
+  The customer-payment initiation responsibility experiment is one subordinate
+  thread, subject to exact BIAN R14 source qualification.
 - Existing enterprise systems remain authoritative for their source records.
   The platform is authoritative only for its governed mappings, review,
   traceability, connected decisions, workflow, and audit records.
@@ -138,6 +145,8 @@ technical spike is inactive and does not constrain current work.
 - `REQ-026` prevents the HSB payments scenario from defining shared platform
   semantics. `RSK-042`, `WRK-012` and `GAT-003` require a non-payment,
   non-API-dominant transferability probe without implying universal coverage.
+  `HSB-TP-001/v0.1` now provides the information-level result; logical
+  application-responsibility reuse remains untested.
 - Horizon Synthetic Bank will provide repeatable fictional scenarios and
   synthetic information.
 - The project is intended to be independently open source.
@@ -191,7 +200,9 @@ evidence and a recorded pass from the accountable judge. In practical terms:
   HSB scenario is used as stage evidence;
 - Application Architecture resolves or deliberately carries forward the
   responsibilities listed in `DEP-013`, `DEP-014` and `WRK-040`;
-- the first HSB scenario has defined inputs, expected decisions, and evidence;
+- the first HSB use case has a credible bank problem, bounded estate, defined
+  inputs, neutral options, expected decisions and evidence, and its subordinate
+  validation threads are aligned before execution;
 - the first proposition has passed the applicable decision-value,
   connected-differentiation, input-feasibility, trust, adoption-fit, and
   sustainable-scope tests;
@@ -205,8 +216,10 @@ evidence and a recorded pass from the accountable judge. In practical terms:
 The trust baseline review is complete under `DEC-026` and `WRK-041`.
 Build-authorisation recalibration is also complete under `DEC-027` and
 `WRK-042`, with no separate early experimental-build route. The immediate work
-sequence is to complete the connected HSB scenario and then develop the logical
-Application Architecture.
+sequence is to review and complete the connected HSB use case, align an
+executable validation-thread version without rewriting the historical
+pre-registration, then develop the logical Application Architecture using both
+the payments reference and completed onboarding transferability probe.
 
 After `GAT-003`, the planned architecture sequence is:
 

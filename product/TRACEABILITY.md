@@ -46,8 +46,8 @@ Registry, three product pillars, Platform Control, and Runtime Targets.
   [Architecture Register](../governance/ARCHITECTURE_REGISTER.md#requirements).
   Their derivation and use are explained in the
   [requirements and traceability view](../architecture/REQUIREMENTS_AND_TRACEABILITY.md).
-- The first working proposition is the bounded responsibility-allocation
-  decision accepted under `DEC-018` and described in the
+- The first working proposition is the fragmented-payments modernisation
+  assessment accepted under `DEC-034` and described in the
   [Business Architecture](../architecture/BUSINESS_ARCHITECTURE.md#13-accepted-working-proposition-and-decision-boundary).
 - Information Systems Architecture is governed by `DEC-019`. Its
   [conceptual Data Architecture](../architecture/DATA_ARCHITECTURE.md) defines

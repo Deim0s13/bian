@@ -204,11 +204,12 @@ supersedes the other eleven `BAR` records. Acceptance confirms that an
 obligation governs subsequent architecture work. It does not prove that the
 future product satisfies it or authorise implementation.
 
-`DEC-031` adds accepted `REQ-026`. It requires the first deep HSB payments
-scenario and a materially different transferability probe to use the same
-adoption kernel without embedding a single banking domain into shared platform
-semantics. This is bounded architecture evidence, not proof of universal
-scenario support.
+`DEC-031` adds accepted `REQ-026`. `DEC-034` now places the first deep HSB
+payments scenario within a bank-led fragmented-payments modernisation use case.
+The use case, its subordinate validation threads and a materially different
+transferability probe must use the same adoption kernel without embedding a
+single banking domain into shared platform semantics. This is bounded
+architecture evidence, not proof of universal scenario support.
 
 `DEC-032` makes that obligation objective through `ADOPTION-KERNEL/v1`, one
 canonical stage-to-behaviour mapping, a probe coverage floor, mandatory

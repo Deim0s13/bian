@@ -31,15 +31,18 @@ prematurely performing them.
 8. [ADM tailoring statement](ADM_TAILORING.md)
 9. [Trust-boundary and security architecture](TRUST_BOUNDARY_AND_SECURITY_ARCHITECTURE.md)
 10. [Adoption scenario contract](ADOPTION_SCENARIO_CONTRACT.md)
-11. [Detailed HSB payments responsibility scenario](HSB_SCENARIO_001_PAYMENTS_RESPONSIBILITY.md)
-12. [Architecture lifecycle and ADM tailoring](ARCHITECTURE_LIFECYCLE.md)
+11. [HSB fragmented-payments modernisation use case](HSB_USE_CASE_001_PAYMENTS_MODERNISATION.md)
+12. [HSB customer-payment initiation validation thread](HSB_SCENARIO_001_PAYMENTS_RESPONSIBILITY.md)
+13. [HSB customer-onboarding transferability probe](HSB_TRANSFERABILITY_PROBE_001_CUSTOMER_ONBOARDING.md)
+14. [Architecture lifecycle and ADM tailoring](ARCHITECTURE_LIFECYCLE.md)
 
 Future work products will be added only when they answer a named stakeholder
 concern or support a decision. Expected next views include:
 
 - logical Application Architecture and interaction view;
-- execution evidence for the detailed HSB scenario and the structurally
-  different transferability probe governed by the adoption scenario contract;
+- execution evidence for the detailed HSB payments validation thread and
+  application-responsibility reuse across the structurally different
+  transferability probe governed by the adoption scenario contract;
 - domain and solution requirement refinements where the architecture requires
   them;
 - Technology Architecture after `GAT-003` and `GAT-005` pass;

@@ -28,12 +28,17 @@ These instructions apply to the entire repository unless a more specific
   `product/VALUE_AND_VALIDATION.md` to test decision value, connected
   differentiation, input feasibility, trust, adoption fit, and sustainable
   scope. Preserve its explicit stop and narrow conditions.
-- HSB customer-payment initiation is the first deep reference scenario, not the
-  shared platform domain model. Apply `REQ-026` and
+- HSB fragmented-payments modernisation is the first deep reference use case,
+  not the shared platform domain model. The customer-payment initiation
+  responsibility scenario is one subordinate validation thread. The compact
+  customer-onboarding and periodic-review probe is the first structurally
+  different transferability test, not a second product proposition. Apply
+  `DEC-034`, `REQ-026` and
   `architecture/ADOPTION_SCENARIO_CONTRACT.md`: keep shared information
   concepts, logical responsibilities and workflows banking-domain-neutral,
   preserve absent or unsupported API structures explicitly, and require the
-  `GAT-003` transferability probe before treating the architecture as reusable.
+  completed `GAT-003` cross-scenario test before treating the architecture as
+  reusable.
 - Treat `archive/initial-technical-spike/` as historical reference only. Do not
   edit, revive, or cite it as current architecture without explicit instruction.
 - Confirm the repository root before editing. Do not work from a copied sibling

@@ -43,22 +43,26 @@ feature in this chain is assumed to be differentiated by itself.
 
 ## Intended first users and decision
 
-The accepted working architecture hypothesis under `DEC-018` uses an enterprise
+The accepted working architecture hypothesis under `DEC-034` uses an enterprise
 or payments domain architect as the primary user. A Chief Architect or Head of
 Enterprise Architecture sponsors the architecture outcome, while a payments
 transformation sponsor represents funding and sequencing. Architecture
 enablement or BIAN stewardship represents the operational owner. Real-world
 buyer demand and operating fit remain unvalidated under `EVD-001`.
 
-The first named decision is:
+The first bounded problem is:
 
-> Which HSB assets should own, support, or relinquish a bounded
-> customer-payment initiation responsibility in the target state, and how should
-> the transition be sequenced?
+> How should HSB rationalise and progressively modernise its fragmented
+> domestic account-to-account payments estate using source-qualified BIAN
+> context, reviewed estate evidence and explicit operational constraints?
 
+The first user outcome is a reviewed current-state diagnosis, including gaps,
+duplication, mixed responsibility and uncertainty, followed by defensible
+target choices and a transition decision. The narrower customer-payment
+initiation responsibility experiment remains one subordinate decision thread.
 This is project and HSB scope until exact BIAN R14 relationships are qualified
-from authorised sources. Other decisions in the fourteen-use-case vision remain
-valid later propositions rather than part of the first user outcome.
+from authorised sources. Other decisions in the fourteen-use-case vision
+remain valid later propositions rather than part of the first user outcome.
 
 CIO dashboards, developer self-service, and compliance reporting are downstream
 benefits. They should not be treated as the first source of adoption.
@@ -100,7 +104,7 @@ A consumable release is not a shallow feature from every platform block. It is
 one complete, usable journey in which a primary user can make a meaningful
 decision without project-developer intervention.
 
-The initial HSB hypothesis is that an architect can:
+The `HSB-UC-001` hypothesis is that an architect can:
 
 1. select an authorised BIAN release and inspect source provenance;
 2. import a bounded application and API landscape;
@@ -113,10 +117,11 @@ The initial HSB hypothesis is that an architect can:
    Control; and
 9. change a BIAN or HSB artefact and identify downstream impact.
 
-The first user outcome is reached at step 5 through a reviewed target and
-transition decision. Steps 6 through 9 test the connected value of that decision
-across later platform concerns; they are not permission to implement every
-capability at equal depth or make payments the product centre.
+The first user outcome is reached through steps 2 through 5: a reviewed view of
+the estate and its alignment questions, followed by a target and transition
+decision. Steps 6 through 9 test the connected value of that decision across
+later platform concerns; they are not permission to implement every capability
+at equal depth or make payments the product centre.
 
 ## Validation tests
 

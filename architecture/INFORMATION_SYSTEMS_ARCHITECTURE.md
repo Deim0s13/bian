@@ -38,7 +38,8 @@ Information Systems Architecture must explain:
 - how information crosses trust and ownership boundaries;
 - which logical application responsibilities create, validate, relate, review,
   project, exchange, or govern that information; and
-- how the bounded HSB responsibility-allocation decision traverses the model.
+- how the bounded HSB payments-modernisation assessment and its subordinate
+  decisions traverse the model.
 
 The intended outcome is a coherent conceptual architecture that can later guide
 technology evaluation and bounded experiments. It is not a logical deployment
@@ -49,7 +50,7 @@ or implementation design.
 The principal inputs are:
 
 - the product north-star and fourteen use cases;
-- the accepted bounded responsibility-allocation proposition under `DEC-018`;
+- the accepted fragmented-payments modernisation proposition under `DEC-034`;
 - project principles `PRN-001` through `PRN-017`;
 - cross-cutting requirements `REQ-001` through `REQ-026`;
 - retained Business Architecture requirements `BAR-002` and `BAR-006`, with
@@ -198,10 +199,12 @@ provenance for implementation convenience.
    concerns through the
    [Trust-boundary and security architecture](TRUST_BOUNDARY_AND_SECURITY_ARCHITECTURE.md).
 3. **HSB information scenario:** apply the reusable
-   [adoption scenario contract](ADOPTION_SCENARIO_CONTRACT.md) to the bounded
-   customer-payment initiation decision, including ambiguity, negative trust
-   paths and change, then exercise a materially different transferability
-   probe without changing shared semantics.
+   [adoption scenario contract](ADOPTION_SCENARIO_CONTRACT.md) to the
+   [bank-led payments-modernisation use case](HSB_USE_CASE_001_PAYMENTS_MODERNISATION.md)
+   and its subordinate responsibility-allocation thread, including ambiguity,
+   negative trust paths and change, then exercise the materially different
+   [customer-onboarding transferability probe](HSB_TRANSFERABILITY_PROBE_001_CUSTOMER_ONBOARDING.md)
+   without changing shared semantics.
 4. **Logical Application Architecture:** define application responsibilities,
    interactions, information ownership, integration seams, and user services.
 5. **Cross-architecture traceability:** show how Data and Application
@@ -238,8 +241,8 @@ external review exists.
 | BIAN integrity | Source qualification or an explicit project-placeholder boundary for every BIAN-attributed scenario input | BIAN source steward | Project, HSB, inferred or unqualified content is represented as a BIAN assertion or relationship |
 | Cross-domain traceability | Phase C gap analysis and capability, value-stream and role-authority matrices | Architecture owner | A required business capability, value-stream step or information domain has no explained relationship, or depends on an undisclosed duplicate source of truth |
 | Trust boundary | Reviewed trust-boundary and security architecture plus the negative HSB outcomes under `WRK-041` | Security owner | Sensitive information crosses a boundary without declared ownership, purpose, classification, policy reference, accountable decision or explicit unresolved record |
-| Connected HSB scenario | `WRK-012` outputs using the same governed records, the adoption scenario contract and `HSB-SCN-001`, including an exact reconstructable View Definition and expected negative results | Architecture owner | The scenario needs hidden information, silently changes authority, cannot reproduce the decision view, or presents synthetic evidence as external validation |
-| Domain transferability | A non-payment, non-API-dominant probe identifies the kernel version, exercises the required nine-stage floor and six variation dimensions, and records either an empty semantic diff or a governed finding, requirement impact and architecture decision | Architecture owner | Coverage is below the floor, a mandatory dimension is unchanged, the semantic diff is absent, a core change is hidden as configuration, or the current kernel version relies on a failed and unresolved transferability result |
+| Connected HSB scenario | `WRK-012` outputs using the same governed records, `HSB-UC-001`, the adoption scenario contract and subordinate validation threads, including exact reconstructable View Definitions and expected negative results | Architecture owner | The scenario needs hidden information, silently changes authority, assumes a preferred target, cannot reproduce a decision view, or presents synthetic evidence as external validation |
+| Domain transferability | `HSB-TP-001/v0.1` identifies the kernel version, exercises all eleven stages and eight variation dimensions, records an empty semantic diff, and is reused by logical Application Architecture | Architecture owner | Coverage is below the floor, a mandatory dimension is unchanged, the semantic diff is absent, a core change is hidden as configuration, or logical responsibilities work only for the payments reference |
 | Logical application responsibilities | Logical Application Architecture and disposition of the `DEP-013` requirements | Architecture owner | A capture, validation, view, review, projection, export, protection or impact responsibility is orphaned, duplicated without rationale, or changes Data Architecture semantics |
 | Requirement traceability | Architecture Register evidence and outcome for each in-scope `REQ`, `BAR`, `DAR` and later application requirement | Project owner | A requirement lacks an explicit outcome, gate, owner, acceptance evidence or parent and dependant trace where required |
 | Explicit non-decisions | Data and Application Architecture non-decision lists plus architecture-review record | Architecture owner | Storage, framework, protocol, product, topology or other Phase D choice has been selected without an approved architecture decision |
@@ -256,10 +259,13 @@ external review exists.
 - The record-level model validation uses one synthetic HSB example and a project
   BIAN placeholder. It does not establish source-qualified BIAN fidelity,
   real-bank feasibility or broad model coverage; `EVD-011` records that limit.
-- Domain transferability is now a required test under `REQ-026`, but no
-  transferability evidence exists until `WRK-012` exercises the probe defined by
-  the adoption scenario contract.
-- `HSB-SCN-001` has a detailed conceptual design, but its governed records,
+- `HSB-TP-001/v0.1` supplies an empty semantic diff and conceptual
+  information-level transferability evidence. Reuse of logical application
+  responsibilities remains untested until `WRK-013` allocates and exercises
+  them across both scenarios.
+- `HSB-UC-001/v0.2` defines the bank-led use case, but its realism has not
+  received qualified independent review. `HSB-SCN-001/v0.2` remains a preserved
+  subordinate design under its `v0.3` disposition; its governed records,
   expected negative outcomes, views, controlled change and export have not been
   executed or accepted as evidence.
 - Tenancy, residency, retention, evidence, and rights rules require further
@@ -289,6 +295,7 @@ Data or Application Architecture decisions.
 - [Phase C gap and traceability analysis](PHASE_C_TRACEABILITY.md)
 - [Trust-boundary and security architecture](TRUST_BOUNDARY_AND_SECURITY_ARCHITECTURE.md)
 - [Adoption scenario contract](ADOPTION_SCENARIO_CONTRACT.md)
+- [HSB customer-onboarding transferability probe](HSB_TRANSFERABILITY_PROBE_001_CUSTOMER_ONBOARDING.md)
 - [ADM tailoring](ADM_TAILORING.md)
 - [Project principles](../product/PROJECT_PRINCIPLES.md)
 - [BIAN alignment policy](../product/BIAN_ALIGNMENT_POLICY.md)

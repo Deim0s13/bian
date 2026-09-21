@@ -391,27 +391,29 @@ time, review state, sensitivity, and limitations appropriate to their authority.
 
 ## 13. Accepted working proposition and decision boundary
 
-`DEC-018` establishes the following as the working Business Architecture
-baseline. It may evolve through evidence and governed review. It does not
-validate real-bank demand, qualify exact BIAN R14 relationships, or authorise
-implementation.
+`DEC-034` supersedes the narrower proposition in `DEC-018` and establishes the
+following as the working Business Architecture baseline. It may evolve through
+evidence and governed review. It does not validate real-bank demand, qualify
+exact BIAN R14 relationships, or authorise implementation.
 
 ### Bounded proposition
 
-> Help an architect decide where one contested banking responsibility should sit
-> in the target architecture, using qualified BIAN context and reviewed
-> bank-estate evidence, with uncertainty, ownership, and transition consequences
-> made explicit.
+> Help an architect reconstruct a fragmented domestic payments estate, use
+> qualified BIAN context to identify gaps, duplication and boundary concerns,
+> compare defensible target choices and plan a safe transition.
 
-The initial HSB scenario concerns customer-payment initiation. That phrase
-describes project and HSB scope until authorised BIAN R14 sources establish the
-exact BIAN Service Domains, Business Capabilities, Business Scenarios, and
-relationships that apply.
+The initial HSB use case covers personal and business domestic
+account-to-account payments across digital, business, assisted, scheduled and
+exception journeys. These are project and HSB scope until authorised BIAN R14
+sources establish the exact BIAN Service Domains, Business Capabilities,
+Business Scenarios and relationships that apply.
 
-The first outcome is a reviewed responsibility-allocation and transition
-decision. It is not a generic BIAN adoption report, automatic target
-architecture, bank-wide estate inventory, service-generation demonstration, or
-claim that the full platform should be built.
+The first outcome is a reviewed current-state diagnosis and target and
+transition decision, not a generic BIAN adoption report, automatic target
+architecture, bank-wide estate inventory, service-generation demonstration or
+claim that the full platform should be built. The customer-payment initiation
+responsibility experiment is one subordinate decision thread, not the primary
+customer problem.
 
 ### Roles and decision rights
 
@@ -433,30 +435,30 @@ risk acceptance, or attestation.
 
 ### Named decision and change in process
 
-The named decision is:
+The named assessment decision is:
 
-> Which HSB assets should own, support, or relinquish the bounded
-> customer-payment initiation responsibility in the target state, and how should
-> the transition be sequenced?
+> How should HSB rationalise and progressively modernise its fragmented
+> domestic account-to-account payments estate using source-qualified BIAN
+> context, reviewed estate evidence and explicit operational constraints?
 
 | Concern | Baseline process | Proposed platform-enabled process |
 |---|---|---|
 | Context | Reconstruct BIAN, application, API, ownership, and dependency context from separate sources for each review. | Reuse a versioned, source-qualified context while preserving every source boundary. |
 | Mapping | Record unstructured or implicit interpretations in diagrams and working files. | Propose, explain, review, dispute, accept, and supersede mappings with evidence and uncertainty. |
 | Options | Develop target options with inconsistent connection to current assets and owners. | Compare at least two options, including justified no change, against reviewed mappings, dependencies, risks, and constraints. |
-| Decision | Approve a design whose assumptions and evidence may be difficult to reconstruct. | Record the selected allocation, rationale, authority, rejected options, limitations, affected owners, and transition actions. |
+| Decision | Approve a design whose assumptions and evidence may be difficult to reconstruct. | Record the accepted current-state findings, target choice, rationale, authority, rejected options, limitations, affected owners and transition actions. |
 | Change | Reconstruct impact manually when BIAN or the estate changes. | Identify potentially affected mappings, decisions, assets, owners, controls, and evidence for accountable review. |
 
-The scenario tests whether this connected thread improves the effort,
+The use case tests whether this connected thread improves the effort,
 reproducibility, and completeness of the decision. It cannot prove that the
 selected architecture is universally correct.
 
 ### Minimum information boundary
 
-The bounded scenario requires only:
+The bounded use case requires only:
 
-- the decision question, in-scope customer-payment context, constraints,
-  criteria, sponsor, and approving authority;
+- the assessment question, in-scope payment journeys, constraints, criteria,
+  sponsor and approving authority;
 - stable identity, type, lifecycle, and accountable owner for relevant HSB
   applications, APIs, and integrations;
 - evidence describing current responsibilities, providers, consumers,
@@ -517,81 +519,38 @@ obligations without deleting their history. This document explains the Business
 Architecture context from which the requirements arose; it does not maintain a
 second requirements register.
 
-## 15. Initial HSB business scenario
+## 15. Initial HSB business use case
 
-### Scenario: allocate a bounded customer-payment initiation responsibility
+### Use case: modernise a fragmented payments estate using BIAN
 
-The exact BIAN Service Domains, Business Capabilities, Business Scenarios, and
-relationships used in this scenario must be confirmed from authorised R14
-sources before they are represented as BIAN. Until then, the scenario describes
-project and HSB intent only.
+The detailed
+[HSB payments-modernisation use case](HSB_USE_CASE_001_PAYMENTS_MODERNISATION.md)
+defines the bank context, transformation trigger, six payment journeys,
+mixed-generation estate, evidence sources, known symptoms, adoption questions,
+neutral option space, participants, measures and failure conditions.
 
-Under `DEC-031` and the
-[adoption scenario contract](ADOPTION_SCENARIO_CONTRACT.md), this payments scope
-is the first deep reference instance of a banking-domain-neutral adoption
-kernel. It must not define shared platform semantics, logical responsibilities
-or workflow. A materially different transferability probe is required before
+The primary actor is an HSB enterprise or payments domain architect responding
+to a bank-sponsored need to understand and modernise a fragmented domestic
+payments estate. The actor must reconstruct the current state, review
+HSB-to-BIAN mappings, identify gaps and duplication, compare target choices and
+record a transition decision without assuming that the Payment Orchestration
+Hub or any other asset is the answer.
+
+The exact BIAN content and relationships remain blocked until authorised R14
+sources pass qualification and rights review. The
+[adoption scenario contract](ADOPTION_SCENARIO_CONTRACT.md) governs the
+domain-neutral kernel, and the preserved
+[responsibility-allocation validation thread](HSB_SCENARIO_001_PAYMENTS_RESPONSIBILITY.md)
+tests one contested decision within the wider assessment. The materially
+different `HSB-TP-001/v0.1` transferability probe is now conceptually exercised;
+reuse of the same logical application responsibilities remains required before
 `GAT-003` can pass.
 
-**Trigger:** HSB has overlapping payment-related applications and APIs and needs
-to decide how the bounded customer-payment initiation responsibility should be
-allocated in its target architecture.
-
-**Primary actor:** HSB enterprise or payments domain architect.
-
-**Supporting actors:** application and API owners, transformation sponsor,
-security and control owner, platform engineer, BIAN source steward, and
-independent reviewer.
-
-**Preconditions:**
-
-- the BIAN source and rights position for the bounded scope is known;
-- deliberately incomplete and contradictory HSB estate information exists;
-- accountable HSB owners and review roles are assigned; and
-- the question and decision authority are explicit.
-
-**Business flow:**
-
-1. Establish the authorised BIAN context and exact release.
-2. Reconcile the in-scope HSB applications, APIs, integrations, data, ownership,
-   lifecycle, and known issues.
-3. Propose mappings and show evidence, uncertainty, conflicts, and unmapped
-   elements.
-4. Review mappings with architects and asset owners, retaining rejected and
-   superseded proposals.
-5. Identify ownership, duplication, mixed-responsibility, dependency, and
-   control concerns.
-6. Develop at least two target and transition options, including a decision not
-   to change where justified.
-7. Record the selected option, rationale, affected owners, assumptions, risks,
-   actions, and measures.
-8. Demonstrate one traceable engineering projection and one scoped assurance
-   path from the approved context.
-9. Introduce a BIAN-source or HSB-estate change and identify the resulting
-   decision, asset, control, evidence, and owner impacts.
-
-**Decision outcome:** an accountable HSB architecture decision with sufficient
-evidence to explain why the selected allocation and transition were preferred.
-
-**Validation measures:**
-
-- completeness and provenance of information used by the decision;
-- number and materiality of unresolved conflicts and assumptions;
-- reviewed, rejected, and superseded mapping outcomes;
-- time and manual effort required to establish and update the decision thread;
-- affected assets and owners correctly identified after a controlled change;
-- ability of an independent reviewer to reproduce the rationale; and
-- explicit evidence of what the scenario cannot establish.
-
-**Failure and stop signals:**
-
-- the decision can be reached just as well without the connected model;
-- manual reconciliation overwhelms the value of the outcome;
-- reviewers cannot understand or trust mapping rationale;
-- downstream engineering or assurance links do not affect a decision or action;
-- the required BIAN content cannot be used lawfully; or
-- the scenario requires several teams to operate the platform before the primary
-  user receives useful value.
+The first customer outcome is a reviewable current-state diagnosis and a
+defensible target and transition decision with evidence, ownership,
+uncertainty, rejected choices and stop conditions retained. It is not an
+alignment score, a recommendation generated from application names or an
+implementation authorisation.
 
 ## 16. Operating-model hypothesis
 
@@ -633,7 +592,7 @@ Active questions are maintained only in the
 [Architecture Register](../governance/ARCHITECTURE_REGISTER.md#open-questions).
 The accepted working answers to `OQ-001` through `OQ-003`, `OQ-012`, `OQ-013`,
 `OQ-015`, and `OQ-017` are expressed in section 13 and governed through
-`DEC-018`. `OQ-016` remains in analysis because synthetic evidence cannot prove
+`DEC-034`. `OQ-016` remains in analysis because synthetic evidence cannot prove
 a sustainable real-bank stewardship model.
 
 The remaining Business Architecture and investment position is principally

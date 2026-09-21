@@ -111,7 +111,7 @@ The [Architecture Vision](architecture/ARCHITECTURE_VISION.md) establishes the
 direction. The initial
 [Business Architecture](architecture/BUSINESS_ARCHITECTURE.md) defines the
 value streams, platform capabilities, business services, roles, decision rights,
-operating-model hypothesis, and HSB decision scenario. This stage will continue
+operating-model hypothesis, and HSB business use case. This stage will continue
 through the
 [Information Systems Architecture](architecture/INFORMATION_SYSTEMS_ARCHITECTURE.md),
 beginning with the
@@ -119,7 +119,9 @@ beginning with the
 the
 [trust-boundary and security architecture](architecture/TRUST_BOUNDARY_AND_SECURITY_ARCHITECTURE.md),
 the [adoption scenario contract](architecture/ADOPTION_SCENARIO_CONTRACT.md),
-the connected HSB reference scenario and transferability probe, logical
+the [bank-led HSB payments-modernisation use case](architecture/HSB_USE_CASE_001_PAYMENTS_MODERNISATION.md),
+its connected validation threads, the
+[customer-onboarding transferability probe](architecture/HSB_TRANSFERABILITY_PROBE_001_CUSTOMER_ONBOARDING.md), logical
 Application Architecture and capability
 interactions without prematurely selecting detailed technology.
 

@@ -20,19 +20,22 @@ needed, rather than becoming the definition of the platform.
 
 ## Selected working proposition
 
-Under `DEC-018`, conceptual architecture will use a bounded, BIAN-informed
-responsibility-allocation decision as its first working proposition:
+Under `DEC-034`, conceptual architecture will use a bounded, BIAN-informed
+assessment of a fragmented domestic payments estate as its first working
+proposition:
 
-> Help an architect decide where one contested banking responsibility should sit
-> in the target architecture, using qualified BIAN context and reviewed
-> bank-estate evidence, with uncertainty, ownership, and transition consequences
-> made explicit.
+> Help an architect understand how a mixed-generation payments estate currently
+> implements banking responsibilities, identify gaps and duplication, compare
+> defensible target choices and plan a safe transition using qualified BIAN
+> context and reviewed bank-estate evidence.
 
-HSB customer-payment initiation provides the initial synthetic scope. Exact
-BIAN R14 concepts and relationships remain subject to authorised source
-qualification. The proposition combines the estate understanding of UC-07, a
-focused part of UC-08, and the decision outcome of UC-09. It does not make
-payments the product centre or authorise implementation.
+`HSB-UC-001` provides the initial synthetic scope. Exact BIAN R14 concepts and
+relationships remain subject to authorised source qualification. The
+proposition combines the estate understanding of UC-07, relevant API analysis
+from UC-08, the target and transition outcome of UC-09 and focused
+modernisation reasoning from UC-11. The preserved customer-payment initiation
+responsibility experiment is one subordinate decision thread. The proposition
+does not make payments the product centre or authorise implementation.
 
 The selection is an evolving architecture baseline. External desirability,
 real-bank input feasibility, and sustainable stewardship remain unvalidated.
@@ -115,8 +118,8 @@ differentiation.
 
 ## Current architecture validation recommendation
 
-Use the selected responsibility-allocation proposition as the primary user
-outcome within a **connected, model-driven HSB journey** across the north-star
+Use the selected fragmented-payments assessment as the primary user outcome
+within a **connected, model-driven HSB journey** across the north-star
 structure. Payments is a practical synthetic scenario, not an assumed market
 choice or the definition of the platform.
 
@@ -136,6 +139,10 @@ The journey should progressively demonstrate that one governed model thread can:
 8. describe and later validate delivery into selected Runtime Targets; and
 9. assess how a BIAN or HSB change affects mappings, generated artefacts,
    controls, evidence, owners, and runtime consumers.
+
+The compact `HSB-TP-001` customer-onboarding and periodic-review probe tests
+that the shared architecture is not a payments-modernisation design in disguise.
+It is transferability evidence, not a competing first proposition.
 
 This does not require every capability to be implemented at once. It gives each
 architecture increment a shared end-to-end thread and prevents any one pillar

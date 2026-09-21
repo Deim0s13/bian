@@ -2,16 +2,18 @@
 
 ## Document status
 
-**Status:** Revised conceptual contract under `DEC-031`, `DEC-032` and
-`DEC-033`
+**Status:** Revised conceptual contract under `DEC-031`, `DEC-032`, `DEC-033`
+and `DEC-034`
 
 **Architecture stage:** Information Systems Architecture
 
 **Scope:** Reusable structure and validation rules for bounded HSB adoption
 scenarios
 
-**First reference instance:** HSB customer-payment initiation responsibility
-allocation
+**First reference use case:** HSB fragmented-payments modernisation assessment
+
+**Subordinate validation thread:** HSB customer-payment initiation
+responsibility allocation
 
 **Excluded:** Exact BIAN source selection, complete scenario evidence, logical
 Application Architecture, technology selection, implementation and universal
@@ -208,30 +210,39 @@ Canonical shared semantic and behaviour catalogues use the repository's
 blocks. Scenario descriptions and explicit risk statements remain outside the
 blocks so legitimate banking language does not weaken or disable the control.
 
-## 6. First deep reference instance
+## 6. First deep reference use case
 
 | Field | HSB payments reference position |
 |---|---|
-| Scenario ID | `HSB-SCN-001` |
-| Working title | Allocate a bounded customer-payment initiation responsibility |
-| Purpose | Test whether an enterprise or payments domain architect can make and defend a target allocation and transition decision across a fragmented synthetic estate |
+| Use-case ID | `HSB-UC-001` |
+| Working title | Modernise a fragmented payments estate using BIAN |
+| Purpose | Test whether an enterprise or payments domain architect can reconstruct a credible legacy estate, use source-qualified BIAN context to identify gaps, duplication and boundary concerns, and make defensible target and transition decisions without a preselected outcome |
 | Domain standing | HSB scenario data only; payments is not the platform domain model |
 | BIAN standing | Exact R14 elements and relationships remain unresolved until authorised source qualification; project placeholders cannot be described as BIAN mappings |
-| Depth | Full connected path, including conflict, review, options, decision, participating downstream outcomes, controlled change, negative paths and export |
+| Depth | Multiple payment journeys, mixed-generation estate, conflicting sources, BIAN mapping, diagnosis, neutral options, target and transition decisions, participating downstream outcomes, controlled change, negative paths and export |
 | Intended evidence | Internal architectural coherence, reproducibility, authority separation, transfer-ready responsibilities and explicit failure or stop signals |
 | Prohibited inference | Universal BIAN support, customer demand, real-bank feasibility, regulatory acceptance, implementation security or production readiness |
 
-The [detailed payments scenario](HSB_SCENARIO_001_PAYMENTS_RESPONSIBILITY.md)
-is developed separately under `WRK-012`. This contract constrains it but does
-not duplicate its estate records, views or decision evidence. Its current
-state is `HSB-SCN-001/v0.2`, a pre-execution refinement rather than executed
-scenario evidence.
+The [bank-led payments-modernisation use case](HSB_USE_CASE_001_PAYMENTS_MODERNISATION.md)
+defines the customer problem, estate and adoption assessment. The
+[responsibility-allocation validation thread](HSB_SCENARIO_001_PAYMENTS_RESPONSIBILITY.md)
+preserves `HSB-SCN-001/v0.2` as one unexecuted experiment within that use case
+and records its subordinate disposition in `v0.3`. This contract constrains
+both without duplicating their estate records, views or decision evidence.
 
 ## 7. Transferability probe
 
 The transferability probe is a bounded architecture test, not a second complete
 product proposition. Its exact BIAN scope shall be selected only after source
 qualification or represented by clearly labelled project placeholders.
+
+Under `DEC-035`,
+[HSB-TP-001](HSB_TRANSFERABILITY_PROBE_001_CUSTOMER_ONBOARDING.md) uses customer
+onboarding and periodic review as the first compact probe. Its estate-only paper
+execution records an empty semantic diff against `ADOPTION-KERNEL/v1`. That is
+information-semantics evidence only until `WRK-013` demonstrates that the same
+logical application responsibilities support both the payments reference and
+the probe.
 
 The probe shall be:
 
@@ -278,8 +289,8 @@ shape and source mix are mandatory differences.
 
 | Dimension | Payments reference | Transferability expectation |
 |---|---|---|
-| Banking context | Payment-related responsibility allocation | Non-payment context |
-| Primary decision | Target allocation and transition | Different adoption decision or trigger |
+| Banking context | Fragmented domestic payments modernisation | Non-payment context |
+| Primary decision | Current-state diagnosis, target choices and transition, including a subordinate responsibility-allocation decision | Different adoption decision or trigger |
 | API dependence | APIs participate in the estate | API specification is absent or non-dominant |
 | Mapping shape | Conflicting and mixed-responsibility mappings | A different cardinality or unmapped outcome |
 | Source mix | Synthetic application, API, integration and governance sources | Different source combination |
@@ -290,11 +301,16 @@ shape and source mix are mandatory differences.
 The matrix is evidence planning, not permission to invent BIAN structures or
 claim exhaustive combinatorial coverage.
 
+`HSB-TP-001/v0.1` differs on all eight dimensions. Its exact comparison and
+limitations are maintained in the probe rather than duplicated here.
+
 ## 9. `WRK-012` acceptance tests
 
 `WRK-012` is complete only when:
 
-1. `HSB-SCN-001` satisfies every mandatory contract field.
+1. `HSB-UC-001` supplies a coherent bank problem, estate, evidence boundary,
+   neutral option space and expected adoption outcomes, while its executable
+   validation threads satisfy every mandatory contract field.
 2. The same governed records connect its business, information, trust, review,
    projection and impact views.
 3. Its decision view is reconstructable from the exact View Definition, inputs,
@@ -314,6 +330,9 @@ claim exhaustive combinatorial coverage.
 9. Every participating and non-participating stage is explicit.
 10. Measures and conclusions state their synthetic scope, method, limitations
     and stop or narrow result.
+11. A source-blocked estate assessment is named and bounded separately from any
+    BIAN-informed assessment, and no BIAN alignment or adoption conclusion is
+    permitted until the exact source context passes `GAT-004`.
 
 Passing these tests establishes conceptual evidence only. It does not satisfy
 later implementation, security, operational, open-source publication or

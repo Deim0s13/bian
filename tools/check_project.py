@@ -31,7 +31,9 @@ REQUIRED_FILES = (
     "architecture/REQUIREMENTS_AND_TRACEABILITY.md",
     "architecture/INFORMATION_SYSTEMS_ARCHITECTURE.md",
     "architecture/ADOPTION_SCENARIO_CONTRACT.md",
+    "architecture/HSB_USE_CASE_001_PAYMENTS_MODERNISATION.md",
     "architecture/HSB_SCENARIO_001_PAYMENTS_RESPONSIBILITY.md",
+    "architecture/HSB_TRANSFERABILITY_PROBE_001_CUSTOMER_ONBOARDING.md",
     "architecture/DATA_ARCHITECTURE.md",
     "architecture/PHASE_C_MODEL_VALIDATION.md",
     "architecture/PHASE_C_TRACEABILITY.md",
@@ -85,8 +87,8 @@ REQUIRED_CONTENT = {
         "Platform business services",
         "Accepted working proposition and decision boundary",
         "Business Architecture requirements",
-        "Initial HSB business scenario",
-        "Failure and stop signals",
+        "Initial HSB business use case",
+        "HSB payments-modernisation use case",
     ),
     "architecture/REQUIREMENTS_AND_TRACEABILITY.md": (
         "sole authoritative record",
@@ -122,6 +124,25 @@ REQUIRED_CONTENT = {
         "DEC-033",
         "Decision subject",
     ),
+    "architecture/HSB_USE_CASE_001_PAYMENTS_MODERNISATION.md": (
+        "HSB-UC-001/v0.2",
+        "DEC-034",
+        "Transformation trigger",
+        "Realism disclaimer",
+        "Current payment journeys",
+        "Synthetic estate baseline",
+        "Domestic Clearing Gateway",
+        "Return, recall or reversal",
+        "HSB-COND-014",
+        "BIAN adoption assessment",
+        "HSB-ASSESS-ESTATE-001",
+        "HSB-ASSESS-BIAN-001",
+        "Neutral option space",
+        "decouple the acquired engine's proprietary domestic scheme connectivity",
+        "Relationship to the validation protocol",
+        "HSB-SCN-001/v0.2",
+        "GAT-003",
+    ),
     "architecture/HSB_SCENARIO_001_PAYMENTS_RESPONSIBILITY.md": (
         "HSB-SCN-001/v0.2",
         "ADOPTION-KERNEL/v1",
@@ -138,6 +159,23 @@ REQUIRED_CONTENT = {
         "Trust-boundary and negative-path design",
         "Application Architecture hand-off",
         "transferability probe",
+    ),
+    "architecture/HSB_TRANSFERABILITY_PROBE_001_CUSTOMER_ONBOARDING.md": (
+        "HSB-TP-001/v0.1",
+        "ADOPTION-KERNEL/v1",
+        "customer onboarding and periodic review",
+        "SUBJ-PRJ-BIAN-SCOPE-ONB-001",
+        "HSB-TP-COND-004",
+        "HSB-TP-ASSESS-ESTATE-001",
+        "HSB-TP-ASSESS-BIAN-001",
+        "VIEWDEF-HSB-TP-001@1",
+        "HSB-TP-CHG-001",
+        "HSB-TP-OUT-001",
+        "all eleven stages",
+        "all eight dimensions",
+        "Semantic diff outcome",
+        "998057efe99c8fabaadfdcaba6cdb7d00f41ed3d8c82c4f17e5a0e86da5f24dc",
+        "WRK-013",
     ),
     "architecture/DATA_ARCHITECTURE.md": (
         "Conceptual Data Architecture",
@@ -252,6 +290,7 @@ REQUIRED_CONTENT = {
         "DEC-031",
         "DEC-032",
         "DEC-033",
+        "DEC-035",
         "GAT-001",
         "GAT-011",
         "GAT-012",
@@ -725,6 +764,57 @@ def check_adoption_kernel(errors: list[str]) -> None:
         )
 
 
+def check_transferability_probe_kernel_digest(errors: list[str]) -> None:
+    contract_path = ROOT / "architecture/ADOPTION_SCENARIO_CONTRACT.md"
+    probe_path = (
+        ROOT
+        / "architecture/HSB_TRANSFERABILITY_PROBE_001_CUSTOMER_ONBOARDING.md"
+    )
+    if not contract_path.is_file() or not probe_path.is_file():
+        return
+
+    contract_text = contract_path.read_text(encoding="utf-8")
+    probe_text = probe_path.read_text(encoding="utf-8")
+    start_marker = "<!-- domain-neutral:start adoption-kernel -->"
+    end_marker = "<!-- domain-neutral:end adoption-kernel -->"
+
+    if contract_text.count(start_marker) != 1 or contract_text.count(end_marker) != 1:
+        errors.append(
+            "architecture/ADOPTION_SCENARIO_CONTRACT.md: adoption-kernel "
+            "digest boundaries are ambiguous"
+        )
+        return
+
+    start = contract_text.index(start_marker)
+    end = contract_text.index(end_marker, start) + len(end_marker)
+    digest = hashlib.sha256(contract_text[start:end].encode("utf-8")).hexdigest()
+    digest_match = re.search(
+        r"\*\*Kernel block SHA-256:\*\*\s+`([0-9a-f]{64})`",
+        probe_text,
+    )
+    if not digest_match:
+        errors.append(
+            "architecture/HSB_TRANSFERABILITY_PROBE_001_CUSTOMER_ONBOARDING.md: "
+            "kernel block digest is missing"
+        )
+    elif digest_match.group(1) != digest:
+        errors.append(
+            "architecture/HSB_TRANSFERABILITY_PROBE_001_CUSTOMER_ONBOARDING.md: "
+            "kernel block digest does not match the canonical adoption kernel"
+        )
+
+    stage_rows = {
+        match.group(1)
+        for line in probe_text.splitlines()
+        if (match := re.match(r"^\| `(AK-\d{2})` \|", line))
+    }
+    if stage_rows != ADOPTION_KERNEL_STAGES:
+        errors.append(
+            "architecture/HSB_TRANSFERABILITY_PROBE_001_CUSTOMER_ONBOARDING.md: "
+            "probe execution must record exactly AK-01 through AK-11"
+        )
+
+
 def check_hsb_preregistration(errors: list[str]) -> None:
     scenario_path = (
         ROOT / "architecture/HSB_SCENARIO_001_PAYMENTS_RESPONSIBILITY.md"
@@ -970,6 +1060,7 @@ def main() -> int:
     check_data_architecture_requirements(errors)
     check_crosscutting_requirements(errors)
     check_adoption_kernel(errors)
+    check_transferability_probe_kernel_digest(errors)
     check_hsb_preregistration(errors)
     check_domain_neutral_blocks(files, errors)
     check_register_controls(errors)

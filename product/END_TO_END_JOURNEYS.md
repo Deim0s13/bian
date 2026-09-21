@@ -12,6 +12,10 @@ A bank knows its payments estate is fragmented across channels, a payment hub,
 core banking, messaging, fraud systems, and manual controls. It wants a target
 architecture and transition plan, not a generic BIAN diagram.
 
+`HSB-UC-001` provides the project-authored synthetic instance of this journey.
+Its bank narrative remains separate from the validation threads used to test
+platform behaviour.
+
 ### Participants
 
 Transformation director, enterprise architect, payments architect, application
